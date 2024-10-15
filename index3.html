@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles.css">
+    
+</head>
+<body ng-app="myApp" ng-controller="myController">
+    <header>
+        <img src="./images/ClientLogo.png" class="logo" alt="">
+        <button class="logout">
+            <img src="./images/Logout.svg" alt="" srcset="">
+            Log Out
+        </button>
+    </header>
+    <main>
+        <nav>
+            <a href="#" class="menu">
+                <i class="ri-menu-line"></i> Menu
+            </a>             
+            <a href="#" class="--desktop"><i class="ri-clipboard-line"></i>Forms to Complete</a>            
+            <a href="#" class="--desktop"><i class="ri-time-line"></i></i>Clinical Screening Dues</a>
+            <a href="#" class="--desktop"><i class="ri-flask-line"></i></i>Lab Results</a>
+            <a href="#" class="--desktop"><i class="ri-clipboard-line"></i>Request Rx Refill</a>            
+            <div class="switch">
+                <div class="current__user">
+                    <span>TM</span>
+                </div>   
+                <div class="select__user">
+                    <label for="user">
+                        Alexander
+                    </label>
+                    <select name="user" id="user">
+                        <option value="switch">Switch</option>
+                        <option value="john">John</option>
+                        <option value="mark">Mark</option>
+                    </select>
+                </div>
+            </div>
+        </nav>
+
+        <nav class="--mobile mobile__nav"> 
+            <a href="#"><i class="ri-clipboard-line"></i>Forms to Complete</a>            
+            <a href="#"><i class="ri-clipboard-line"></i>Clinical Screening Dues</a>
+            <a href="#"><i class="ri-clipboard-line"></i>Lab Results</a>
+            <a href="#"><i class="ri-clipboard-line"></i>Request Rx Refill</a>               
+        </nav>
+
+        <div class="container">
+            <h1 class="welcome">Welcome</h1>
+            
+            <div class="cards">
+                <div class="card">
+                    <h2 class="card__header">
+                        <i class="ri-calendar-line"></i>
+                        View & Schedule Appointments
+                    </h2>
+                   
+
+                   <div class="card__content">
+                       <strong>Up coming appointments</strong>
+                       <div class="apptcard">
+                            <div class="row">
+                                <div class="date">
+                                    <span>{{myData.appointments.Date.month}}</span>
+                                    <span>{{myData.appointments.Date.day}}</span>
+                                    <span>{{myData.appointments.Date.year}}</span>
+                                </div>
+                                <div class="details">
+                                    <strong>{{myData.appointments.Service}}</strong>
+                                    <span>{{myData.appointments.Provider}}</span>
+                                    <span>{{myData.appointments.Program}}</span>                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="icon"><i class="ri-video-on-line"></i></div>
+                                <div class="link">
+                                    <a href="{{myData.appointments.Link}}">
+                                        Meeting link
+                                    </a>
+                                </div>
+                            </div>
+                       </div>
+                   </div>
+
+                   <div class="card__footer">
+                       <button>View all Appointments</button>
+                       <button>Book New Appointment</button>
+                   </div>
+
+                </div>
+                <div class="card">
+                    <h2 class="card__header">
+                        <i class="ri-chat-1-line"></i>
+                        View and Send Messages
+                    </h2>
+
+                   <div class="card__content">
+                       <ul class="messages">
+                            <li>
+                                <i class="ri-notification-2-line"></i>
+                                <div>
+                                    <strong>{{myData.messages[0].header}} <span>{{myData.messages[0].date}}</span></strong>
+                                    <span>{{myData.messages[0].bodytext}}</span>                                    
+                                </div>
+                            </li>
+                            <li>
+                                <i class="ri-group-line"></i>
+                                <div>
+                                    <strong>{{myData.messages[1].header}} <span>{{myData.messages[1].date}}</span></strong>
+                                    <span>{{myData.messages[1].bodytext}}</span>                                    
+                                </div>
+                            </li>
+                            <li>
+                                <i class="ri-calendar-line"></i>
+                                <div>
+                                    <strong>{{myData.messages[2].header}} <span>{{myData.messages[2].date}}</span></strong>
+                                    <span>{{myData.messages[2].bodytext}}</span>                                    
+                                </div>
+                            </li>
+                       </ul>
+                   </div>
+
+                   <div class="card__footer">
+                       <button>Send Message</button>
+                   </div>
+                </div>
+                <div class="card">
+                    <h2 class="card__header">
+                        <i class="ri-shield-line"></i>
+                        Insurance Details
+                    </h2>
+
+                   <div class="card__content">
+                       <ul class="list">
+                            <li><span>Health Plan:</span> <span>{{myData.insurance.HealthPlan}}</span></li>
+                            <li><span>Policy Number:</span> <span>{{myData.insurance.PolicyNumber}}</span></li>
+                            <li><span>Relation To Insured:</span> <span>{{myData.insurance.RelationToInsured}}</span></li>
+                            <li><span>Start Date:</span> <span>{{myData.insurance.StartDate}}</span></li>
+                            <li><span>End Date:</span> <span>{{myData.insurance.EndDate}}</span></li>
+                            <li><span>Insurance Sequence:</span> <span>{{myData.insurance.InsuranceSequence}}</span> </li>
+                       </ul>
+                   </div>
+
+                 
+                </div>
+               
+             
+                <div class="card">
+                    <h2 class="card__header">
+                        <i class="ri-money-dollar-circle-line"></i>
+                        View and Pay Bills
+                    </h2>
+
+                   <div class="card__content">
+                       <label for="">
+                         You have a balance due of: 
+                         <strong ng-bind="myData.bills.dueAmount"></strong>
+                       </label>
+                   </div>
+
+                    <div class="card__footer">
+                       <button> View Your Statement</button>
+                       <button> Pay Your Bill</button>
+                   </div>
+
+                 
+                       <p>if you have any questions about your balance please send us a <a href="#" target="_blank">message</a>  or contact us at (555) 555-5555</p>
+                 
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./app.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+    "appointments": {
+        "Date": {
+            "month":"oct",
+            "day": "30",
+            "year": "2024"
+        },
+        "Service": "Individual Therapy Session",
+        "Provider": "Amy Smith, LCSW",
+        "Program":  "Couple Therapy Program",
+        "Link" : "https://www.google.com/zd3erdfd"
+
+    },
+    "messages": {
+        "key": "value2",
+        "randomKey1": "randomValue3",
+        "randomKey2": "randomValue4"
+    },
+    "insurance": {
+        "HealthPlan": "Blue Cross Blue Shield of Oregon",
+        "PolicyNumber": "62039CT568",
+        "RelationToInsured": "Self",
+        "StartDate": "1/1/2024",
+        "EndDate": "12/31/2024",
+        "InsuranceSequence": "Primary"
+
+    },
+    "bills": {
+        "dueAmount": "$20"        
+    }
+}
