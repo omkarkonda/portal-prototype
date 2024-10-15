@@ -139,6 +139,21 @@ nav .switch {
     padding-bottom: 2%;    
 }
 
+.welcome__row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcome__row p{
+    font-size: 16px;
+}
+
+.welcome__row p > i{
+    color: #227CC7;
+    font-size: 1.5rem;
+}
+
 .welcome {
     color: #227CC7;
     margin-block: 0.5em;
@@ -311,7 +326,9 @@ ul.messages li strong + span{
 
 
 
-
+.insurance span{
+    margin-left: auto;
+}
 
 
 .card  ul.list{
@@ -345,8 +362,8 @@ ul.list li span {
 }
 
 .card p{
+    font-size: 16px
 
-    font-size: 0.8rem;
 }
 
 .card__footer{
