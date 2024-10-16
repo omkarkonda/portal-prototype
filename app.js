@@ -27,14 +27,14 @@ angular.module("myApp").controller("myController", function($scope, $http) {
             {
                 "type": "message",
                 "header": "Amy Smith, LCSW",
-                "bodytext": "I would recommend enrolling in our group therapy session for Couple Therapy Program",
+                "bodytext": "I would recommend enrolling in our group therapy session for Couple...",
                 "date": "8/15/24"
             },
 
             {
                 "type": "Front desk",
                 "header": "Questionnaire Due",
-                "bodytext": "You have an upcoming appointment on August 7, 2024! Please arriv",
+                "bodytext": "You have an upcoming appointment on August 7, 2024! Please arriv...",
                 "date": "8/05/24"
             }
 

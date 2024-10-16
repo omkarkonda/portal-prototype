@@ -26,10 +26,10 @@
             <a href="#" class="menu">
                 <i class="ri-menu-line"></i> Menu
             </a>             
-            <a href="#" class="--desktop"><i class="ri-clipboard-line"></i>Forms to Complete</a>            
-            <a href="#" class="--desktop"><i class="ri-time-line"></i></i>Clinical Screening Dues</a>
-            <a href="#" class="--desktop"><i class="ri-flask-line"></i></i>Lab Results</a>
-            <a href="#" class="--desktop"><i class="ri-clipboard-line"></i>Request Rx Refill</a>            
+            <a href="#" class="--desktop"><i class="ri-survey-line"></i>Forms to Complete</a>            
+            <a href="#" class="--desktop"><i class="ri-hourglass-line"></i>Clinical Screening Dues</a>
+            <a href="#" class="--desktop"><i class="ri-flask-line"></i>Lab Results</a>
+            <a href="#" class="--desktop"><i class="ri-medicine-bottle-line"></i>Request Rx Refill</a>            
             <div class="switch">
                 <div class="current__user">
                     <span>TM</span>
@@ -48,10 +48,10 @@
         </nav>
 
         <nav class="--mobile mobile__nav"> 
-            <a href="#"><i class="ri-clipboard-line"></i>Forms to Complete</a>            
-            <a href="#"><i class="ri-clipboard-line"></i>Clinical Screening Dues</a>
-            <a href="#"><i class="ri-clipboard-line"></i>Lab Results</a>
-            <a href="#"><i class="ri-clipboard-line"></i>Request Rx Refill</a>               
+            <a href="#" class="--mobile"><i class="ri-survey-line"></i>Forms to Complete</a>            
+            <a href="#" class="--mobile"><i class="ri-hourglass-line"></i>Clinical Screening Dues</a>
+            <a href="#" class="--mobile"><i class="ri-flask-line"></i>Lab Results</a>
+            <a href="#" class="--mobile"><i class="ri-medicine-bottle-line"></i>Request Rx Refill</a>               
         </nav>
 
         <div class="container">
@@ -97,7 +97,7 @@
                    </div>
 
                    <div class="card__footer">
-                       <button>View all Appointments</button>
+                       <button>View All Appointments</button>
                        <button>Book New Appointment</button>
                    </div>
 
@@ -117,14 +117,14 @@
                                     <span>{{myData.messages[0].bodytext}}</span>                                    
                                 </div>
                             </li>
-                            <li>
+                            <li class="read">
                                 <i class="ri-group-line"></i>
                                 <div>
                                     <strong>{{myData.messages[1].header}} <span>{{myData.messages[1].date}}</span></strong>
                                     <span>{{myData.messages[1].bodytext}}</span>                                    
                                 </div>
                             </li>
-                            <li>
+                            <li class="read">
                                 <i class="ri-calendar-line"></i>
                                 <div>
                                     <strong>{{myData.messages[2].header}} <span>{{myData.messages[2].date}}</span></strong>
@@ -163,7 +163,7 @@
                 </div>
                
              
-                <div class="card">
+                <div class="card bills">
                     <h2 class="card__header">
                         <i class="ri-money-dollar-circle-line"></i>
                         View and Pay Bills
@@ -172,18 +172,17 @@
                    <div class="card__content">
                        <label for="">
                          You have a balance due of: 
-                         <strong ng-bind="myData.bills.dueAmount"></strong>
+                         <span ng-bind="myData.bills.dueAmount"></span>
                        </label>
+                       <div class="buttons">
+                           <button> View Your Statement</button>
+                           <button> Pay Your Bill</button>
+                       </div>
                    </div>
 
                     <div class="card__footer">
-                       <button> View Your Statement</button>
-                       <button> Pay Your Bill</button>
+                       <p>If you have any questions about your balance, please send us a <a href="#" target="_blank">message</a>  or contact us at (555) 555-5555.</p>                        
                    </div>
-
-                 
-                       <p>if you have any questions about your balance please send us a <a href="#" target="_blank">message</a>  or contact us at (555) 555-5555</p>
-                 
                 </div>
             </div>
         </div>
