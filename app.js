@@ -1,8 +1,8 @@
 
 angular.module("myApp", []);
 
-angular.module("myApp").controller("myController", function($scope, $http) {
-    $scope.message = "Hello World!";
+angular.module("myApp").controller("myController", function($scope) {
+    
     $scope.myData = {
         "appointments": {
             "Date": {
@@ -53,6 +53,21 @@ angular.module("myApp").controller("myController", function($scope, $http) {
         }
     }
     
+
+      // State variable to track if dialog is open
+      $scope.isDialogOpen = false;
+
+      // Function to open the dialog
+      $scope.openDialog = function() {        
+          $scope.isDialogOpen = true;
+      };
+
+      // Function to close the dialog
+      $scope.closeDialog = function() {
+          $scope.isDialogOpen = false;
+      };
+
+
 
     // $scope.getData = async function() {
     //     try {

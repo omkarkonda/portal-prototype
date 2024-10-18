@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Layout</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js" type="text/javascript"></script>
+    
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,17 +13,18 @@
     <link rel="stylesheet" href="./styles.css">
     
 </head>
-<body ng-app="myApp" ng-controller="myController">
+<body  ng-controller="myController">
     <header>
         <img src="./images/ClientLogo.png" class="logo" alt="">
         <button class="logout">
             <img src="./images/Logout.svg" alt="" srcset="">
-            Log Out
+            <span>Log Out</span>
         </button>
     </header>
+    
     <main>
         <nav>
-            <a href="#" class="menu">
+            <a href="#0" class="menu" ng-click="openDialog()">
                 <i class="ri-menu-line"></i> Menu
             </a>             
             <a href="#" class="--desktop"><i class="ri-survey-line"></i>Forms to Complete</a>            
@@ -47,12 +48,7 @@
             </div>
         </nav>
 
-        <nav class="--mobile mobile__nav"> 
-            <a href="#" class="--mobile"><i class="ri-survey-line"></i>Forms to Complete</a>            
-            <a href="#" class="--mobile"><i class="ri-hourglass-line"></i>Clinical Screening Dues</a>
-            <a href="#" class="--mobile"><i class="ri-flask-line"></i>Lab Results</a>
-            <a href="#" class="--mobile"><i class="ri-medicine-bottle-line"></i>Request Rx Refill</a>               
-        </nav>
+        
 
         <div class="container">
             <div class="welcome__row">
@@ -62,6 +58,15 @@
                     Your Provider: <span>Amy Smith, LCSW</span>
                 </p>
             </div>
+
+            <nav class="--mobile mobile__nav"> 
+                <a href="#" class="--mobile"><i class="ri-survey-line"></i>Forms to Complete</a>            
+                <a href="#" class="--mobile"><i class="ri-hourglass-line"></i>Clinical Screening Dues</a>
+                <a href="#" class="--mobile"><i class="ri-flask-line"></i>Lab Results</a>
+                <a href="#" class="--mobile"><i class="ri-medicine-bottle-line"></i>Request Rx Refill</a>                         
+            </nav>
+
+
             <div class="cards">
                 <div class="card">
                     <h2 class="card__header">
@@ -71,7 +76,7 @@
                    
 
                    <div class="card__content">
-                       <strong>Up coming appointments</strong>
+                       <strong>Upcoming appointments</strong>
                        <div class="apptcard">
                             <div class="row">
                                 <div class="date">
@@ -110,21 +115,21 @@
 
                    <div class="card__content">
                        <ul class="messages">
-                            <li>
+                            <li tabindex="0">
                                 <i class="ri-notification-2-line"></i>
                                 <div>
                                     <strong>{{myData.messages[0].header}} <span>{{myData.messages[0].date}}</span></strong>
                                     <span>{{myData.messages[0].bodytext}}</span>                                    
                                 </div>
                             </li>
-                            <li class="read">
+                            <li class="read" tabindex="0">
                                 <i class="ri-group-line"></i>
                                 <div>
                                     <strong>{{myData.messages[1].header}} <span>{{myData.messages[1].date}}</span></strong>
                                     <span>{{myData.messages[1].bodytext}}</span>                                    
                                 </div>
                             </li>
-                            <li class="read">
+                            <li class="read" tabindex="0">
                                 <i class="ri-calendar-line"></i>
                                 <div>
                                     <strong>{{myData.messages[2].header}} <span>{{myData.messages[2].date}}</span></strong>
@@ -157,12 +162,8 @@
                             <li><span>End Date:</span> <span>{{myData.insurance.EndDate}}</span></li>
                             <li><span>Insurance Sequence:</span> <span>{{myData.insurance.InsuranceSequence}}</span> </li>
                        </ul>
-                   </div>
-
-                 
-                </div>
-               
-             
+                   </div>                 
+                </div>                            
                 <div class="card bills">
                     <h2 class="card__header">
                         <i class="ri-money-dollar-circle-line"></i>
@@ -186,7 +187,97 @@
                 </div>
             </div>
         </div>
+
+        
+        
+
+    <div class="dialog-backdrop" ng-show="isDialogOpen" ng-click="closeDialog()"></div>
+    <div class="menu-dialog" ng-class="{'open': isDialogOpen}">
+        <span class="close-dialog" ng-click="closeDialog()">
+            <i class="ri-close-large-fill"></i> <span>Close</span>
+        </span>
+        <div class="menu-links">
+            <a href="#">
+                <span class="icon"><i class="ri-calendar-line"></i></span>
+                <span class="text">Appointments</span>
+            </a>
+            <a href="#">
+                <span class="icon"><i class="ri-file-3-line"></i></span>
+                <span class="text">Documents</span>
+            </a>
+            <a href="#">
+                <span class="icon"><i class="ri-shield-line"></i></span>
+                <span class="text">Insurance Policies</span>
+            </a>
+            <a href="#">
+                <span class="icon"><i class="ri-pen-nib-fill"></i></span>
+                <span class="text">Froms to Sign</span>
+            </a>
+            <a href="#">
+                <span class="icon"><i class="ri-bank-card-line"></i></span>
+                <span class="text">Credit Cards</span>
+            </a>
+            <a href="#">
+                <span class="icon"><i class="ri-survey-line"></i></span>
+                <span class="text">Forms to Complete</span>
+            </a>
+            <a href="#">
+                <span class="icon"><i class="ri-survey-fill"></i></i></span>
+                <span class="text">Completed Forms</span>
+            </a>
+            <a href="#">
+                <span class="icon"><i class="ri-group-2-line"></i></span>
+                <span class="text">Cosign Forms</span>
+            </a>
+            <a href="#">
+                <span class="icon"><i class="ri-chat-1-line"></i></span>
+                <span class="text">Messages</span>
+            </a>
+            <a href="#">
+                <span class="icon"><i class="ri-checkbox-multiple-line"></i></span>
+                <span class="text">Patient Choices</span>
+            </a>
+            <a href="#">
+                <span class="icon"><i class="ri-contacts-line"></i></span>
+                <span class="text">Contacts</span>
+            </a>
+            <a href="#">
+                <span class="icon"><i class="ri-feedback-line"></i></span>
+                <span class="text">My Complaints</span>
+            </a>
+            <a href="#">
+                <span class="icon"><i class="ri-money-dollar-circle-line"></i></span>
+                <span class="text">Billing</span>
+            </a>
+            <a href="#">
+                <span class="icon"><i class="ri-folder-user-line"></i></span>
+                <span class="text">Demographics</span>
+            </a>
+            <a href="#">
+                <span class="icon"><i class="ri-bill-line"></i></span>
+                <span class="text">Ledger</span>
+            </a>
+            <a href="#">
+                <span class="icon"><i class="ri-upload-cloud-line"></i></span>
+                <span class="text">Upload Documents</span>
+            </a>
+            <a href="#">
+                <span class="icon"><i class="ri-capsule-fill"></i></span>
+                <span class="text">Current Medicines</span>
+            </a>
+            <a href="#">
+                <span class="icon"><i class="ri-video-on-line"></i></span>
+                <span class="text">Zoom Meetings</span>
+            </a>
+        </div>
+    </div>
+
+
     </main>
+
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js" type="text/javascript"></script>
     <script src="./app.js" type="text/javascript"></script>
 </body>
 </html>
