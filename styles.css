@@ -60,12 +60,12 @@ nav {
     background-color: #C8DEF1;                        
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     gap: 16px;
     min-height: 81px;
     padding: 0 2%;
 }
-nav i{
+nav a i{
     color:#227CC7;
     font-size: 1.8rem;
 }
@@ -94,11 +94,10 @@ nav a.menu i {
 nav .switch {
     margin-left: auto;
     display: flex;
-    background-color: white;
-    margin-top: 8px;
+    background-color: white;    
     padding: 8px;    
     gap: 8px;
-    border-radius: 3px;
+    border-radius: 4px;
     border: 1px solid #E6E6E6;
     background: var(--Schemes-On-Primary, #FFF);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -113,10 +112,8 @@ nav .switch {
     font-weight: 500;
 }
 
-.switch > .select__user{
-    display: flex;
-    flex-direction: column;
-    width: 100px;
+.switch > .select__user{    
+    width: 100px;    
 }
 
 .select__user label{
@@ -124,19 +121,61 @@ nav .switch {
     font-size: 1rem;
 }
 
-.select__user select{    
-    border: none;
+.dropdown{
+    position: relative;
+    display: inline-block;    
+}
+
+.dropdown button{
+    border:none;
+    background-color: transparent;
     font:inherit;
-    font-size: 1rem;
-    cursor: pointer;    
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: flex;    
+    align-items: center;
+    gap: 4px
 }
 
-.select__user select option{
-    font-size: 1rem;
-    border-radius: 0;
+.dropdown div#users{    
+   display: none;
+   position: absolute;
+   right: -52px;
+   top: 30px;
+   background-color: white;
+   width: 168px;
+   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+   z-index: 1;
+   padding: 8px;
+   border-radius: 4px;
+}
+
+.dropdown:focus div#users,
+.dropdown:focus-within div#users{
+    display: block;
 }
 
 
+div#users a{
+    padding: 8px;
+    border-radius: 4px;
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    gap:8px;
+    transition: all 0.2s ease;
+}
+div#users a i{
+    font-size: 1rem;
+}
+div#users a:hover{    
+    background-color: #227CC7;
+    color: white;
+}
+
+div#users a:hover i{
+    color: white;
+}
 
 .container {    
     padding-inline: 2%;
@@ -473,14 +512,13 @@ ul.list li span {
     font-size: 16px;
     cursor: pointer;
     position: absolute;
-    top: -12px;
-    right: 5%;    
-    background-color: white;
+    top: 3px;
+    right: 1%;        
     border-radius: 999px;
     padding:8px 16px;
     display: flex;
     align-items: center;
-    gap:8px;
+    gap:4px;
     justify-content: center;
 }
 
@@ -577,7 +615,7 @@ ul.list li span {
         background-color: white;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap:2%;        
+        gap: 10px;       
         align-items: stretch;
     }
 
