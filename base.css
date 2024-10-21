@@ -1,0 +1,105 @@
+:root {
+    /* Primary Colors */
+    --color-purple: #64108C;
+    --color-blue: #227CC7;
+  
+    /* Secondary Colors */
+    --color-secondary-blue: #C8DEF1;
+    --color-light-blue:#257cc71a;
+  
+    /* Neutral Colors */
+    --color-white: #FFFFFF;
+    --color-light-gray: #E6E6E6;
+    --color-medium-gray: #A3A3A396;
+    --color-dark-gray: #A3A3A3;
+  
+    /* Text Colors */
+    --color-text-primary: #000000;
+    --color-text-secondary: #227CC7;
+  
+    /* Typography */
+    --font-family-primary: "Manrope", sans-serif;    
+    --font-size-small: 0.8rem;  /*12.8px*/
+    --font-size-medium: 1rem;  /*16px*/
+    --font-size-large: 1.125rem; /*18px*/
+    --font-size-xlarge: 1.5rem; /*24px*/
+    --font-size-extra-large: 1.8rem; /*28.8px*/
+
+    /* Font Weights */
+    --font-weight-normal: 300;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+  
+    /* Spacing */
+    --padding-xs:0.25rem;
+    --padding-small: 0.5rem;
+    --padding-medium: 1rem;
+    --padding-large: 1.25rem;
+    --padding-extra-large: 1.875rem;
+
+    /* margins */
+    --margin-xs:0.25rem;
+    --margin-small: 0.5rem;
+    --margin-medium: 1rem;
+    --margin-large: 1.25rem;
+    --margin-extra-large: 1.875rem;
+  
+    /* Layout */
+    --max-width-container: 80%;
+    --margin-container: 0 auto;
+    
+    /* Gap */
+    --gap-xs: 0.25rem;
+    --gap-small: 0.5rem;
+    --gap-medium: 1rem;
+    --gap-large: 1.5rem;
+
+    /* Components */
+    --border-radius-small: 0.25rem;
+    --border-radius-medium: 0.5rem;
+    --border-radius-large: 1rem;
+
+    /* Shadows */
+    --box-shadow-hard: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    --box-shadow-small: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    --box-shadow-medium: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    --box-shadow-large: 0px 8px 16px rgba(0, 0, 0, 0.1);
+
+    /* icon sizes*/
+    --icon-size-small: 1.5rem;
+    --icon-size-medium: 1.8rem;
+    --icon-size-large: 2.5rem;
+
+    /* responsive breakpoints*/
+    --breakpoint-mobile: 600px;
+    --breakpoint-tablet: 768px;
+    --breakpoint-desktop: 1200px;
+  
+
+    /* Accessibility */
+    --focus-ring: 0 0 0 3px #227CC7;
+}
+
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--color-purple);
+    font-family: var(--font-family-primary);
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+/* body{
+    scroll-behavior: smooth;
+} */
+
+input, select, textarea{
+    appearance: none;
+}

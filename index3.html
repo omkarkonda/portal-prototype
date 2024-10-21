@@ -23,7 +23,7 @@
     </header>
     
     <main>
-        <nav>
+        <nav class="desktop">
             <a href="#0" class="menu" ng-click="openDialog()">
                 <i class="ri-menu-line"></i> Menu
             </a>             
@@ -78,7 +78,7 @@
                    
 
                    <div class="card__content">
-                       <strong>Upcoming appointments</strong>
+                       <strong>Upcoming appointment</strong>
                        <div class="apptcard">
                             <div class="row">
                                 <div class="date">
@@ -104,8 +104,8 @@
                    </div>
 
                    <div class="card__footer">
-                       <button>View All Appointments</button>
-                       <button>Book New Appointment</button>
+                       <button class="btn primary">View All Appointments</button>
+                       <button class="btn primary">Book New Appointment</button>
                    </div>
 
                 </div>
@@ -142,7 +142,7 @@
                    </div>
 
                    <div class="card__footer">
-                       <button>Send Message</button>
+                       <button class="btn primary">Send Message</button>
                    </div>
                 </div>
                 <div class="card">
@@ -178,8 +178,8 @@
                          <span ng-bind="myData.bills.dueAmount"></span>
                        </label>
                        <div class="buttons">
-                           <button> View Your Statement</button>
-                           <button> Pay Your Bill</button>
+                           <button class="btn primary"> View Your Statement</button>
+                           <button class="btn primary"> Pay Your Bill</button>
                        </div>
                    </div>
 

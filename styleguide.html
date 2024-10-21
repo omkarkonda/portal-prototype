@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./base.css">
+
+    <style>
+
+        
+
+        body{
+            display: grid;
+            grid-template-columns: 70% 30%;
+            max-width:960px;
+            margin: 0 auto;                     
+            align-items: start;    
+            background-color: white;                    
+        }
+
+        .container{            
+            background-color: aliceblue;
+            padding:50px;            
+        }
+
+        .outline{
+            position: sticky;
+            top: 50px;            
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li a{
+                padding: 5px 50px;
+                display: block;
+                text-decoration: none;
+                color: #227CC7;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }            
+        }
+
+        h1{
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--color-purple);
+        }
+
+        h1 ~ p, h2 ~ p{
+            margin:16px 0;
+        }
+
+        p{
+            max-width: 50ch;
+            line-height: 1.5;
+        }
+
+        code{
+            background-color: var(--color-white);
+            padding: 16px 32px;
+            border-radius: 4px;
+            color: maroon;
+            margin: 20px 0;
+            display: block;
+            font-size: 16px;
+        }
+        div + div{
+            padding-block:25px;
+            /* border-bottom: 1px dotted var(--color-medium-gray); */
+        }
+        ul.colorslist{
+            list-style: none;
+            display: flex;
+            gap:20px;
+            li{
+                width: 50px;
+                height: 50px;
+                border-radius: 999px;                
+            }
+        }
+
+        ul.gaplist{
+            list-style: none;
+            display: flex;
+            margin-block: 20px;
+            background-color: coral;
+            padding: 15px;
+            li{
+                width: 50px;
+                height: 50px;
+                border-radius: 8px;
+                background-color: var(--color-white);
+                border: 1px solid var(--color-medium-gray);
+                padding: 5px;  
+            }
+        }
+
+        ul.radlist{
+            list-style: none;
+            display: flex;
+            gap:20px;
+            li{
+                width: 177px;
+                height: 80px;
+                border: 1px solid var(--color-medium-gray);       
+                background-color: var(--color-white);  
+                padding: 5px;    
+            }
+        }
+
+        ul.iconlist{
+            list-style: none;
+            display: flex;
+            gap:20px;
+            align-items: center;
+            li{
+                width: auto7px;
+                border-radius: var(--border-radius-small);
+                border: 1px solid var(--color-medium-gray);       
+                background-color: var(--color-white);  
+                padding: 5px;    
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <section class="container">
+        <h1>Styleguide</h1>
+        <p>A CSS style guide is a set of standards or guidelines that help developers maintain consistency, clarity, and maintainability in the way CSS code is written and structured across a project or organization. This is a live document, new styles/cmponents can be added as needed.</p>
+        
+
+        <h2 id="variables">CSS Variables</h2>
+        <p>CSS variables, also known as custom properties, allow developers to define reusable values for properties like colors, fonts, and sizes, making it easier to maintain and update styles across a project, enhance consistency, improve code readability, and simplify the process of adapting designs for different contexts or themes.</p>
+
+        <div class="colors" id="primarycolors">
+            <h2>Colors - Primary</h2>                       
+            <code>
+                --color-purple: #64108C;<br>
+                --color-blue: #227CC7;
+            </code>
+            <ul class="colorslist">
+                <li style="background-color: var(--color-purple);"></li>
+                <li style="background-color: var(--color-blue);"></li>
+            </ul>            
+        </div>
+        
+        <div class="colors" id="secondarycolors">
+            <h2>Colors - Secondary</h2>                       
+            <code>
+                --color-secondary-blue: #C8DEF1;<br>
+                --color-light-blue:#257cc71a;
+            </code>
+            <ul class="colorslist">
+                <li style="background-color: var(--color-secondary-blue);"></li>
+                <li style="background-color: var(--color-light-blue);"></li>
+            </ul>            
+        </div>
+
+        <div class="colors" id="neutralcolors">
+            <h2>Neutral Colors</h2>                       
+            <code>
+                --color-white: #FFFFFF; <br>
+                --color-light-gray: #E6E6E6; <br>
+                --color-medium-gray: #A3A3A396; <br>
+                --color-dark-gray: #A3A3A3;
+            </code>
+            <ul class="colorslist">
+                <li style="background-color: var(--color-white);"></li>
+                <li style="background-color: var(--color-light-gray);"></li>
+                <li style="background-color: var(--color-medium-gray);"></li>
+                <li style="background-color: var(--color-dark-gray);"></li>
+            </ul>            
+        </div>
+
+        <div class="colors" id="textcolors">
+            <h2>Text Colors</h2>                       
+            <code>
+                --color-text-primary: #000000; <br>
+                --color-text-secondary: #227CC7;
+            </code>
+            <ul class="colorslist">
+                <li style="background-color: var(--color-text-primary);"></li>
+                <li style="background-color: var(--color-text-secondary);"></li>
+            </ul>            
+        </div>
+
+        <div class="fontsize" id="fontsize">
+            <h2>Font Sizes</h2>
+            <code>
+                --font-size-small: 0.8rem;  /*12.8px*/ <br>
+                --font-size-medium: 1rem;  /*16px*/<br>
+                --font-size-large: 1.125rem; /*18px*/<br>
+                --font-size-xlarge: 1.5rem; /*24px*/<br>
+                --font-size-extra-large: 1.8rem; /*28.8px*/<br>                
+            </code>
+            <p style="font-size: var(--font-size-small);"><strong>SMALL: </strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ut cumque ea veniam similique. </p>
+            <p style="font-size: var(--font-size-medium);"><strong>Medium: </strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ut cumque ea veniam similique. </p>
+
+            <p style="font-size: var(--font-size-large);"><strong>Large: </strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ut cumque ea veniam similique. </p>
+
+            <p style="font-size: var(--font-size-xlarge);"><strong>xlarge: </strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ut cumque ea veniam similique. </p>
+            <p style="font-size: var(--font-size-extra-large);"><strong>Extra Large: </strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ut cumque ea veniam similique. </p>
+        </div>
+
+
+        <div class="fontweight" id="fontweight">
+            <h2>Font Weights</h2>
+            <code>
+                --font-weight-normal: 400; <br>
+                --font-weight-medium: 500; <br>
+                --font-weight-bold: 700; <br>              
+            </code>
+
+            <p style="font-weight: var(--font-weight-normal);"><strong>Normal: </strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ut cumque ea veniam similique. </p>
+            <p style="font-weight: var(--font-weight-medium);"><strong>medium: </strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ut cumque ea veniam similique. </p>
+            <p style="font-weight: var(--font-weight-bold);"><strong>bold: </strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ut cumque ea veniam similique. </p>
+        </div>
+         
+        <div class="spacing" id="padding">
+            <h2>Padding</h2>
+            <code>
+                --padding-xs:0.25rem; <br>
+                --padding-small: 0.5rem;<br>
+                --padding-medium: 1rem;<br>
+                --padding-large: 1.25rem;<br>
+                --padding-extra-large: 1.875rem;<br>
+            </code>
+            <p style="padding: var(--padding-xs); background-color: var(--color-light-gray); font-size: var(--font-size-small); line-height: 1; max-width: 100%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur laudantium accusantium rem iure nulla voluptate hic ullam at, nam earum cupiditate fugiat fuga atque quod nisi fugit ad inventore optio.</p>    
+            <p style="padding: var(--padding-small); background-color: var(--color-light-gray); font-size: var(--font-size-small); line-height: 1; max-width: 100%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur laudantium accusantium rem iure nulla voluptate hic ullam at, nam earum cupiditate fugiat fuga atque quod nisi fugit ad inventore optio.</p>    
+            <p style="padding: var(--padding-medium); background-color: var(--color-light-gray); font-size: var(--font-size-small); line-height: 1; max-width: 100%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur laudantium accusantium rem iure nulla voluptate hic ullam at, nam earum cupiditate fugiat fuga atque quod nisi fugit ad inventore optio.</p>    
+            <p style="padding: var(--padding-large); background-color: var(--color-light-gray); font-size: var(--font-size-small); line-height: 1; max-width: 100%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur laudantium accusantium rem iure nulla voluptate hic ullam at, nam earum cupiditate fugiat fuga atque quod nisi fugit ad inventore optio.</p>    
+            <p style="padding: var(--padding-extra-large); background-color: var(--color-light-gray); font-size: var(--font-size-small); line-height: 1; max-width: 100%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur laudantium accusantium rem iure nulla voluptate hic ullam at, nam earum cupiditate fugiat fuga atque quod nisi fugit ad inventore optio.</p>    
+        </div>
+
+
+        <div class="spacing" id="margin">
+            <h2>Margin</h2>
+            <code>
+                --margin-xs:0.25rem; <br>
+                --margin-small: 0.5rem;<br>
+                --margin-medium: 1rem;<br>
+                --margin-large: 1.25rem;<br>
+                --margin-extra-large: 1.875rem;<br>
+            </code>
+            <div style="background-color: red; margin: 0; -webkit-margin-bottom-collapse: unset;">
+                <p
+                    style="margin: var(--margin-xs); background-color: var(--color-light-gray); font-size: var(--font-size-small); line-height: 1; max-width: 100%;">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur laudantium accusantium rem iure nulla
+                    voluptate hic ullam at, nam earum cupiditate fugiat fuga atque quod nisi fugit ad inventore optio.</p>
+            </div>
+            
+            <div style="background-color: red; margin: 0; padding: 0;">
+                <p
+                    style="margin: var(--margin-small); background-color: var(--color-light-gray); font-size: var(--font-size-small); line-height: 1; max-width: 100%;">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur laudantium accusantium rem iure nulla
+                    voluptate hic ullam at, nam earum cupiditate fugiat fuga atque quod nisi fugit ad inventore optio.</p>
+            </div>
+            
+            <div style="background-color: red; margin: 0; padding: 0;">
+                <p
+                    style="margin: var(--margin-medium); background-color: var(--color-light-gray); font-size: var(--font-size-small); line-height: 1; max-width: 100%;">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur laudantium accusantium rem iure nulla
+                    voluptate hic ullam at, nam earum cupiditate fugiat fuga atque quod nisi fugit ad inventore optio.</p>
+            </div>
+            
+            <div style="background-color: red; margin: 0; padding: 0;">
+                <p
+                    style="margin: var(--margin-large); background-color: var(--color-light-gray); font-size: var(--font-size-small); line-height: 1; max-width: 100%;">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur laudantium accusantium rem iure nulla
+                    voluptate hic ullam at, nam earum cupiditate fugiat fuga atque quod nisi fugit ad inventore optio.</p>
+            </div>
+        
+            <div style="background-color: red; margin: 0; padding: 0;">
+                <p
+                    style="margin: var(--margin-extra-large); background-color: var(--color-light-gray); font-size: var(--font-size-small); line-height: 1; max-width: 100%;">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur laudantium accusantium rem iure nulla
+                    voluptate hic ullam at, nam earum cupiditate fugiat fuga atque quod nisi fugit ad inventore optio.</p>
+            </div>
+            
+            <strong style="font-size: var(--font-size-small);">*** Note:  Vertical margins are collapsed</strong>
+        </div>
+
+        <div class="spacing" id="gap">
+            <h2>Flex and Grid Gap</h2>
+            <code>
+                --gap-xs: 0.25rem; <br>
+                --gap-small: 0.5rem; <br>
+                --gap-medium: 1rem;<br>
+                --gap-large: 1.5rem;<br>
+            </code>
+            <ul class="gaplist" style="gap:var(--gap-xs)">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul class="gaplist" style="gap:var(--gap-small)">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul class="gaplist" style="gap:var(--gap-medium)">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul class="gaplist" style="gap:var(--gap-large)">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+        <div class="radius" id="radius">
+            <h2>Border Radius</h2>
+            <code>
+                --border-radius-small: 0.25rem;<br>
+                --border-radius-medium: 0.5rem;<br>
+                --border-radius-large: 1rem;<br>
+            </code>
+            <ul class="radlist">
+                <li style="border-radius: var(--border-radius-small);">Samll</li>
+                <li style="border-radius: var(--border-radius-medium);">Medium</li>
+                <li  style="border-radius: var(--border-radius-large);">Large</li>
+            </ul>
+        </div>
+
+        <div class="shadow" id="shadow">
+            <h2>Box Shadow</h2>
+            <code>
+                --box-shadow-hard: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);<br>
+                --box-shadow-small: 0px 2px 4px rgba(0, 0, 0, 0.1);<br>
+                --box-shadow-medium: 0px 4px 8px rgba(0, 0, 0, 0.1);<br>
+                --box-shadow-large: 0px 8px 16px rgba(0, 0, 0, 0.1);<br>
+            </code>
+            <ul class="radlist">
+                <li style="border-radius: var(--border-radius-small); box-shadow: var(--box-shadow-hard);">
+                    Hard
+                </li>                
+                <li style="border-radius: var(--border-radius-small); box-shadow: var(--box-shadow-small);">
+                    Small
+                </li>                
+                <li style="border-radius: var(--border-radius-small); box-shadow: var(--box-shadow-medium);">
+                    Medium
+                </li>                
+                <li style="border-radius: var(--border-radius-small); box-shadow: var(--box-shadow-large);">
+                    Large
+                </li>                
+            </ul>
+        </div>
+
+        <div class="icons" id="icons">
+            <h2>Icons</h2>
+            <P>Use <a href="https://remixicon.com/">Remix Icon.</a> Don not use PNG, JPG or GIF formats. If the required icon is not available in remixicon, we can use <a href="https://icones.js.org/">Icones.js</a> to download any line based svg and place the downloaded svg inline or user as background image</P>
+            <code>
+                --icon-size-small: 1.5rem;<br>
+                --icon-size-medium: 1.8rem;<br>
+                --icon-size-large: 2.5rem;<br>
+            </code>
+
+            <ul class="iconlist">
+                <li><i class="ri-add-line" style="font-size: var(--icon-size-small); color: black;"></i></li>
+                <li><i class="ri-add-line" style="font-size: var(--icon-size-medium);"></i></li>
+                <li><i class="ri-add-line" style="font-size: var(--icon-size-large);"></i></li>
+            </ul>
+
+        </div>
+
+    </section>
+
+    <ul class="outline">
+        <li><a href="#variables">CSS Variables</a></li>
+        <li><a href="#primarycolors">Primary colors</a></li>
+        <li><a href="#secondarycolors">Secondary colors</a></li>
+        <li><a href="#neutralcolors">Neutral colors</a></li>
+        <li><a href="#textcolors">Text colors</a></li>
+        <li><a href="#fontsize">Font Sizes</a></li>
+        <li><a href="#fontweight">Font Weights</a></li>
+        <li><a href="#padding">Padding</a></li>
+        <li><a href="#margin">Margin</a></li>
+        <li><a href="#gap">Flex and Grid Gaps</a></li>
+        <li><a href="#radius">Box Cornor Radius</a></li>
+        <li><a href="#shadow">Box Shadow</a></li>
+        <li><a href="#icons">Icons</a></li>
+    </ul>
+
+
+</body>
+</html>

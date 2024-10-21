@@ -1,49 +1,38 @@
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-html, body {
-    width: 100%;
-    height: 100%;
-    background-color: #64108C;
-    font-family: "Manrope", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-}
+@import url('base.css');
 
-body{
-    scroll-behavior: smooth;
-}
+
+
 
 header {
     height: 100px;
-    background-color: white;
+    background-color:var(--color-white);
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding-inline: 3vw;
+    align-items: center;    
+    padding-inline: 10vw;
+    /* padding-inline: var(--padding-large); */
 }
 
-header img.logo {
+/* header img.logo {
  margin-left: 8vw;
-}
+} */
 
 header button.logout {
-    margin-right: 8vw;
+    /* margin-right: 8vw; */
     appearance: none;
     border:none;
-    border-radius: 8px;
+    border-radius: var(--border-radius-medium);
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 5px 10px;
-    background-color: #227CC7;
-    color: white;
+    gap: var(--gap-small);
+    padding: var(--padding-xs) var(--padding-small);
+    background-color: var(--color-blue);
+    color: var(--color-white);
     font:inherit;
-    font-size: 1rem;
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-normal);
     cursor: pointer;
 }
  
@@ -51,65 +40,68 @@ header button.logout {
 main {
     width: 80%;            
     margin: 0 auto;
-    background-color: white;     
+    background-color: var(--color-white);     
     position: relative;      
     overflow: hidden; 
 }
 
-nav {
-    background-color: #C8DEF1;                        
-    display: flex;
-    justify-content: flex-start;
+nav.desktop {
     align-items: center;
-    gap: 16px;
-    min-height: 81px;
-    padding: 0 2%;
+    background-color: var(--color-secondary-blue);                        
+    display: flex;
+    gap: var(--gap-medium);    
+    justify-content: flex-start;
+    padding: 0 var(--padding-small);
 }
-nav a i{
-    color:#227CC7;
-    font-size: 1.8rem;
+
+nav.desktop a i{
+    color:var(--color-blue);
+    font-size: var(--font-size-extra-large);
 }
-nav a{
+nav.desktop a{
     display: inline-flex;
     text-decoration: none;
-    gap: 15px;
-    padding: 10px;
-    color: black;
-    font-size: 1.1rem;
+    gap: var(--gap-small);
+    padding: var(--padding-medium) 0;
+    color: var(--color-text-primary);
+    font-size: var(--font-size-large);
 }
 
-nav a.menu{
+
+nav.desktop a.menu{
     align-items: center;
+    margin-right: var(--margin-medium);
 }
 
-nav a.menu i {
-    background-color: #227CC7;
-    color: white;
-    padding: 10px 12px;
+nav.desktop a.menu i {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    padding: 10px 12px;    
     border-radius: 999px;
-    font-size: 2rem;
+    font-size: var(--font-size-extra-large);
 }
 
 
-nav .switch {
+.switch {
     margin-left: auto;
     display: flex;
-    background-color: white;    
-    padding: 8px;    
-    gap: 8px;
+    background-color: var(--color-white);    
+    padding: var(--padding-small);    
+    gap: var(--gap-small);
     border-radius: 4px;
     border: 1px solid #E6E6E6;
-    background: var(--Schemes-On-Primary, #FFF);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background: var(--color-white);
+    box-shadow: var(--box-shadow-hard);
+    
 }
 
 .current__user span{
     display: inline-block;
-    padding: 10px;
-    background-color: #227CC7;
-    color: white;
+    padding: var(--padding-small);
+    background-color: var(--color-blue);
+    color: var(--color-white);
     border-radius: 999px;
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
 }
 
 .switch > .select__user{    
@@ -117,8 +109,8 @@ nav .switch {
 }
 
 .select__user label{
-    color: #227CC7;
-    font-size: 1rem;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-medium);
 }
 
 .dropdown{
@@ -130,11 +122,11 @@ nav .switch {
     border:none;
     background-color: transparent;
     font:inherit;
-    font-size: 0.8rem;
+    font-size: var(--font-size-small);
     cursor: pointer;
     display: flex;    
     align-items: center;
-    gap: 4px
+    gap: var(--gap-xs)
 }
 
 .dropdown div#users{    
@@ -142,31 +134,31 @@ nav .switch {
    position: absolute;
    right: -52px;
    top: 30px;
-   background-color: white;
-   width: 168px;
-   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+   background-color: var(--color-white);
+   width: 166px;
+   box-shadow: var(--box-shadow-large);
    z-index: 1;
-   padding: 8px;
-   border-radius: 4px;
+   padding:var(--padding-small);
+   border-radius: var(--border-radius-small);
 }
 
 .dropdown:focus div#users,
-.dropdown:focus-within div#users{
+.dropdown:focus-within div#users {
     display: block;
 }
 
 
 div#users a{
-    padding: 8px;
-    border-radius: 4px;
+    padding: var(--padding-small);
+    border-radius: var(--border-radius-small);
     display: flex;
-    font-size: 14px;
+    font-size: var(--font-size-medium);
     align-items: center;
-    gap:8px;
+    gap:var(--gap-small);
     transition: all 0.2s ease;
 }
 div#users a i{
-    font-size: 1rem;
+    font-size: var(--font-size-medium);
 }
 div#users a:hover{    
     background-color: #227CC7;
@@ -203,27 +195,25 @@ div#users a:hover i{
 
 
 .welcome__row p{
-    font-size: 16px;
+    font-size: var(--font-size-medium);
 }
 
 .welcome__row p > i{
-    color: #227CC7;
-    font-size: 1.5rem;
+    color: var(--color-blue);
+    font-size: var(--font-size-large);
 }
 
 .welcome {
-    color: #227CC7;
-    margin-block: 0.2em;
-    font-weight: 500;    
+    color: var(--color-blue);
+    margin-block: var(--margin-small);
+    font-weight: var(--font-weight-medium);    
 }
 
-.cards {
-    
+.cards {    
     display: flex;
-    gap: 30px;
+    gap: var(--gap-medium);
     flex-wrap: wrap;
-    flex-grow: 1;
-    
+    flex-grow: 1;    
 }
 
 .cards > .card {            
@@ -234,26 +224,27 @@ div#users a:hover i{
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
-    gap: 8px;
-    box-shadow: 0px 10px 5px -5px #a3a3a396;
-    border: 1px solid #a3a3a396;
-    border-radius: 4px;
-    padding: 14px;
+    gap: var(--gap-small);
+    box-shadow: var(--box-shadow-small);
+    border: 1px solid var(--color-medium-gray);
+    border-radius: var(--border-radius-small);
+    padding: var(--padding-medium);
 }   
 
 
 
 .card > .card__header{
-    font-weight: normal;
-    color: #227CC7;
-    font-size: 24px;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-blue);
+    /* font-size: var(--font-size-xlarge); */
+    font-size: clamp(1.2rem, 1.0404rem + 0.5106vw, 1.5rem);
     display: flex;
-    gap: 15px;
+    gap: var(--gap-medium);
     align-items: center
 }
 
 .card__header >i{
-    font-size: 2.5rem;
+    font-size: var(--icon-size-large);
 }
 
 .card > .card__content{
@@ -262,32 +253,32 @@ div#users a:hover i{
 
 
 .card__content > strong{
-    font-size: 20px;
-    padding-bottom: 8px;
+    font-size: var(--font-size-large);
+    padding-bottom: var(--padding-small);
     display: inline-block;
     font-weight: 500;
 }
 
 .apptcard{
     display: flex;
-    flex-direction: column;            
-    border: 1px solid #a3a3a396;
-    padding: 8px;
-    margin-block: 4px;
-    gap: 8px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    flex-direction: column;
+    border: 1px solid var(--color-medium-gray);
+    padding: var(--padding-small);
+    margin-block: var(--margin-small);
+    gap: var(--gap-small);
+    box-shadow: var(--box-shadow-hard);
 }
 
 .apptcard > .row{
     display: flex;
     justify-content: flex-start;            
     align-items: flex-start;
-    gap: 20px;
+    gap: calc(var(--gap-large) - 4px);
 }
 
 .apptcard > .row + .row{
-    padding-top: 8px;
-    border-top: 1px solid #a3a3a396;
+    padding-top: var(--padding-small);
+    border-top: 1px solid var(--color-medium-gray);
 }
 
 .apptcard .date,  
@@ -299,36 +290,37 @@ div#users a:hover i{
 
 .apptcard .date{
     text-align: center;
-    color: #227CC7;
+    color: var(--color-blue);
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: var(--font-size-medium);
     line-height: 1;
-    margin-top: 4px;
+    margin-top: var(--margin-xs);
 }
 
 .date span:nth-child(2){
-    font-weight: bold;
-    font-size: 22px;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-xlarge);
 }
 
 .details strong{
-    font-size: 20px;
-    font-weight: 500;
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-bold);
 }
 
 .details span{
-    font-size: 16px;
+    font-size: var(--font-size-medium);
 }
 
 .apptcard .link{
-    font-size: 0.9rem;
+    font-size: var(--font-size-medium);
 }
 
 .apptcard .icon{
-    width: 37px;}
+    width: 37px;
+}
 .apptcard .icon i{
-    font-size: 1.8rem;
-    color:#227CC7
+    font-size: var(--font-size-extra-large);
+    color:var(--color-blue);
 }
 
 
@@ -339,23 +331,24 @@ ul.messages{
 
 ul.messages li{
     display: flex;
-    padding: 8px 12px;
-    gap: 16px;
-    border-radius: 4px;
-    border: 1px solid #E6E6E6;
-    margin-bottom: 8px;
+    padding: var(--padding-small) var(--padding-medium);
+    gap: var(--gap-medium);
+    border-radius: var(--border-radius-small);
+    border: 1px solid var(--color-light-gray);
+    margin-bottom: var(--margin-small);
     align-items: self-start;
 }
 
 ul.messages li:first-child{
-    background-color: rgba(37,124,199,0.1);
+    /* background-color: #257cc71a; */
+    background-color: var(--color-light-blue);
 }
 
 ul.messages li i{
-    background-color:#64108C;
-    color: white;
-    font-size: 1.5rem;
-    padding: 8px;
+    background-color:var(--color-purple);
+    color: var(--color-white);
+    font-size: var(--font-size-xlarge);
+    padding: var(--padding-small);
     border-radius: 999px;
     width: 40px;
     height: 40px;
@@ -364,29 +357,29 @@ ul.messages li > div{
     flex: 1;
 }
 ul.messages li strong{
-    color:#227CC7;
+    color:var(--color-blue);
     display: flex;
     justify-content: space-between;    
-    font-size: 18px;
+    font-size: var(--font-size-large);
     width: 100%;
-    margin-bottom: 3px;
+    margin-bottom: var(--margin-xs);
 }
 
 
 ul.messages li.read strong,
 ul.messages li.read strong + span{
-    font-weight: 400;
+    font-weight: var(--font-weight-normal);
 }
 
 ul.messages li strong > span{
-    color: black;
-    font-size: 12px;
+    color: var(--color-black);
+    font-size: var(--font-size-small);
     margin-left: auto;
 }
 
 ul.messages li strong + span{
     font-weight: bold;
-    font-size: 12px;    
+    font-size: var(--font-size-small);    
     line-height: 1.2;
     overflow: hidden;    
     display: block;
@@ -398,7 +391,7 @@ ul.messages li strong + span{
 .insurance span{
     margin-left: auto;
     display: flex;
-    gap: 15px;
+    gap: var(--gap-medium);
 }
 
 
@@ -410,7 +403,7 @@ ul.messages li strong + span{
 ul.list li{
     display: flex;
     justify-content: flex-start;
-    padding: 0.3rem;
+    padding: var(--padding-xs);
     font-size: 1rem;
     font-weight: 500;
 }
@@ -421,31 +414,33 @@ ul.list li span {
 
 
 
-.card  button{
-    background-color: #64108C;
-    color: white;
+.btn{    
     border: none;
-    border-radius: 4px;
-    padding: 8px 16px;
-    font: inherit;
-    font-size: 0.9rem;
+    border-radius: var(--border-radius-small);    
+    font: inherit;    
     cursor: pointer;
 }
 
-.card p{
-    font-size: 16px
+.btn.primary{
+    background-color: var(--color-purple);
+    color: var(--color-white);
+    padding: var(--padding-small) var(--padding-medium);
+    font-size: var(--font-size-medium);
+}
 
+.card p{
+    font-size: var(--font-size-medium);
 }
 
 .card__footer{
     display: flex;
     justify-content: center;
-    gap:4px;
+    gap:var(--gap-small);
 }
 
 
 .bills .card__content label{
-    font-size: 20px;
+    font-size: var(--font-size-large);
     display: flex;
     justify-content: space-between;
 }
@@ -456,9 +451,9 @@ ul.list li span {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 15px;
+    gap: var(--gap-medium);
     align-items: center;
-    margin-top: 20px;
+    margin-top: var(--margin-large);
 }
 
 .bills .buttons button{
@@ -477,17 +472,16 @@ ul.list li span {
 
  /* Dialog Styling */
  .menu-dialog {
-    width:90%;    
-    
-    background: white;
+    width:90%;        
+    background: var(--color-white);
     position: absolute;
     top: -100%;
     left: 5%;
     margin: auto;
     transition: top 0.3s ease;
     z-index: 999;
-    border-radius: 8px;
-    padding:20px;
+    border-radius: var(--border-radius-medium);
+    padding: var(--padding-large);
 }
 
 .menu-dialog.open {
@@ -509,32 +503,32 @@ ul.list li span {
 
 /* Close button for the dialog */
 .close-dialog {
-    font-size: 16px;
+    font-size: calc(--font-size-medium);
     cursor: pointer;
     position: absolute;
     top: 3px;
     right: 1%;        
     border-radius: 999px;
-    padding:8px 16px;
+    padding: var(--padding-small) var(--padding-medium);
     display: flex;
     align-items: center;
-    gap:4px;
+    gap:var(--gap-xs);
     justify-content: center;
 }
 
 .close-dialog span{
-    font-weight: 500;
-    font-size: 12px;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-small);
 }
 
 
-/* List of links inside the dialog */
+
 .menu-links {   
     padding: 0;
     display: grid;
-    margin-top:20px;
+    margin-top: var(--margin-large);
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 20px;
+    gap: var(--gap-medium);
 }
 
 
@@ -547,7 +541,7 @@ ul.list li span {
     justify-content: space-evenly;
     border:1px solid rgba(240, 240, 240, 0.70);    
     height: 124px;    
-    border-radius: 8px;
+    border-radius: var(--border-radius-medium);
     transition: background-color 0.5s ease;    
 }
 .menu-links a:hover{
@@ -561,7 +555,7 @@ ul.list li span {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #a3a3a320;
+    background-color: var(--color-light-gray);
     border-radius: 9999px;    
     transition: all 0.3s ease;
 }
@@ -569,8 +563,8 @@ ul.list li span {
 
 
 .menu-links span.icon i{
-    font-size: 1.5rem;
-    color: #64108C;
+    font-size: var(--font-size-xlarge);
+    color: var(--color-purple);
     animation: icon-spin 0.3s ease-out infinite ;
     animation-play-state: paused; 
 }
@@ -594,8 +588,8 @@ ul.list li span {
     text-align: center;
     font-size: 12px;
     font-weight: 800;
-    color: #64108C;
-    padding: 0 3px;    
+    color: var(--color-purple);
+    padding: 0 var(--padding-xs);    
 }
 
 
@@ -607,20 +601,23 @@ ul.list li span {
         display: flex;
     }
 
-     .--desktop{
+    
+
+    .desktop .--desktop, 
+    .--desktop{
         display: none;
     }
 
     .mobile__nav{        
-        background-color: white;
+        background-color: var(--color-white);
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 10px;       
+        gap: var(--gap-small);       
         align-items: stretch;
     }
 
     .container nav.mobile__nav{
-        margin: 0 0 20px 0;
+        margin: 0 0 var(--margin-large) 0;
         padding: 0;
         min-height: auto;
     }
@@ -628,18 +625,23 @@ ul.list li span {
     .mobile__nav > a {
         display: flex;
         align-items: center;
-        border:2px solid #227CC7;
-        border-radius: 4px;
-        padding: 8px 12px;
-        gap: 8px;
-        font-size: .9rem;
+        border:2px solid var(--color-blue);
+        border-radius: var(--border-radius-small);
+        padding: var(--padding-small) var(--padding-small);
+        gap: var(--gap-small);
+        font-size: var(--font-size-medium);
         text-decoration: none;
-        color: black;
+        color: var(--color-black);
         flex: 1;
     }
 
+    .mobile__nav > a > i{
+        font-size: var(--font-size-xlarge);
+        color: var(--color-blue);
+    }
+
     .cards {        
-        gap: 20px;
+        gap: var(--gap-medium);
         
     }
 
@@ -652,6 +654,10 @@ ul.list li span {
 @media (max-width: 860px) {
     main{
         width: 100%;
+    }
+
+    header{
+        padding-inline: var(--padding-small)
     }
 }
 
@@ -666,7 +672,7 @@ ul.list li span {
 
     .cards {
         flex-direction: column;
-        row-gap: 20px;
+        row-gap: var(--gap-medium);
         column-gap: 0px;                
     }
     .cards > .card {
