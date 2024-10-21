@@ -138,7 +138,14 @@
         
 
         <h2 id="variables">CSS Variables</h2>
-        <p>CSS variables, also known as custom properties, allow developers to define reusable values for properties like colors, fonts, and sizes, making it easier to maintain and update styles across a project, enhance consistency, improve code readability, and simplify the process of adapting designs for different contexts or themes.</p>
+        <p>CSS variables, allow developers to define reusable values for properties like colors, fonts, and sizes, making it easier to maintain and update styles across a project, enhance consistency and improve code readability.</p>
+        <p>
+            css variables can be defined any where in the css file, and can be used in any selector. to maintain consistency, all css variables must be defined in the root element of the document. <em>This done for you and the root elemtn in available in base.css file. </em>            
+        </p>
+        <strong>Usage</strong>
+        <code>
+            color: var(--color-purple);
+        </code>
 
         <div class="colors" id="primarycolors">
             <h2>Colors - Primary</h2>                       
