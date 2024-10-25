@@ -74,7 +74,7 @@ angular.module("myApp").controller("myController", function($scope, $compile, Co
         let url = `${$scope.baseUrl}/${contentUrl}`;
 
         if($scope.baseUrl.includes("github")){
-            let url = `${$scope.baseUrl}/portal-prototype/${contentUrl}`
+            url = `${$scope.baseUrl}/portal-prototype/${contentUrl}`
         }
 
         let targetElement = document.getElementById(elementId);
