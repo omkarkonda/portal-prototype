@@ -9,13 +9,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-
+    <style>
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+        }
+    </style>
     <link rel="stylesheet" href="./styles.css">
     
 </head>
-<body  ng-controller="myController">
+<body  ng-controller="myController" ng-cloak>
     <header>
-        <img src="./images/ClientLogo.png" class="logo" alt="">
+        <a href="/index.html"><img src="./images/ClientLogo.png" class="logo" alt=""></a>
         <button class="logout">
             <img src="./images/Logout.svg" alt="" srcset="">
             <span>Log Out</span>
@@ -52,7 +56,7 @@
 
         
 
-        <div class="container">
+        <section class="container" id="container">
             <div class="welcome__row">
                 <h1 class="welcome">Welcome</h1>
                 <p>
@@ -104,8 +108,8 @@
                    </div>
 
                    <div class="card__footer">
-                       <button class="btn primary">View All Appointments</button>
-                       <button class="btn primary">Book New Appointment</button>
+                       <button class="btn primary" ng-click="replaceContent('container', 'allAppts.html')">View All Appointments</button>
+                       <button class="btn primary" ng-click="replaceContent('container', 'bookAppointment.html')">Book New Appointment</button>
                    </div>
 
                 </div>
@@ -188,12 +192,12 @@
                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         
         
 
-    <div class="dialog-backdrop" ng-show="isDialogOpen" ng-click="closeDialog()"></div>
+    <div class="dialog-backdrop" ng-class="{'open': isDialogOpen}" ng-click="closeDialog()"></div>
     <div class="menu-dialog" ng-class="{'open': isDialogOpen}">
         <span class="close-dialog" ng-click="closeDialog()">
             <i class="ri-close-large-fill"></i> <span>Close</span>
@@ -201,7 +205,11 @@
         <div class="menu-links">
             <a href="#">
                 <span class="icon"><i class="ri-calendar-line"></i></span>
-                <span class="text">Appointments</span>
+                <span class="text">All Appointments</span>
+            </a>
+            <a href="#">
+                <span class="icon"><i class="ri-calendar-event-line"></i></i></span>
+                <span class="text">Book New Appointment</span>
             </a>
             <a href="#">
                 <span class="icon"><i class="ri-file-3-line"></i></span>
@@ -274,7 +282,44 @@
         </div>
     </div>
 
+    <div popover id="bookApptConfirm">
+        <h2>New Appointment</h2>
+        <ul>
+            <li>
+                <span>service</span>
+                {{newAppt.service}}
+            </li>
+            <li>
+                <span>visit type</span>
+                {{newAppt.visitType}}
+            </li>
+            <li>
+                <span>Facility</span>
+                {{newAppt.facility}}
+            </li>
+            <li>
+                <span>Provider</span>
+                {{newAppt.provider}}
+            </li>
+            <li>
+                <span>date</span>
+                {{newAppt.date}}/{{newAppt.month}}/{{newAppt.year}}</li>
+            <li>
+                <span>time</span>
+                {{newAppt.time}}</li>
+            
+        </ul>
+        <button 
+            class="btn primary"
+            
+            >Confirm</button>
 
+            <button 
+            class="btn secondary"
+            popovertarget="bookApptConfirm"  
+            popovertargetaction="hide" ng-click="modifyAppt()" >Modify</button>
+    </div>
+     
     </main>
 
     

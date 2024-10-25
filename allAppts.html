@@ -1,0 +1,177 @@
+
+            <div class="welcome__row">
+                <h1 class="welcome">View All Appointments</h1>
+                <!-- <p>
+                    <i class="ri-user-3-line"></i>
+                    Your Provider: <span>Amy Smith, LCSW</span>
+                </p> -->
+                <button class="btn primary" ng-click="replaceContent('container', 'bookAppointment.html')">Book New Appointment</button>
+            </div>
+
+          
+
+          
+
+            <section class="appt_list">
+                <div class="card upcoming">
+                    <div class="card__header">
+                        <h2>
+                           All Upcoming Appointments     
+                        </h2>
+                    </div>
+                    <div class="card__content">
+                        <div class="apptcard">
+                            <div class="row">
+                                <div class="date">
+                                    <span>{{myData.appointments.Date.month}}</span>
+                                    <span>{{myData.appointments.Date.day}}</span>
+                                    <span>{{myData.appointments.Date.year}}</span>
+                                </div>
+                                <div class="details">
+                                    <strong>{{myData.appointments.Service}}</strong>
+                                    <span>{{myData.appointments.Provider}}</span>
+                                    <span>{{myData.appointments.Program}}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="icon"><i class="ri-video-on-line"></i></div>
+                                <div class="link">
+                                    <a href="{{myData.appointments.Link}}">
+                                        Meeting link
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="apptcard">
+                            <div class="row">
+                                <div class="date">
+                                    <span>{{myData.appointments.Date.month}}</span>
+                                    <span>{{myData.appointments.Date.day}}</span>
+                                    <span>{{myData.appointments.Date.year}}</span>
+                                </div>
+                                <div class="details">
+                                    <strong>{{myData.appointments.Service}}</strong>
+                                    <span>{{myData.appointments.Provider}}</span>
+                                    <span>{{myData.appointments.Program}}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="icon"><i class="ri-video-on-line"></i></div>
+                                <div class="link">
+                                    <a href="{{myData.appointments.Link}}">
+                                        Meeting link
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="apptcard">
+                            <div class="row">
+                                <div class="date">
+                                    <span>{{myData.appointments.Date.month}}</span>
+                                    <span>{{myData.appointments.Date.day}}</span>
+                                    <span>{{myData.appointments.Date.year}}</span>
+                                </div>
+                                <div class="details">
+                                    <strong>{{myData.appointments.Service}}</strong>
+                                    <span>{{myData.appointments.Provider}}</span>
+                                    <span>{{myData.appointments.Program}}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="icon"><i class="ri-video-on-line"></i></div>
+                                <div class="link">
+                                    <a href="{{myData.appointments.Link}}">
+                                        Meeting link
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                     
+                    </div>
+                </div>
+                <div class="card past">
+                    <div class="card__header">
+                        <h2>
+                            All Past Appointments
+                        </h2>
+                    </div>
+                    <div class="card__content">
+                        <div class="apptcard">
+                            <div class="row">
+                                <div class="date">
+                                    <span>{{myData.appointments.Date.month}}</span>
+                                    <span>{{myData.appointments.Date.day}}</span>
+                                    <span>{{myData.appointments.Date.year}}</span>
+                                </div>
+                                <div class="details">
+                                    <strong>{{myData.appointments.Service}}</strong>
+                                    <span>{{myData.appointments.Provider}}</span>
+                                    <span>{{myData.appointments.Program}}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="icon"><i class="ri-video-on-line"></i></div>
+                                <div class="link">
+                                    <a href="{{myData.appointments.Link}}">
+                                        Meeting link
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="apptcard">
+                            <div class="row">
+                                <div class="date">
+                                    <span>{{myData.appointments.Date.month}}</span>
+                                    <span>{{myData.appointments.Date.day}}</span>
+                                    <span>{{myData.appointments.Date.year}}</span>
+                                </div>
+                                <div class="details">
+                                    <strong>{{myData.appointments.Service}}</strong>
+                                    <span>{{myData.appointments.Provider}}</span>
+                                    <span>{{myData.appointments.Program}}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="icon"><i class="ri-video-on-line"></i></div>
+                                <div class="link">
+                                    <a href="{{myData.appointments.Link}}">
+                                        Meeting link
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="apptcard">
+                            <div class="row">
+                                <div class="date">
+                                    <span>{{myData.appointments.Date.month}}</span>
+                                    <span>{{myData.appointments.Date.day}}</span>
+                                    <span>{{myData.appointments.Date.year}}</span>
+                                </div>
+                                <div class="details">
+                                    <strong>{{myData.appointments.Service}}</strong>
+                                    <span>{{myData.appointments.Provider}}</span>
+                                    <span>{{myData.appointments.Program}}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="icon"><i class="ri-video-on-line"></i></div>
+                                <div class="link">
+                                    <a href="{{myData.appointments.Link}}">
+                                        Meeting link
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+
+        
+        
+
+
+
+
+    
+

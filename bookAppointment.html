@@ -1,0 +1,292 @@
+
+            <div class="welcome__row">
+                <h1 class="welcome">Book New Appointment</h1>               
+                <button class="btn primary" ng-click="replaceContent('container', 'allAppts.html')">View All Appointments</button>
+            </div>
+
+          
+
+            <section class="emergency" ng-show="!isNotEmergency">
+                <div id="emmergency">
+                    <p> Do you think you have a life threatening emergency? </p> <br>
+                    <div class="buttons">
+                        <button class="btn secondary" ng-click="emergencyCheck(true)" ng-class="{'danger': isEmergency}">
+                            <i class="ri-checkbox-circle-line" ng-show="isEmergency"></i>
+                            Yes
+                        </button>
+                        <button class="btn secondary" ng-click="emergencyCheckNo(false)" ng-class="{'notDanger': isNotEmergency}">
+                            <i class="ri-close-line" ng-show="isNotEmergency"></i>
+                            No</button>
+                    </div>
+                </div>
+                <div class="emergency-yes" ng-show="isEmergency">
+                     <div><i class="ri-error-warning-line"></i></div>
+                     <div>
+                        <p>This appointment cannot be scheduled.</p>
+                        <p>You indicated you think you may be experiencing a <em> threatening emergency. </em> </p>
+                        <p>We recommend you <em>immediately call 911 </em> for medical assistance, <em> or go to a nearby emergency room.</em></p>
+                     </div>
+
+                </div>
+            </section>
+
+
+
+
+            <section class="booking_wrapper" ng-class="{'open': isNotEmergency}">                
+                <div class="tabs">
+                    <button 
+                        ng-repeat="tab in tabs" 
+                        
+                        ng-class="{'current': selectedTab === $index}">
+                        <i class="{{tab.icon}} --mobile"></i>
+                        <span>{{tab.title}}</span>
+                    </button>
+                </div>
+
+
+                <div class="tab-content">
+                    <div ng-show="selectedTab === 0" class="service">
+                        <h2> What would you like to schedule?</h2>
+                        <div class="buttons">
+                            <button class="btn primary" ng-click="selectService('Annual Evaluation')">
+                                Annual Evaluation
+                            </button>
+                            <button class="btn primary" ng-click="selectService('Individual Therapy Session')">
+                                Individual Therapy Session
+                            </button>
+                            <button class="btn primary" ng-click="selectService('Group Therapy Session')">
+                                Group Therapy Session
+                            </button>
+                        </div>                                                
+                    </div>
+                    <div ng-show="selectedTab === 1" class="visit_type">
+                        <h2> How would you like to be seen?</h2>                        
+                         <div class="buttons">
+                            <button class="btn primary" ng-click="selectVisitType('In Person')">
+                                In Person
+                            </button>
+                            <button class="btn primary" ng-click="selectVisitType('Virtual')">
+                                Virtual
+                            </button>
+                            <button class="btn primary" ng-click="selectVisitType('Telephone')">
+                                Telephone
+                            </button>
+                        </div> 
+                    </div>
+                    <div ng-show="selectedTab === 2" class="facility">
+                        <h2> Which facility would you like to book your appointment at?</h2>
+                        <div class="facility-list">
+                            <a href="#" ng-click="selectFacility('3779 Metz Lane, Pennsville')">
+                                <i class="ri-hospital-line"></i>
+                                <address>
+                                    <span>3779 Metz Lane</span>
+                                    <span>Pennsville</span>
+                                </address>
+                                                                
+                            </a>
+                            <a href="#" ng-click="selectFacility('1057 Northwest Boulevard, Ramsey')">
+                                <i class="ri-hospital-line"></i>
+                                <address>
+                                    <span>1057 Northwest Boulevard,</span>
+                                    <span>Ramsey</span>
+                                </address>
+                            </a>
+                            <a href="#" ng-click="selectFacility('4277 Hillhaven Drive, Los Angeles')">
+                                <i class="ri-hospital-line"></i>
+                                <address>
+                                    <span>4277 Hillhaven Drive,</span>
+                                    <span>Los Angeles</span>
+                                </address>
+                            </a>
+                            <a href="#" class="selected" ng-click="selectFacility('2676 Charmaine Lane, Wheatley')">
+                                <i class="ri-checkbox-circle-line"></i>
+                                <address>
+                                    <span>2676 Charmaine Lane,</span>
+                                    <span>Wheatley TX</span>
+                                </address>
+                            </a>
+                            <a href="#" ng-click="selectFacility('2018 Oak Lane, Calhoun')">
+                                <i class="ri-hospital-line"></i>
+                                <address>
+                                    <span>2018 Oak Lane,</span>
+                                    <span>Calhoun</span>
+                                </address>
+                            </a>
+                            <a href="#" ng-click="selectFacility('4853 Willis Avenue, New Smyrna Beach')">
+                                <i class="ri-hospital-line"></i>
+                                <address>
+                                    <span>4853 Willis Avenue,</span>
+                                    <span>New Smyrna Beach</span>
+                                </address>
+                            </a>
+                            <a href="#" ng-click="selectFacility('3516 Aspen Court, Hyde Park')">
+                                <i class="ri-hospital-line"></i>
+                                <address>
+                                    <span>3516 Aspen Court,</span>
+                                    <span>Hyde Park</span>
+                                </address>
+                            </a>
+                            <a href="#" ng-click="selectFacility('728 Maud Street, Philadelphia')">
+                                <i class="ri-hospital-line"></i>
+                                <address>
+                                    <span>728 Maud Street,</span>
+                                    <span>Philadelphia</span>
+                                </address>
+                            </a>
+                        </div>                        
+                        
+                    </div>
+                    <div ng-show="selectedTab === 3" class="provider">
+                        <h2>Who would you like to see?</h2>
+                        <div class="search">
+                            <input type="text" placeholder="Search for a provider">
+                            <i class="ri-search-line"></i>
+                        </div>                        
+                        <div class="provider-list">
+                            <a href="#" ng-click="selectProvider('Philip S Johnson')">
+                                <i class="ri-stethoscope-line"></i>
+                                <span>Philip S Johnson</span>
+                                                                
+                            </a>
+                            <a href="#" ng-click="selectProvider('Katy J McElligott')">
+                                <i class="ri-stethoscope-line"></i>
+                                <span>Katy J McElligott</span>
+                            </a>
+                            <a href="#" ng-click="selectProvider('Willie E Scott')">
+                                <i class="ri-stethoscope-line"></i>
+                                <span>Willie E Scott</span>
+                                
+                            </a>
+                            <a href="#" class="selected" ng-click="selectProvider('John L Medina')">
+                                <i class="ri-checkbox-circle-line"></i>
+                                <span>John L Medina</span>
+                                
+                            </a>
+                            <a href="#" ng-click="selectProvider('Sheldon A Frye')">
+                                <i class="ri-stethoscope-line"></i>
+                                <span>Sheldon A Frye</span>
+                                
+                            </a>
+                            <a href="#" ng-click="selectProvider('Helen F Nguyen')">
+                                <i class="ri-stethoscope-line"></i>
+                                <span>Helen F Nguyen</span>
+                                
+                            </a>
+                            <a href="#" ng-click="selectProvider('Connie M Hruska')">
+                                <i class="ri-stethoscope-line"></i>
+                                <span>Connie M Hruska</span>
+                                
+                            </a>
+                            <a href="#" ng-click="selectProvider('Thomas J Seale')">
+                                <i class="ri-stethoscope-line"></i>
+                                <span>Thomas J Seale</span>
+                                
+                            </a>
+                        </div>   
+                    </div>
+                    <div ng-show="selectedTab === 4" class="time">
+                        <h2>When would you like to book your appointment for?</h2>                        
+                        <div class="days">
+                            <div ng-repeat="day in allDays">
+                                <a href="#" class="{{day.shortWeekDay}}" ng-click="selectDate(day)">
+                                    <span class="day">{{day.date}}</span>
+                                    <span class="weekday">{{day.shortWeekDay}}</span>                               
+                                </a>
+                                <span ng-show="isFirstDayofTheMonth(day)">
+                                    {{day.month}}
+                                </span>                                                           
+                            </div>
+                        </div>
+
+                        <div class="selecteddates" ng-show="isDateSelected">
+                            <div class="day">
+                                <h4>{{selctedDay.month}} {{selctedDay.date}}, {{selctedDay.year}}</h4>
+                                <div class="timeslots">
+                                    <button ng-click="selectTime('10:00 AM')">10:00 AM</button>
+                                    <button ng-click="selectTime('11:00 AM')">11:00 AM</button>
+                                    <button ng-click="selectTime('12:00 PM')">12:00 PM</button>
+                                    <button ng-click="selectTime('1:00 PM')">1:00 PM</button>
+                                    <button ng-click="selectTime('2:00 PM')">2:00 PM</button>
+                                    <button ng-click="selectTime('3:00 PM')">3:00 PM</button>
+                                    <button ng-click="selectTime('4:00 PM')">4:00 PM</button>
+                                    <button ng-click="selectTime('5:00 PM')">5:00 PM</button>
+                                    <button ng-click="selectTime('6:00 PM')">6:00 PM</button>
+                                 
+                                </div>
+                            </div>
+
+                            <!-- <div class="day">
+                                <h4>Octoner 28, 2024</h4>
+                                <div class="timeslots">
+                                    <button>10:00 AM</button>
+                                    <button>11:00 AM</button>
+                                    <button>12:00 PM</button>
+                                    <button>1:00 PM</button>
+                                    <button>2:00 PM</button>
+                                    <button>3:00 PM</button>
+                                    <button>4:00 PM</button>
+                                    <button>5:00 PM</button>
+                                    <button>6:00 PM</button>
+                                 
+                                </div>
+                            </div> -->
+
+                            <!-- <div class="day">
+                                <h4>November 11, 2024</h4>
+                                <div class="timeslots">
+                                    <button>10:00 AM</button>
+                                    <button>11:00 AM</button>
+                                    <button>12:00 PM</button>
+                                    <button>1:00 PM</button>
+                                    <button>2:00 PM</button>
+                                    <button>3:00 PM</button>
+                                    <button>4:00 PM</button>
+                                    <button>5:00 PM</button>
+                                    <button>6:00 PM</button>
+                                 
+                                </div>
+                            </div> -->
+
+                            <!-- <div class="day">
+                                <h4>November 15, 2024</h4>
+                                <div class="timeslots">
+                                    <button>10:00 AM</button>
+                                    <button>11:00 AM</button>
+                                    <button>12:00 PM</button>
+                                    <button>1:00 PM</button>
+                                    <button>2:00 PM</button>
+                                    <button>3:00 PM</button>
+                                    <button>4:00 PM</button>
+                                    <button>5:00 PM</button>
+                                    <button>6:00 PM</button>
+                                 
+                                </div>
+                            </div> -->
+                        </div>
+                         
+                        
+                    </div>
+                </div>
+                <button 
+                    class="btn primary bookappt" 
+                    ng-show="selectedTab === 4" 
+                    ng-click="submitAppt()"
+                    popovertarget="bookApptConfirm" 
+                    popovertargetaction="show"
+                    >Book Appointment</button>
+            </section>       
+
+            
+
+            
+        
+
+        
+        
+
+
+
+
+    
+
