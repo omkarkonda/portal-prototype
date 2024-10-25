@@ -71,7 +71,12 @@ angular.module("myApp").controller("myController", function($scope, $compile, Co
 
       $scope.replaceContent = function(elementId, contentUrl){
         
-        let url = `${$scope.baseUrl}/${contentUrl}`
+        let url = `${$scope.baseUrl}/${contentUrl}`;
+
+        if($scope.baseUrl.includes("github")){
+            let url = `${$scope.baseUrl}/portal-prototype/${contentUrl}`
+        }
+
         let targetElement = document.getElementById(elementId);
 
         ContentService.getExternalContent(url).then(function(response) {
