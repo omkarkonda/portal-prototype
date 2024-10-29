@@ -283,41 +283,10 @@
     </div>
 
     <div popover id="bookApptConfirm">
-        <h2>New Appointment</h2>
-        <ul>
-            <li>
-                <span>service</span>
-                {{newAppt.service}}
-            </li>
-            <li>
-                <span>visit type</span>
-                {{newAppt.visitType}}
-            </li>
-            <li>
-                <span>Facility</span>
-                {{newAppt.facility}}
-            </li>
-            <li>
-                <span>Provider</span>
-                {{newAppt.provider}}
-            </li>
-            <li>
-                <span>date</span>
-                {{newAppt.date}}/{{newAppt.month}}/{{newAppt.year}}</li>
-            <li>
-                <span>time</span>
-                {{newAppt.time}}</li>
-            
-        </ul>
-        <button 
-            class="btn primary"
-            
-            >Confirm</button>
-
-            <button 
-            class="btn secondary"
-            popovertarget="bookApptConfirm"  
-            popovertargetaction="hide" ng-click="modifyAppt()" >Modify</button>
+                
+        <i class="ri-checkbox-circle-line"></i>
+        <p>New appointment scheduled successfully</p>
+        <button class="btn secondary" popovertarget="bookApptConfirm"  popovertargetaction="hide">Close</button>
     </div>
      
     </main>

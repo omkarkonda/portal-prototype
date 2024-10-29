@@ -35,12 +35,16 @@
 
             <section class="booking_wrapper" ng-class="{'open': isNotEmergency}">                
                 <div class="tabs">
-                    <button 
+                    <button class="tab" 
                         ng-repeat="tab in tabs" 
-                        
-                        ng-class="{'current': selectedTab === $index}">
-                        <i class="{{tab.icon}} --mobile"></i>
-                        <span>{{tab.title}}</span>
+                        ng-class="{'completed': tabs[$index].isCompleted, 'active': $index === selectedTab}"
+                        ng-click="editTab(tab)">
+                       
+                            <i class="{{tab.icon}}"></i>
+                            <span class="title">{{tab.title}}</span>
+                            <span class="edit">Edit</span>
+                       
+                        <!-- <span class="edit" ng-show="$index < currentStep">Edit</span> -->
                     </button>
                 </div>
 
@@ -99,7 +103,7 @@
                                     <span>Los Angeles</span>
                                 </address>
                             </a>
-                            <a href="#" class="selected" ng-click="selectFacility('2676 Charmaine Lane, Wheatley')">
+                            <a href="#" ng-click="selectFacility('2676 Charmaine Lane, Wheatley')">
                                 <i class="ri-checkbox-circle-line"></i>
                                 <address>
                                     <span>2676 Charmaine Lane,</span>
@@ -158,7 +162,7 @@
                                 <span>Willie E Scott</span>
                                 
                             </a>
-                            <a href="#" class="selected" ng-click="selectProvider('John L Medina')">
+                            <a href="#" ng-click="selectProvider('John L Medina')">
                                 <i class="ri-checkbox-circle-line"></i>
                                 <span>John L Medina</span>
                                 
@@ -187,95 +191,93 @@
                     </div>
                     <div ng-show="selectedTab === 4" class="time">
                         <h2>When would you like to book your appointment for?</h2>                        
-                        <div class="days">
-                            <div ng-repeat="day in allDays">
-                                <a href="#" class="{{day.shortWeekDay}}" ng-click="selectDate(day)">
-                                    <span class="day">{{day.date}}</span>
-                                    <span class="weekday">{{day.shortWeekDay}}</span>                               
-                                </a>
-                                <span ng-show="isFirstDayofTheMonth(day)">
-                                    {{day.month}}
-                                </span>                                                           
-                            </div>
-                        </div>
-
-                        <div class="selecteddates" ng-show="isDateSelected">
-                            <div class="day">
-                                <h4>{{selctedDay.month}} {{selctedDay.date}}, {{selctedDay.year}}</h4>
-                                <div class="timeslots">
-                                    <button ng-click="selectTime('10:00 AM')">10:00 AM</button>
-                                    <button ng-click="selectTime('11:00 AM')">11:00 AM</button>
-                                    <button ng-click="selectTime('12:00 PM')">12:00 PM</button>
-                                    <button ng-click="selectTime('1:00 PM')">1:00 PM</button>
-                                    <button ng-click="selectTime('2:00 PM')">2:00 PM</button>
-                                    <button ng-click="selectTime('3:00 PM')">3:00 PM</button>
-                                    <button ng-click="selectTime('4:00 PM')">4:00 PM</button>
-                                    <button ng-click="selectTime('5:00 PM')">5:00 PM</button>
-                                    <button ng-click="selectTime('6:00 PM')">6:00 PM</button>
-                                 
+                        <div class="calendar__wrapper">
+                            <div class="calendar">
+                                <div class="calendar-header">
+                                <button ng-click="prevMonth()"><i class="ri-arrow-left-circle-line"></i></button>
+                                <span>{{ monthNames[currentMonth] }} {{ currentYear }}</span>
+                                <button ng-click="nextMonth()"><i class="ri-arrow-right-circle-line"></i></button>
+                                </div>
+                                <div class="calendar-body">
+                                <div class="calendar-weekdays">
+                                    <span ng-repeat="day in weekdays">{{ day }}</span>
+                                </div>
+                                <div class="calendar-days">
+                                    <span ng-repeat="day in days track by $index"
+                                        ng-class="getDayClass(day)"
+                                        ng-click="selectDay(day)">
+                                    {{ day.date }}
+                                    </span>
+                                </div>
                                 </div>
                             </div>
 
-                            <!-- <div class="day">
-                                <h4>Octoner 28, 2024</h4>
-                                <div class="timeslots">
-                                    <button>10:00 AM</button>
-                                    <button>11:00 AM</button>
-                                    <button>12:00 PM</button>
-                                    <button>1:00 PM</button>
-                                    <button>2:00 PM</button>
-                                    <button>3:00 PM</button>
-                                    <button>4:00 PM</button>
-                                    <button>5:00 PM</button>
-                                    <button>6:00 PM</button>
-                                 
-                                </div>
-                            </div> -->
+                            <div class="selected-dates">
+                                    
+                                    <div ng-show="!selectedDate" class="no-date-selected">
+                                        <i class="ri-loader-2-line"></i>
+                                        <p>Select a date from calendar</p>
+                                    </div>
 
-                            <!-- <div class="day">
-                                <h4>November 11, 2024</h4>
-                                <div class="timeslots">
-                                    <button>10:00 AM</button>
-                                    <button>11:00 AM</button>
-                                    <button>12:00 PM</button>
-                                    <button>1:00 PM</button>
-                                    <button>2:00 PM</button>
-                                    <button>3:00 PM</button>
-                                    <button>4:00 PM</button>
-                                    <button>5:00 PM</button>
-                                    <button>6:00 PM</button>
-                                 
-                                </div>
-                            </div> -->
-
-                            <!-- <div class="day">
-                                <h4>November 15, 2024</h4>
-                                <div class="timeslots">
-                                    <button>10:00 AM</button>
-                                    <button>11:00 AM</button>
-                                    <button>12:00 PM</button>
-                                    <button>1:00 PM</button>
-                                    <button>2:00 PM</button>
-                                    <button>3:00 PM</button>
-                                    <button>4:00 PM</button>
-                                    <button>5:00 PM</button>
-                                    <button>6:00 PM</button>
-                                 
-                                </div>
-                            </div> -->
+                                   <div ng-show="selectedDate">
+                                       <h4>{{monthNames[selectedDate.month]}} {{selectedDate.date}} {{selectedDate.year}}</h4>
+                                       <div class="timeslots">
+                                           <button ng-click="selectTime('10:00 AM')">10:00 AM</button>
+                                           <button ng-click="selectTime('11:00 AM')">11:00 AM</button>
+                                           <button ng-click="selectTime('12:00 PM')">12:00 PM</button>
+                                           <button ng-click="selectTime('1:00 PM')">1:00 PM</button>
+                                           <button ng-click="selectTime('2:00 PM')">2:00 PM</button>
+                                           <button ng-click="selectTime('3:00 PM')">3:00 PM</button>
+                                           <button ng-click="selectTime('4:00 PM')">4:00 PM</button>
+                                           <button ng-click="selectTime('5:00 PM')">5:00 PM</button>
+                                           <button ng-click="selectTime('6:00 PM')">6:00 PM</button>                                    
+                                        </div>                            
+                                    </div> 
+                            </div>
                         </div>
-                         
                         
                     </div>
+
+                    <div ng-show="selectedTab === 5" class="final">
+                        <h2>Review Appointment Details</h2>
+                        <ul>
+                            <li>
+                                <span>service</span>
+                                {{newAppt.service}}
+                            </li>
+                            <li>
+                                <span>visit type</span>
+                                {{newAppt.visitType}}
+                            </li>
+                            <li>
+                                <span>Facility</span>
+                                {{newAppt.facility}}
+                            </li>
+                            <li>
+                                <span>Provider</span>
+                                {{newAppt.provider}}
+                            </li>
+                            <li>
+                                <span>date</span>
+                                {{newAppt.date}}/{{newAppt.month}}/{{newAppt.year}}</li>
+                            <li>
+                                <span>time</span>
+                                {{newAppt.time}}</li>
+                            
+                        </ul>
+                    </div>
+
                 </div>
                 <button 
                     class="btn primary bookappt" 
-                    ng-show="selectedTab === 4" 
+                    ng-show="selectedTab === 5" 
                     ng-click="submitAppt()"
                     popovertarget="bookApptConfirm" 
                     popovertargetaction="show"
                     >Book Appointment</button>
             </section>       
+
+
 
             
 

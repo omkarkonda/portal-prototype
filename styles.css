@@ -312,8 +312,7 @@ ul.list li span {
 
 
 .booking_wrapper{
-    border-radius: var(--border-radius-small);
-    border: 1px solid var(--color-light-gray);
+    border-radius: var(--border-radius-small);    
     min-height: 100%;    
     display: none;
     
@@ -331,51 +330,103 @@ ul.list li span {
 .tabs{    
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-                
+    gap: var(--gap-xs);            
 }
 
-.tabs button{
-    padding: var(--padding-small);
+
+.tabs button.tab{    
+    border-top-left-radius: var(--border-radius-medium);
+    border-top-right-radius: var(--border-radius-medium);
+    background-color: #ebebeb;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: var(--gap-small);
-    text-decoration: none;    
+    justify-content: center;    
     font-size: var(--font-size-medium);
     cursor:pointer;
     border:none;
     appearance: none;
-    font:inherit;
+    font:inherit;    
+    color: inherit;    
+    padding: var(--padding-small);    
+}
+
+button.tab i{
+    font-size: var(--icon-size-small);
+    color: var(--color-medium-gray);
+}
+
+
+button.tab.completed{
+    background-color: var(--color-light-blue);    
+}
+
+button.tab.completed i {
+    color: var(--color-blue);
+}
+
+button.tab.active{
+    background-color: var(--color-light-purple);
+    border-bottom: 2px solid var(--color-purple);
+}
+
+button.tab.active i {
+    color: var(--color-purple);
+}
+
+button.tab .edit{
+    display: none;
+}
+
+button.tab.completed .edit{
+    display: block;
+    text-decoration: underline;
+    font-size: var(--font-size-small);
+}
+
+/* 
+.tabs .tab button + span{    
+    font-size: var(--font-size-small);
     font-weight: var(--font-weight-medium);
+    color: var(--color-white);            
     
 }
 
-.tabs button i{
-    font-size: var(--font-size-xlarge);
+.tabs .tab.completed{
+    background-color: var(--color-light-blue);
+    color:var(--color-text-secondary);       
 }
 
-/* .tabs button:hover{
+.tabs .tab.completed button + span{
+    color: var(--color-text-primary);
+}
+
+.tabs .tab.completed i{
+    color:var(--color-blue);
+}
+
+.tabs .tab.active{
     background-color: var(--color-light-purple);
-    color:var(--color-purple);
+    color:var(--color-black);
+    border-bottom: 2px solid var(--color-light-purple);
+}
+
+.tabs .tab.active i{
+    color:var(--color-purple)
 } */
-
-.tabs button.current{
-    background-color: var(--color-light-purple);
-    color:var(--color-purple);
-}
 
 .tab-content{
     padding: var(--padding-medium);    
     flex: 1 0 auto;
-    
+    border: 1px solid var(--color-light-gray);
 }
 
 .tab-content .service, 
 .tab-content .visit_type, 
 .tab-content .facility, 
 .tab-content .provider, 
-.tab-content .time{
+.tab-content .time,
+.tab-content .final{
     display: flex;
     flex-direction: column;
     gap: var(--gap-small);
@@ -478,77 +529,124 @@ ul.list li span {
 }
 
 
-.days{
-    display: grid;
-    grid-template-columns: repeat(60, minmax(40px, 1fr)) ;
-    gap:var(--gap-xs);
-    width: 100%;
-    overflow-x: scroll;
-    scrollbar-color: var(--color-light-gray) white;
-    scrollbar-width: thin;
-    
-    border: 1px solid var(--color-light-gray);
-    
-    
+
+.calendar__wrapper{
+    display: flex;    
+    gap: var(--gap-large);
+    width: 90%;
+}
+
+.calendar__wrapper > *{
+    width: calc(50% - var(--gap-large));
 }
 
 
-
-.days a {
+.calendar {
+    min-width: 320px;
+    border: 1px solid #ddd;
+    background: white;
+    box-shadow: var(--box-shadow-medium);
+    border-radius: var(--border-radius-medium);
+    overflow: hidden;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    background-color: var(--color-light-gray);
-    border-radius: var(--border-radius-small);
-    padding: 5px;
-    text-decoration: none;
-    color: var(--color-text-primary);
-    transition: all 0.3s ease-in-out;
-}
+    gap: var(--gap-small);
+    padding: var(--padding-medium);
+    flex:1 0 auto;
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-text-primary);;
+    overflow: hidden;    
+    font-weight: var(--font-weight-medium);
+    padding: var(--padding-small);
+  }
 
-.days a.SUN, .days a.SAT{
-    background-color:var(--color-light-blue);
-}
+  
+  .calendar-header button{
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: var(--font-size-medium);
+    color: var(--color-text-secondary);
+  }
 
-.days a:hover{
-background-color: var(--color-light-purple);
-}
+  .calendar-header button i{
+    font-size: var(--font-size-extra-large);
+  }
 
-.days a span:first-child{
-    
-    font-size: var(--font-size-xlarge);
-    color: var(--color-purple);
-}
+  .calendar-body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .calendar-weekdays,
+  .calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+  }
+  
+  .calendar-weekdays span {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+  }
+  
+  .calendar-days span {
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
 
-.days a span:last-child{
-    font-size: var(--font-size-small);
-    letter-spacing: 1px;
-}
+
+
+  .selected-day, 
+  .selected-time{
+    background-color: var(--color-purple);
+    color: var(--color-white);
+  }
+  
 
 
 
 
-.selecteddates{
+.selected-dates{
     display: flex;
     flex-direction: column;
     gap: var(--gap-medium);
     width: 100%;
-    margin-top: var(--margin-small);
+    border-radius:var(--border-radius-medium);
+    box-shadow: var(--box-shadow-medium);
+    padding: var(--padding-medium);
+    border: 1px solid var(--color-light-gray);
     
 }
 
-.selecteddates h4{
+.selected-dates h4{
     font-size: var(--font-size-large);
     font-weight: var(--font-weight-bold);
     margin-bottom: var(--margin-xs);
 }
 
-.selecteddates .day{
-    box-shadow: var(--box-shadow-small);
-    padding: var(--padding-small);
-    border: 1px solid var(--color-light-gray);
+.no-date-selected{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-medium);
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-medium);
 }
+
+
+
 .timeslots{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -573,8 +671,8 @@ background-color: var(--color-light-purple);
 }
 
 #bookApptConfirm:popover-open {
-    width: 300px;
-    height: 480px;
+    width: 400px;
+    height: 200px;
     padding: 0 10px;
     border-radius: 10px;
     position: absolute;    
@@ -584,37 +682,48 @@ background-color: var(--color-light-purple);
     border: 1px solid var(--color-light-gray);
     box-shadow: var(--box-shadow-large);
     display: flex;
-    padding: var(--padding-large);
+    padding: var(--padding-large) var(--padding-medium);
     flex-direction: column;
     gap: var(--gap-medium);
+    justify-content: center;
+    align-items: center;
 }
+
+
 
 #bookApptConfirm::backdrop {
     backdrop-filter: blur(5px);
   }
 
+  #bookApptConfirm i{
+    font-size: var(--icon-size-large);
+    color: var(--color-green);
+  }
 
-  #bookApptConfirm ul{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap:var(--gap-small);
+.final ul{
+    list-style: none;    
+    gap:var(--gap-large);    
+    columns: 2 100px;
   }
 
   
 
-  #bookApptConfirm li{
+  .final li{
     color: var(--color-purple);
     font-weight: 600;
-
+    max-width: 16ch;
+    padding: var(--padding-small);
+    /* border: 1px solid var(--color-light-gray); */
+    border-radius: var(--border-radius-small);
+    margin-bottom: var(--margin-medium);
   }
 
-  #bookApptConfirm span{
+  .final span{
     display: block;
     text-transform: uppercase;
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-bold);
-    color: var(--color-text-primary);
+    color: var(--color-text-secondary);
   }
 
 
@@ -661,6 +770,24 @@ background-color: var(--color-light-purple);
     .provider-list a{
         flex-direction: row;
     }
+
+    
+    .calendar__wrapper{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .calendar__wrapper > *{
+        width: auto;
+    }
+
+    #bookApptConfirm:popover-open{
+        width: 90%;
+    }
+
+   button.tab .title{
+    display: none;
+   }
          
 }
 
