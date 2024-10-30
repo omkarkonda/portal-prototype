@@ -16,6 +16,7 @@
 
     /* red */
     --color-red: #EF4444;
+    --color-light-red: #FEE2E2;
   
     /* green */
     --color-green: #22C55E;
@@ -505,6 +506,36 @@ main {
     background-color: var(--color-green);
     
 }
+
+
+.pill{
+    display: flex;
+    gap:var(--gap-xs);
+    align-items: center;
+    appearance: none;
+    font:inherit;
+    background-color: var(--color-white);
+    border:none;
+    border-radius: 999px;
+    background-color: var(--color-light-gray);
+    padding: var(--padding-xs) var(--padding-small);
+    padding-right: var(--padding-medium);
+    font-size: var(--font-size-small);
+    cursor: pointer;
+    letter-spacing: 1px;    
+    text-transform: uppercase;
+
+}
+
+.pill i{
+    font-size: var(--font-size-medium);
+}
+
+.pill.cancel{
+    background-color: var(--color-light-red);
+    color: var(--color-red);
+}
+
 
 
 @media (max-width: 1200px) {

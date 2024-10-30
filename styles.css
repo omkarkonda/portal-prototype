@@ -69,9 +69,16 @@
     gap: calc(var(--gap-large) - 4px);
 }
 
-.apptcard > .row + .row{
+.apptcard > .row + .row, .apptcard > .buttons{
     padding-top: var(--padding-small);
     border-top: 1px solid var(--color-medium-gray);
+}
+
+.apptcard > .buttons{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:var(--gap-small)
 }
 
 .apptcard .date,  
@@ -702,20 +709,22 @@ button.tab.completed .edit{
 
 .final ul{
     list-style: none;    
-    gap:var(--gap-large);    
-    columns: 2 100px;
+    gap:var(--gap-large);        
+    columns: 2;
+    border: 1px solid var(--color-light-gray);
+    padding: var(--padding-large);
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--box-shadow-medium);
   }
 
   
 
   .final li{
     color: var(--color-purple);
-    font-weight: 600;
-    max-width: 16ch;
+    font-weight: 600;    
     padding: var(--padding-small);
     /* border: 1px solid var(--color-light-gray); */
-    border-radius: var(--border-radius-small);
-    margin-bottom: var(--margin-medium);
+    font-size: var(--font-size-large);
   }
 
   .final span{
