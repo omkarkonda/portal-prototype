@@ -119,14 +119,15 @@ header {
     background-color:var(--color-white);
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;    
     padding-inline: 10vw;
+    gap: var(--gap-small);
     /* padding-inline: var(--padding-large); */
 }
 
 
-header button.logout {
+header button.logout, header a.home {
     /* margin-right: 8vw; */
     appearance: none;
     border:none;
@@ -134,7 +135,7 @@ header button.logout {
     display: flex;
     align-items: center;
     gap: var(--gap-small);
-    padding: var(--padding-xs) var(--padding-small);
+    padding: var(--padding-small) var(--padding-small);
     background-color: var(--color-blue);
     color: var(--color-white);
     font:inherit;
@@ -142,7 +143,18 @@ header button.logout {
     font-weight: var(--font-weight-normal);
     cursor: pointer;
 }
- 
+
+header a.home{
+    margin-left: auto;
+    padding: calc(var(--padding-small));
+    background-color: var(--color-light-blue);    
+}
+
+header a.home i{
+    color: var(--color-blue);
+    font-size: var(--icon-size-medium);
+}
+
 
 
 
@@ -474,37 +486,34 @@ main {
     font: inherit;    
     cursor: pointer;
     min-width: 6ch;
+    color: var(--color-white);
+    padding: var(--padding-small) var(--padding-medium);
+    font-weight: var(--font-weight-medium);
 }
 
 .btn.primary{
     background-color: var(--color-purple);
-    color: var(--color-white);
-    padding: var(--padding-small) var(--padding-medium);
-    font-size: var(--font-size-medium);
+    font-weight: normal;
 }
 
 .btn.secondary{
     background-color: var(--color-light-blue);
-    color: var(--color-purple);
-    padding: var(--padding-small) var(--padding-medium);
     font-size: var(--font-size-medium);
-    
-    font-weight: var(--font-weight-medium);
+    color: var(--color-blue);        
 }
 
 
 .btn.secondary.danger,
 .btn.secondary.notDanger{
-    background-color: var(--color-red);
-    color: var(--color-white);
+    background-color: var(--color-light-red);
+    color: var(--color-red);
     display:inline-flex;    
     gap: var(--gap-small);
     align-items: center;
 }
 
 .btn.secondary.notDanger{
-    background-color: var(--color-green);
-    
+    background-color: var(--color-green);    
 }
 
 

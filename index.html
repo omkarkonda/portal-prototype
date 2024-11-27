@@ -20,6 +20,9 @@
 <body  ng-controller="myController" ng-cloak>
     <header>
         <a href="/index.html"><img src="./images/ClientLogo.png" class="logo" alt=""></a>
+        <a href="/index.html" class="home" >
+            <i class="ri-home-4-line"></i>
+        </a>
         <button class="logout">
             <img src="./images/Logout.svg" alt="" srcset="">
             <span>Log Out</span>
@@ -88,13 +91,18 @@
                                 <div class="date">
                                     <span>{{myData.appointments.Date.month}}</span>
                                     <span>{{myData.appointments.Date.day}}</span>
-                                    <span>{{myData.appointments.Date.year}}</span>
+                                    <span>{{myData.appointments.Date.year}}</span>                                    
+                                </div>
+                                <div class="time">
+                                    <span>12:00</span>
+                                    <span>PM</span>
                                 </div>
                                 <div class="details">
                                     <strong>{{myData.appointments.Service}}</strong>
                                     <span>{{myData.appointments.Provider}}</span>
                                     <span>{{myData.appointments.Program}}</span>                                    
                                 </div>
+                              
                             </div>
                             <div class="row">
                                 <div class="icon"><i class="ri-video-on-line"></i></div>
@@ -105,8 +113,8 @@
                                 </div>
                             </div>
                             <div class="buttons">
-                                <button class="reschedule pill"><i class="ri-forward-5-line"></i> Reschedule</button>                                
-                                <button class="cancel pill"><i class="ri-close-line"></i> Cancel</button>
+                                <button class="reschedule pill" ng-click="replaceContent('container', 'reschedule.html')"><i class="ri-forward-5-line"></i> Reschedule</button>                                
+                                <button class="cancel pill" popovertarget="cancelAppt"  popovertargetaction="show"><i class="ri-close-line"></i> Cancel</button>
                             </div>
                        </div>
                    </div>
@@ -157,10 +165,11 @@
                     <h2 class="card__header insurance">
                         <i class="ri-shield-line"></i>
                         Insurance Details
-                        <span>
-                            <i class="ri-list-unordered"></i>
-                            <i class="ri-file-edit-line"></i>
-                        </span>
+                        <div class="icons">
+                            <button><i class="ri-list-unordered"></i></button>
+                            <button><i class="ri-add-fill"></i></button>
+                            <button><i class="ri-file-edit-line"></i></button>
+                        </div>
                     </h2>
 
                    <div class="card__content">
@@ -286,13 +295,22 @@
         </div>
     </div>
 
-    <div popover id="bookApptConfirm">
-                
+    <div popover id="bookApptConfirm">                
         <i class="ri-checkbox-circle-line"></i>
         <p>New appointment scheduled successfully</p>
         <button class="btn secondary" popovertarget="bookApptConfirm"  popovertargetaction="hide">Close</button>
     </div>
      
+    <div popover id="cancelAppt">                
+        <i class="ri-alert-line"></i>
+        <p>Are you sure you want to cancel this appointment? </p>
+        <div class="card__footer">
+            <button class="btn secondary danger" popovertarget="cancelAppt"  popovertargetaction="hide">Yes</button>
+        <button class="btn secondary" popovertarget="cancelAppt"  popovertargetaction="hide">No</button>
+        </div>
+    </div>
+
+
     </main>
 
     

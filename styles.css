@@ -56,7 +56,7 @@
     display: flex;
     flex-direction: column;
     border: 1px solid var(--color-medium-gray);
-    padding: var(--padding-small);
+    padding: var(--padding-medium);
     margin-block: var(--margin-small);
     gap: var(--gap-small);
     box-shadow: var(--box-shadow-hard);
@@ -65,7 +65,7 @@
 .apptcard > .row{
     display: flex;
     justify-content: flex-start;            
-    align-items: flex-start;
+    
     gap: calc(var(--gap-large) - 4px);
 }
 
@@ -84,8 +84,7 @@
 .apptcard .date,  
 .apptcard .details {
     display: flex;
-    flex-direction: column;
-    
+    flex-direction: column;    
 }
 
 .apptcard .date{
@@ -95,6 +94,22 @@
     font-size: var(--font-size-medium);
     line-height: 1;
     margin-top: var(--margin-xs);
+    justify-content: center;
+}
+
+.apptcard .time{
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-medium);
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius-medium);
+    background-color: var(--color-light-blue);
+    padding: var(--padding-medium);
+    gap: var(--gap-xs);
+    /* color: var(--color-purple); */
 }
 
 .date span:nth-child(2){
@@ -188,10 +203,24 @@ ul.messages li strong + span{
 
 
 
-.insurance span{
+.insurance .icons{
     margin-left: auto;
     display: flex;
     gap: var(--gap-medium);
+}
+
+.insurance .icons button{
+    appearance: none;
+    font:inherit;
+    border:none;
+    background: none;
+    padding: 0;
+    margin: 0 ;
+    color: inherit;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
 }
 
 
@@ -677,9 +706,15 @@ button.tab.completed .edit{
     margin: 15px auto;
 }
 
-#bookApptConfirm:popover-open {
+
+[popover] p{
+    text-align: center;
+}
+
+#bookApptConfirm:popover-open, 
+#cancelAppt:popover-open{
     width: 400px;
-    height: 200px;
+    height: 230px;
     padding: 0 10px;
     border-radius: 10px;
     position: absolute;    
@@ -691,21 +726,30 @@ button.tab.completed .edit{
     display: flex;
     padding: var(--padding-large) var(--padding-medium);
     flex-direction: column;
-    gap: var(--gap-medium);
+    gap: var(--gap-large);
     justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 
 
-#bookApptConfirm::backdrop {
+#bookApptConfirm::backdrop,
+#cancelAppt::backdrop {
     backdrop-filter: blur(5px);
   }
 
-  #bookApptConfirm i{
+#bookApptConfirm i{
     font-size: var(--icon-size-large);
     color: var(--color-green);
-  }
+}
+
+#cancelAppt i{
+    color: orange;
+    font-size: var(--icon-size-large);
+}
+
+
 
 .final ul{
     list-style: none;    

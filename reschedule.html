@@ -1,0 +1,157 @@
+
+            <div class="welcome__row">
+                <h1 class="welcome">Reschedule Appointment</h1>               
+                <button class="btn primary" ng-click="replaceContent('container', 'allAppts.html')">View All Appointments</button>
+            </div>
+
+          
+
+            <!-- <section class="emergency" ng-show="!isNotEmergency">
+                <div id="emmergency">
+                    <p> Do you think you have a life threatening emergency? </p> <br>
+                    <div class="buttons">
+                        <button class="btn secondary" ng-click="emergencyCheck(true)" ng-class="{'danger': isEmergency}">
+                            <i class="ri-checkbox-circle-line" ng-show="isEmergency"></i>
+                            Yes
+                        </button>
+                        <button class="btn secondary" ng-click="emergencyCheckNo(false)" ng-class="{'notDanger': isNotEmergency}">
+                            <i class="ri-close-line" ng-show="isNotEmergency"></i>
+                            No</button>
+                    </div>
+                </div>
+                <div class="emergency-yes" ng-show="isEmergency">
+                     <div><i class="ri-error-warning-line"></i></div>
+                     <div>
+                        <p>This appointment cannot be scheduled.</p>
+                        <p>You indicated you think you may be experiencing a <em> threatening emergency. </em> </p>
+                        <p>We recommend you <em>immediately call 911 </em> for medical assistance, <em> or go to a nearby emergency room.</em></p>
+                     </div>
+
+                </div>
+            </section> -->
+
+
+
+
+            <section class="booking_wrapper" ng-class="{'open': true}">                
+                <div class="tabs">
+                    <button class="tab" 
+                        ng-repeat="tab in tabs" 
+                        ng-class="{'completed': true}"
+                        ng-click="editTab(tab)">
+                       
+                            <i class="{{tab.icon}}"></i>
+                            <span class="title">{{tab.title}}</span>
+                            <!-- <span class="edit">Edit</span> -->
+                       
+                        <!-- <span class="edit" ng-show="$index < currentStep">Edit</span> -->
+                    </button>
+                </div>
+
+
+                <div class="tab-content">
+                    
+                  
+                    <div class="time">
+                        <h2>When would you like to book your appointment for?</h2>                        
+                        <div class="calendar__wrapper">
+                            <div class="calendar">
+                                <div class="calendar-header">
+                                <button ng-click="prevMonth()"><i class="ri-arrow-left-circle-line"></i></button>
+                                <span>{{ monthNames[currentMonth] }} {{ currentYear }}</span>
+                                <button ng-click="nextMonth()"><i class="ri-arrow-right-circle-line"></i></button>
+                                </div>
+                                <div class="calendar-body">
+                                <div class="calendar-weekdays">
+                                    <span ng-repeat="day in weekdays">{{ day }}</span>
+                                </div>
+                                <div class="calendar-days">
+                                    <span ng-repeat="day in days track by $index"
+                                        ng-class="getDayClass(day)"
+                                        ng-click="selectDay(day)">
+                                    {{ day.date }}
+                                    </span>
+                                </div>
+                                </div>
+                            </div>
+
+                            <div class="selected-dates">
+                                    
+                                    <div ng-show="!selectedDate" class="no-date-selected">
+                                        <i class="ri-loader-2-line"></i>
+                                        <p>Select a date from calendar</p>
+                                    </div>
+
+                                   <div ng-show="selectedDate">
+                                       <h4>{{monthNames[selectedDate.month]}} {{selectedDate.date}} {{selectedDate.year}}</h4>
+                                       <div class="timeslots">
+                                           <button ng-click="selectRescheduleTime('10:00 AM')">10:00 AM</button>
+                                           <button ng-click="selectRescheduleTime('11:00 AM')">11:00 AM</button>
+                                           <button ng-click="selectRescheduleTime('12:00 PM')">12:00 PM</button>
+                                           <button ng-click="selectRescheduleTime('1:00 PM')">1:00 PM</button>
+                                           <button ng-click="selectRescheduleTime('2:00 PM')">2:00 PM</button>
+                                           <button ng-click="selectRescheduleTime('3:00 PM')">3:00 PM</button>
+                                           <button ng-click="selectRescheduleTime('4:00 PM')">4:00 PM</button>
+                                           <button ng-click="selectRescheduleTime('5:00 PM')">5:00 PM</button>
+                                           <button ng-click="selectRescheduleTime('6:00 PM')">6:00 PM</button>                                    
+                                        </div>                            
+                                    </div> 
+                            </div>
+                        </div>
+                        
+                    </div>
+<!-- 
+                    <div ng-show="selectedTab === 5" class="final">
+                        <h2>Review Appointment Details</h2>
+                        <ul>
+                            <li>
+                                <span>service</span>
+                                {{newAppt.service}}
+                            </li>
+                            <li>
+                                <span>visit type</span>
+                                {{newAppt.visitType}}
+                            </li>
+                            <li>
+                                <span>Facility</span>
+                                {{newAppt.facility}}
+                            </li>
+                            <li>
+                                <span>Provider</span>
+                                {{newAppt.provider}}
+                            </li>
+                            <li>
+                                <span>date</span>
+                                {{newAppt.date}}/{{newAppt.month}}/{{newAppt.year}}</li>
+                            <li>
+                                <span>time</span>
+                                {{newAppt.time}}</li>
+                            
+                        </ul>
+                    </div> -->
+
+                </div>
+                <button 
+                    class="btn primary bookappt" 
+                    ng-show="selectedTab === 5" 
+                    ng-click="submitAppt()"
+                    popovertarget="bookApptConfirm" 
+                    popovertargetaction="show"
+                    >Book Appointment</button>
+            </section>       
+
+
+
+            
+
+            
+        
+
+        
+        
+
+
+
+
+    
+

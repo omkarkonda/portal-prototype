@@ -231,6 +231,23 @@ angular.module("myApp").controller("myController", function($scope, $compile, Co
         
     };
 
+    $scope.selectRescheduleTime = function(time) {
+        let buttons  = angular.element(document.querySelectorAll('.timeslots > button'));
+        
+        $scope.time = time;
+        $scope.selectTab(5);
+        angular.forEach(buttons, function(button) {
+            button.classList.remove('selected-time');
+            if(button.innerHTML === time){
+                button.classList.add('selected-time');
+            }
+        })
+
+        //$scope.submitAppt();
+        
+    };
+
+
     $scope.submitAppt = function() {
         $scope.newAppt.service = $scope.service;
         $scope.newAppt.visitType = $scope.visitType;

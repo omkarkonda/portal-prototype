@@ -27,6 +27,10 @@
                                     <span>{{myData.appointments.Date.day}}</span>
                                     <span>{{myData.appointments.Date.year}}</span>
                                 </div>
+                                <div class="time">
+                                    <span>12:00</span>
+                                    <span>PM</span>
+                                </div>
                                 <div class="details">
                                     <strong>{{myData.appointments.Service}}</strong>
                                     <span>{{myData.appointments.Provider}}</span>
@@ -42,8 +46,8 @@
                                 </div>
                             </div>
                             <div class="buttons">
-                                <button class="reschedule pill"><i class="ri-forward-5-line"></i> Reschedule</button>                                
-                                <button class="cancel pill"><i class="ri-close-line"></i> Cancel</button>
+                                <button class="reschedule pill" ng-click="replaceContent('container', 'reschedule.html')"><i class="ri-forward-5-line"></i> Reschedule</button>                                
+                                <button class="cancel pill" popovertarget="cancelAppt"  popovertargetaction="show"><i class="ri-close-line"></i> Cancel</button>
                             </div>
                         </div>
                         <div class="apptcard">
@@ -53,6 +57,10 @@
                                     <span>{{myData.appointments.Date.day}}</span>
                                     <span>{{myData.appointments.Date.year}}</span>
                                 </div>
+                                <div class="time">
+                                    <span>12:00</span>
+                                    <span>PM</span>
+                                </div>
                                 <div class="details">
                                     <strong>{{myData.appointments.Service}}</strong>
                                     <span>{{myData.appointments.Provider}}</span>
@@ -68,8 +76,8 @@
                                 </div>
                             </div>
                             <div class="buttons">
-                                <button class="reschedule pill"><i class="ri-forward-5-line"></i> Reschedule</button>                                
-                                <button class="cancel pill"><i class="ri-close-line"></i> Cancel</button>
+                                <button class="reschedule pill" ng-click="replaceContent('container', 'reschedule.html')"><i class="ri-forward-5-line"></i> Reschedule</button>                                
+                                <button class="cancel pill" popovertarget="cancelAppt"  popovertargetaction="show"><i class="ri-close-line"></i> Cancel</button>
                             </div>
                         </div>
                         <div class="apptcard">
@@ -79,6 +87,10 @@
                                     <span>{{myData.appointments.Date.day}}</span>
                                     <span>{{myData.appointments.Date.year}}</span>
                                 </div>
+                                <div class="time">
+                                    <span>12:00</span>
+                                    <span>PM</span>
+                                </div>
                                 <div class="details">
                                     <strong>{{myData.appointments.Service}}</strong>
                                     <span>{{myData.appointments.Provider}}</span>
@@ -94,8 +106,8 @@
                                 </div>
                             </div>
                             <div class="buttons">
-                                <button class="reschedule pill"><i class="ri-forward-5-line"></i> Reschedule</button>                                
-                                <button class="cancel pill"><i class="ri-close-line"></i> Cancel</button>
+                                <button class="reschedule pill" ng-click="replaceContent('container', 'reschedule.html')"><i class="ri-forward-5-line"></i> Reschedule</button>                                
+                                <button class="cancel pill" popovertarget="cancelAppt"  popovertargetaction="show"><i class="ri-close-line"></i> Cancel</button>
                             </div>
                         </div>
                      
@@ -115,20 +127,17 @@
                                     <span>{{myData.appointments.Date.day}}</span>
                                     <span>{{myData.appointments.Date.year}}</span>
                                 </div>
+                                <div class="time">
+                                    <span>12:00</span>
+                                    <span>PM</span>
+                                </div>
                                 <div class="details">
                                     <strong>{{myData.appointments.Service}}</strong>
                                     <span>{{myData.appointments.Provider}}</span>
                                     <span>{{myData.appointments.Program}}</span>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="icon"><i class="ri-video-on-line"></i></div>
-                                <div class="link">
-                                    <a href="{{myData.appointments.Link}}">
-                                        Meeting link
-                                    </a>
-                                </div>
-                            </div>
+                          
                         </div>
                         <div class="apptcard">
                             <div class="row">
@@ -137,20 +146,17 @@
                                     <span>{{myData.appointments.Date.day}}</span>
                                     <span>{{myData.appointments.Date.year}}</span>
                                 </div>
+                                <div class="time">
+                                    <span>12:00</span>
+                                    <span>PM</span>
+                                </div>
                                 <div class="details">
                                     <strong>{{myData.appointments.Service}}</strong>
                                     <span>{{myData.appointments.Provider}}</span>
                                     <span>{{myData.appointments.Program}}</span>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="icon"><i class="ri-video-on-line"></i></div>
-                                <div class="link">
-                                    <a href="{{myData.appointments.Link}}">
-                                        Meeting link
-                                    </a>
-                                </div>
-                            </div>
+                           
                         </div>
                         <div class="apptcard">
                             <div class="row">
@@ -159,20 +165,17 @@
                                     <span>{{myData.appointments.Date.day}}</span>
                                     <span>{{myData.appointments.Date.year}}</span>
                                 </div>
+                                <div class="time">
+                                    <span>12:00</span>
+                                    <span>PM</span>
+                                </div>
                                 <div class="details">
                                     <strong>{{myData.appointments.Service}}</strong>
                                     <span>{{myData.appointments.Provider}}</span>
                                     <span>{{myData.appointments.Program}}</span>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="icon"><i class="ri-video-on-line"></i></div>
-                                <div class="link">
-                                    <a href="{{myData.appointments.Link}}">
-                                        Meeting link
-                                    </a>
-                                </div>
-                            </div>
+                            
                         </div>
                         <div class="apptcard">
                             <div class="row">
@@ -181,20 +184,17 @@
                                     <span>{{myData.appointments.Date.day}}</span>
                                     <span>{{myData.appointments.Date.year}}</span>
                                 </div>
+                                <div class="time">
+                                    <span>12:00</span>
+                                    <span>PM</span>
+                                </div>
                                 <div class="details">
                                     <strong>{{myData.appointments.Service}}</strong>
                                     <span>{{myData.appointments.Provider}}</span>
                                     <span>{{myData.appointments.Program}}</span>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="icon"><i class="ri-video-on-line"></i></div>
-                                <div class="link">
-                                    <a href="{{myData.appointments.Link}}">
-                                        Meeting link
-                                    </a>
-                                </div>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>
