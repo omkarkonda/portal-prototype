@@ -9,7 +9,7 @@
     flex-grow: 1;    
 }
 
-.cards > .card {            
+.cards > .card {             
     min-height: 250px;
     flex: 1 0 auto;
     width: calc(50% - 30px);
@@ -19,7 +19,7 @@
     justify-content: flex-start;
     gap: var(--gap-small);
     box-shadow: var(--box-shadow-small);
-    border: 1px solid var(--color-medium-gray);
+    border: 1px solid var(--color-light-gray);
     border-radius: var(--border-radius-small);
     padding: var(--padding-medium);
 }   
@@ -28,16 +28,16 @@
 
 .card > .card__header{
     font-weight: var(--font-weight-medium);
-    color: var(--color-blue);
+    color: var(--color-dark-blue);
     /* font-size: var(--font-size-xlarge); */
-    font-size: clamp(1.2rem, 1.0404rem + 0.5106vw, 1.5rem);
+    font-size: clamp(1.2rem, 1.0404rem + 0.5106vw, 1.3rem);
     display: flex;
     gap: var(--gap-medium);
     align-items: center
 }
 
 .card__header >i{
-    font-size: var(--icon-size-large);
+    font-size: var(--icon-size-medium);
 }
 
 .card > .card__content{
@@ -46,10 +46,12 @@
 
 
 .card__content > strong{
-    font-size: var(--font-size-large);
+    font-size: var(--font-size-medium);
     padding-bottom: var(--padding-small);
     display: inline-block;
     font-weight: 500;
+    text-transform: uppercase;
+    color: var(--color-blue);
 }
 
 .apptcard{
@@ -241,6 +243,9 @@ ul.list li span {
     flex: 1;
 }
 
+ul.list li span:first-child{
+    color: #1E1E1E70;
+}
 
 .card p{
     font-size: var(--font-size-medium);
@@ -257,6 +262,15 @@ ul.list li span {
     font-size: var(--font-size-large);
     display: flex;
     justify-content: space-between;
+}
+
+.bills .card__content label span{
+    display: block;
+    background-color: var(--color-light-blue);
+    padding: var(--padding-small);
+    width:120px;
+    text-align: center;
+    border-radius: var(--border-radius-small);
 }
 
 

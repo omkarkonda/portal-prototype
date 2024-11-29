@@ -49,7 +49,7 @@ angular.module("myApp").controller("myController", function($scope, $compile, Co
     
         },
         "bills": {
-            "dueAmount": "$20"        
+            "dueAmount": "$20.00"        
         }
     }
     
