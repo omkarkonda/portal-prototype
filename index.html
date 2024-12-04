@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Layout</title>
+    <title>Client Portal</title>
     
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,42 +19,39 @@
 </head>
 <body  ng-controller="myController" ng-cloak>
     <header>
+        <a href="#0" class="menu --mobile" ng-click="openDialog()">
+            <i class="ri-menu-line"></i>
+        </a>             
+
         <a href="/portal-prototype/index.html"><img src="./images/ClientLogo.png" class="logo" alt=""></a>
-        <a href="/portal-prototype/index.html" class="home" >
-            <i class="ri-home-4-line"></i>
-        </a>
-        <button class="logout">
-            <img src="./images/Logout.svg" alt="" srcset="">
-            <span>Log Out</span>
+      
+        <button class="switch">
+            <div class="current__user">
+                <span>TM</span>
+                <i class="ri-arrow-down-s-line"></i>
+            </div>  
+            <div id="users">                            
+                <a href="#"><i class="ri-user-line"></i> Matthew Wishmonger</a>
+                <a href="#"><i class="ri-user-line"></i>Toby Barlow </a>
+                <a href="#"><i class="ri-user-line"></i> Roger Ferguson</a>
+                <a href="#"><i class="ri-user-line"></i> Hector Gobble</a>            
+                <hr>
+                <a href="#"><i class="ri-logout-box-r-line"></i>Logout</a>            
+
+            </div>             
         </button>
     </header>
     
     <main>
         <nav class="desktop">
-            <a href="#0" class="menu" ng-click="openDialog()">
+            <a href="#0" class="menu --desktop" ng-click="openDialog()">
                 <i class="ri-menu-line"></i> Menu
             </a>             
-            <a href="#" class="--desktop"><i class="ri-survey-line"></i>Forms to Complete</a>            
-            <a href="#" class="--desktop"><i class="ri-hourglass-line"></i>Clinical Screening Dues</a>
-            <a href="#" class="--desktop"><i class="ri-flask-line"></i>Lab Results</a>
-            <a href="#" class="--desktop"><i class="ri-medicine-bottle-line"></i>Request Rx Refill</a>            
-            <div class="switch">
-                <div class="current__user">
-                    <span>TM</span>
-                </div>   
-                <div class="select__user">
-                    <label>Alexander</label>
-                    <div class="dropdown">
-                        <button>Switch <i class="ri-arrow-down-s-line"></i></button>
-                        <div id="users">                            
-                            <a href="#"><i class="ri-user-line"></i> Matthew Wishmonger</a>
-                            <a href="#"><i class="ri-user-line"></i>Toby Barlow </a>
-                            <a href="#"><i class="ri-user-line"></i> Roger Ferguson</a>
-                            <a href="#"><i class="ri-user-line"></i> Hector Gobble</a>                            
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <a href="#"><i class="ri-survey-line"></i>Forms to Complete</a>            
+            <a href="#"><i class="ri-hourglass-line"></i>Clinical Screening Dues</a>
+            <a href="#"><i class="ri-flask-line"></i>Lab Results</a>
+            <a href="#"><i class="ri-medicine-bottle-line"></i>Request Rx Refill</a>            
+           
         </nav>
 
         
@@ -68,13 +65,7 @@
                 </p>
             </div>
 
-            <nav class="--mobile mobile__nav"> 
-                <a href="#" class="--mobile"><i class="ri-survey-line"></i>Forms to Complete</a>            
-                <a href="#" class="--mobile"><i class="ri-hourglass-line"></i>Clinical Screening Dues</a>
-                <a href="#" class="--mobile"><i class="ri-flask-line"></i>Lab Results</a>
-                <a href="#" class="--mobile"><i class="ri-medicine-bottle-line"></i>Request Rx Refill</a>                         
-            </nav>
-
+            
 
             <div class="cards">
                 <div class="card">
@@ -180,7 +171,7 @@
                             <li><span>Relation To Insured:</span> <span>{{myData.insurance.RelationToInsured}}</span></li>
                             <li><span>Start Date:</span> <span>{{myData.insurance.StartDate}}</span></li>
                             <li><span>End Date:</span> <span>{{myData.insurance.EndDate}}</span></li>
-                            <li><span>Insurance Sequence:</span> <span>{{myData.insurance.InsuranceSequence}}</span> </li>
+                            <li><span>Insurance Sequence:</span> <span class="primaryinsurance">{{myData.insurance.InsuranceSequence}}</span> </li>
                        </ul>
                    </div>                 
                 </div>                            

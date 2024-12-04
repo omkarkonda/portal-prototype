@@ -28,7 +28,7 @@
 
 .card > .card__header{
     font-weight: var(--font-weight-medium);
-    color: var(--color-dark-blue);
+    color: var(--color-text-h2);
     /* font-size: var(--font-size-xlarge); */
     font-size: clamp(1.2rem, 1.0404rem + 0.5106vw, 1.3rem);
     display: flex;
@@ -228,7 +228,6 @@ ul.messages li strong + span{
 
 .card  ul.list{
     list-style-type: none;
-
 }
 
 ul.list li{
@@ -240,12 +239,27 @@ ul.list li{
 }
 
 ul.list li span {
-    flex: 1;
+    flex: 0 0 50%;
 }
 
 ul.list li span:first-child{
     color: #1E1E1E70;
 }
+
+
+li span.primaryinsurance{
+    background-color: var(--color-light-blue);
+    padding: var(--padding-xs) var(--padding-small);
+    border-radius: var(--border-radius-small);
+    color: var(--color-blue);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: 1px;
+    max-width: 9ch;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
 
 .card p{
     font-size: var(--font-size-medium);
@@ -262,6 +276,7 @@ ul.list li span:first-child{
     font-size: var(--font-size-large);
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .bills .card__content label span{

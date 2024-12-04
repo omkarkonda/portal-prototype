@@ -2,7 +2,7 @@
     /* Primary Colors */
     --color-purple: #64108C;
     --color-blue: #227CC7;
-    --color-dark-blue: #002265;
+    
   
     /* Secondary Colors */
     --color-secondary-blue: #C8DEF1;
@@ -24,6 +24,7 @@
     /* Text Colors */
     --color-text-primary: #000000;
     --color-text-secondary: #227CC7;
+    --color-text-h2: #002265;
   
     /* Typography */
     --font-family-primary: "Manrope", sans-serif;    
@@ -179,15 +180,17 @@ nav.desktop a{
     padding: var(--padding-medium) 0;
     color: var(--color-text-primary);
     font-size: var(--font-size-large);
+    align-items: center;
 }
 
 
-nav.desktop a.menu{
+nav.desktop a.menu, header a.menu{
     align-items: center;
     margin-right: var(--margin-medium);
+    text-decoration: none;
 }
 
-nav.desktop a.menu i {
+nav.desktop a.menu i , header a.menu i{
     background-color: var(--color-blue);
     color: var(--color-white);
     padding: 10px 12px;    
@@ -202,20 +205,26 @@ nav.desktop a.menu i {
     background-color: var(--color-white);    
     padding: var(--padding-small);    
     gap: var(--gap-small);
-    border-radius: 4px;
+    border-radius: var(--border-radius-medium);
     border: 1px solid #E6E6E6;
     background: var(--color-white);
-    box-shadow: var(--box-shadow-hard);
+    box-shadow: var(--box-shadow-small);
     
+}
+.current__user{
+    display: flex;
+    gap: var(--gap-small);
+    align-items: center;
 }
 
 .current__user span{
     display: inline-block;
-    padding: var(--padding-small);
+    padding: var(--padding-medium);
     background-color: var(--color-blue);
     color: var(--color-white);
-    border-radius: 999px;
+    border-radius: 9999px;
     font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-medium);
 }
 
 .switch > .select__user{    
@@ -227,12 +236,12 @@ nav.desktop a.menu i {
     font-size: var(--font-size-medium);
 }
 
-.dropdown{
+.switch{
     position: relative;
     display: inline-block;    
 }
 
-.dropdown button{
+.switch button{
     border:none;
     background-color: transparent;
     font:inherit;
@@ -243,21 +252,21 @@ nav.desktop a.menu i {
     gap: var(--gap-xs)
 }
 
-.dropdown div#users{    
+.switch div#users{    
    display: none;
    position: absolute;
-   right: -52px;
-   top: 30px;
+   right: 0px;
+   top: 68px;
    background-color: var(--color-white);
-   width: 166px;
+   width: 220px;
    box-shadow: var(--box-shadow-large);
    z-index: 1;
    padding:var(--padding-small);
    border-radius: var(--border-radius-small);
 }
 
-.dropdown:focus div#users,
-.dropdown:focus-within div#users {
+.switch:focus div#users,
+.switch:focus-within div#users {
     display: block;
 }
 
@@ -270,9 +279,12 @@ div#users a{
     align-items: center;
     gap:var(--gap-small);
     transition: all 0.2s ease;
+    color: var(--color-text-primary);
+    text-decoration: none;
 }
 div#users a i{
     font-size: var(--font-size-medium);
+    color: var(--color-blue);
 }
 div#users a:hover{    
     background-color: #227CC7;
@@ -283,7 +295,13 @@ div#users a:hover i{
     color: white;
 }
 
-
+div#users hr{
+    
+    border-width: 1px;
+    border-style: solid;
+    border-color:var(--color-light-gray);
+    margin-block: var(--margin-small);
+}
 
 
 
@@ -313,6 +331,16 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+
+.welcome__row a.btn{
+    min-width: 0;
+    text-decoration: none;
+}
+
+.welcome__row a.btn i{
+    font-size: var(--font-size-xlarge);
 }
 
 
@@ -602,13 +630,32 @@ main {
     }
 
     header{
-        padding-inline: var(--padding-small)
+        padding-inline: var(--padding-small);
+        justify-content: space-between;
     }
+
+    .switch{
+        margin: 0;
+    }
+
+    nav.desktop{
+        justify-content: space-around;
+    }
+
+    nav.desktop a {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: var(--font-size-medium);
+    }
+
 }
 
 @media (max-width: 768px) {
     header img.logo, header button.logout{
         margin: 0;
+        max-width: 100%;
     }
 }
 
@@ -626,7 +673,7 @@ main {
         top:2%
     }
     .welcome__row{
-        flex-direction: column;
+        
         align-items: flex-start;
         gap:0;
         padding-block: 8px;
@@ -638,6 +685,12 @@ main {
     .welcome__row button {
         display: none;
     }
+
+    nav.desktop a {
+        font-size: var(--font-size-small);
+        gap: var(--gap-xxs);
+    }
+
 }
 
 
