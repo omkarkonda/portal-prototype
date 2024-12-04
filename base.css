@@ -674,7 +674,7 @@ main {
     }
     .welcome__row{
         
-        align-items: flex-start;
+        align-items:center;
         gap:0;
         padding-block: 8px;
     }
