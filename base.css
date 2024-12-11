@@ -97,7 +97,7 @@
 }
 
 html, body {    
-    background-color: var(--color-purple);
+    background-color: var(--color-text-h2);
     font-family: var(--font-family-primary);
     font-optical-sizing: auto;
     font-style: normal;
