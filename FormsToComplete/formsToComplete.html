@@ -62,6 +62,8 @@
             .desktop{
                 gap: 56px;
                 padding: 16px 32px !important;
+                padding-top: 24px !important;
+                padding-bottom: 20px !important;
             }
             
             .navLinkClass{
@@ -80,12 +82,20 @@
                 line-height: normal !important;
             }
 
+            .navLinksMainClass a{
+                padding: 0px !important;
+            }
+
 
             #container {
-                padding-top: 16px !important;
                 row-gap: 35px;
-                padding: 32px;
+                padding: 0px !important;
 
+                .welcome__row{
+                    padding-top: 16px !important;
+                    padding: 32px;
+                    padding-bottom: 0px !important;
+                }
                 .welcome {
                     margin: 0px !important;
                 }
@@ -95,6 +105,7 @@
                     display: flex;
                     flex-direction: column;
                     row-gap: 33px;
+                    padding: 0px 32px;
                     flex: 1;
 
                     /* Tab headers */
@@ -145,6 +156,11 @@
                         border-radius: 3px;
                     }
 
+                    .tab-dropdown{
+                        display: none;
+                        flex: 1;
+                    }
+
                     .tab-content.ng-hide {
                         display: none !important;
                     }
@@ -180,39 +196,6 @@
                                 justify-content: flex-start !important;
                                 flex-wrap: wrap;
                                 gap: 16px;
-
-                                .inputFieldsClass {
-                                    flex: 1;
-                                    max-width: 80%;
-                                    min-width: 225px;
-                                    border-radius: 4px;
-                                    border: 1px solid #E6E6E6;
-                                    background: #FFF;
-                                    padding-right: 0px !important;
-                                    gap: 0px !important;
-
-                                    .ri-search-line{
-                                        padding: 16px;
-                                    }
-
-                                    input::placeholder{
-                                        color: #1E1E1E;
-                                        font-family: Manrope;
-                                        font-size: 14px;
-                                        font-style: normal;
-                                        font-weight: 400;
-                                        line-height: 100%; /* 14px */
-                                    }
-
-                                    select{
-                                        padding: 16px;
-                                    }
-                                    input{
-                                        padding-left: 0px !important;
-                                        padding: 13px;
-                                        border-radius: 4px;
-                                    }
-                                }
                             }
 
                             .card_left_block {
@@ -265,7 +248,6 @@
                                     align-items: flex-end;
                                     flex-wrap: wrap;
                                     border-radius: 8px;
-                                    border: 1px solid #227CC7;
                                     background: #FFF;
                                     box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.10);
                                     min-width: min(100%, 800px) !important;
@@ -273,6 +255,9 @@
                                     padding-left: 9px;
                                     padding-bottom: 12px;
                                     padding-right: 19px;
+                                }
+                                .formsToCompleteCardActiveBlock{
+                                    border: 1px solid #227CC7;
                                 }
                             }
 
@@ -289,51 +274,6 @@
                                     line-height: normal;
                                 }
                             }
-
-                            .dropdownClass {
-                                display: flex;
-                                position: relative;
-                                flex: 1;
-                                align-items: center;
-                                border: 1px solid #257CC7 !important;
-                                /* padding: 11px 10px; */
-                                option{
-                                    color: #1E1E1E;
-                                    font-family: Manrope;
-                                    font-size: 16px;
-                                    font-style: normal;
-                                    font-weight: 400;
-                                    line-height: 100%; /* 16px */
-                                }
-                            }
-
-                            /* Icon styling */
-                            .dropdown-icon {
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                width: 25px;
-                                height: 25px;
-                                color: var(--color-text-primary);
-                                font-weight: bold;
-                                font-size: 14px;
-                                position: absolute;
-                                right: 10px;
-                            }
-
-                            /* Select styling */
-                            .dropdown-select {
-                                border: none;
-                                outline: none;
-                                width: 100%;
-                                font-size: 14px;
-                                background: transparent;
-                                cursor: pointer;
-                            }
-
-                            .dropdown-select option {
-                                padding: 5px;
-                            }
                         }
                     }
                 }
@@ -341,13 +281,149 @@
 
         }
 
+        .inputFieldsClass {
+            flex: 1;
+            /* max-width: 80%; */
+            min-width: 225px;
+            border-radius: 4px;
+            border: 1px solid #E6E6E6;
+            background: #FFF;
+            padding-right: 0px !important;
+            gap: 0px !important;
+
+            .ri-search-line{
+                padding: 16px;
+            }
+
+            input::placeholder{
+                color: #1E1E1E;
+                font-family: Manrope;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 100%; /* 14px */
+            }
+
+            select{
+                padding: 16px;
+            }
+            input{
+                padding-left: 0px !important;
+                padding: 13px;
+                border-radius: 4px;
+            }
+        }
+
+        .dropdownClass {
+            display: flex;
+            position: relative;
+            flex: 1;
+            align-items: center;
+            border: 1px solid #257CC7 !important;
+            /* padding: 11px 10px; */
+            option{
+                color: #1E1E1E;
+                font-family: Manrope;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 100%; /* 16px */
+            }
+        }
+
+        /* Icon styling */
+        .dropdown-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 25px;
+            height: 25px;
+            color: var(--color-text-primary);
+            font-weight: bold;
+            font-size: 14px;
+            position: absolute;
+            right: 10px;
+        }
+
+        /* Select styling */
+        .dropdown-select {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 14px;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .dropdown-select option {
+            padding: 5px;
+        }
+
+        .navLinksMainClass{
+            flex-wrap: wrap;
+            display: flex;
+            align-items: center;
+            gap: 56px;
+        }
+        .dropdownTabsClass{
+            display: none;
+        }
+
         @media (max-width: 1200px) {
             .navLinkMenuClass{
                 display: none !important;
             }
+            .desktop{
+                justify-content: center !important;
+            }
         }
 
         @media (max-width: 600px) {
+
+            .dropdownTabsClass{
+                flex: 1;
+                display: flex;
+                border-radius: 8px;
+                background: #FFF;
+                box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.10);
+                position: relative;
+
+                svg{
+                    position: absolute;
+                    right: 15px;
+                    top: 15px;
+                }
+
+                select{
+                    flex: 1;
+                    padding: 10px 10.439px 11px 16px;
+                    border: none;
+                    font-family: Manrope;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                }
+                select.active{
+                    color: #64108C;
+                }
+            }
+            .tab-button{
+                display: none !important;
+            }
+            .tab-dropdown{
+                display: block !important;
+            }
+            .welcome__row{
+                padding: 16px !important;
+            }
+            .formsToCompleteTabs{
+                padding: 0px 16px !important;
+                row-gap: 20px !important;
+            }
+            .container{
+                gap: 28px !important;
+            }
             .inputFieldsClass{
                 max-width: none !important;
             }
@@ -359,7 +435,7 @@
             }
             .welcome{
                 font-size: 28px !important;
-                line-height: normal;
+                line-height: normal !important;
             }
             .profileSwitchButton{
                 h6,h5{
@@ -375,7 +451,7 @@
             }
             #formsToCompleteId{
                 .navLinksMainClass{
-                    gap: 32px !important;
+                    gap: 32px;
                     flex-wrap: wrap;
                     svg{
                         width: 24px !important;
@@ -385,6 +461,12 @@
                 .desktop{
                     padding: 16px 19px !important;
                 }
+            }
+        }
+
+        @media (max-width:400px) {
+            .navLinksMainClass{
+                gap: 20px !important;
             }
         }
     </style>
@@ -436,7 +518,7 @@
     </header>
     <main id="formsToCompleteId">
         <nav class="desktop" style="justify-content: space-between;">
-            <div class="navLinksMainClass" style="display: flex;align-items: center;gap: 56px;">
+            <div class="navLinksMainClass">
 
                 <a href="#0" class="navLinkMenuClass" ng-click="openDialog()">
                     <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -548,12 +630,27 @@
 
             <div class="tabs formsToCompleteTabs">
                 <div class="tab-header">
-                    <button class="tab-button" ng-repeat="tab in tabsList" ng-class="{ active: isActiveTab($index) }"
+                    <button class="tab-button" ng-repeat="tab in tabsList" ng-class="{ active: activeTab == $index}"
                         ng-click="setActiveTab($index)">
                         <span class="title">{{tab.title}}</span>
                     </button>
+                    
+                    <div class="dropdownTabsClass">
+                        <svg class="dropdown-icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.78061 11.25L5.12207 7.5H12.4391L8.78061 11.25Z" fill="#1D1B20"/>
+                        </svg>
+                            
+                        <select class="tab-dropdown" 
+                                ng-class="{ active: tabsList[activeTab] }"
+                                ng-model="activeTab" 
+                                ng-change="setActiveTab(activeTab)" 
+                                ng-options="index as tab.title for (index, tab) in tabsList">
+                        </select>
+                
+                    </div>
                 </div>
-                <div class="tab-content" ng-show="isActiveTab(0)">
+                
+                <div class="tab-content" ng-show="activeTab == 0">
                     <div class="tab-content-body">
                         <div class="provider search_easyforms">
                             <div class="search inputFieldsClass">
@@ -564,7 +661,7 @@
                                 ng-enter="searchEasyFormName()">Go</button>
                         </div>
                         <div class="cards">
-                            <div class="formsToCompleteCardBlock" ng-repeat="item in listData">
+                            <div class="formsToCompleteCardBlock" ng-repeat="item in listData" ng-class="item.status == 'DRAFT' ? 'formsToCompleteCardActiveBlock' : ''">
                                 <div class="card_left_block">
                                     <svg width="60" height="60" viewBox="0 0 60 60" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -613,7 +710,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-content" ng-show="isActiveTab(1)">
+                <div class="tab-content" ng-show="activeTab == 1">
                     <div class="tab-content-body">
                         <div class="provider search_easyforms">
                             <div class="search inputFieldsClass">
@@ -624,7 +721,7 @@
                                 ng-enter="searchEasyFormName()">Go</button>
                         </div>
                         <div class="cards">
-                            <div class="formsToCompleteCardBlock" ng-repeat="item in listData">
+                            <div class="formsToCompleteCardBlock" ng-repeat="item in listData" ng-class="item.status == 'DRAFT' ? 'formsToCompleteCardActiveBlock' : ''">
                                 <div class="card_left_block">
                                     <svg width="60" height="60" viewBox="0 0 60 60" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -673,7 +770,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-content" ng-show="isActiveTab(2)">
+                <div class="tab-content" ng-show="activeTab == 2">
                     <div class="tab-content-body">
                         <div class="provider search_easyforms">
                             <div class="dropdownClass search inputFieldsClass">
@@ -694,7 +791,7 @@
                                 ng-enter="searchEasyFormName()">Go</button>
                         </div>
                         <div class="cards">
-                            <div class="formsToCompleteCardBlock" ng-repeat="item in listPdfData">
+                            <div class="formsToCompleteCardBlock" ng-repeat="item in listPdfData" ng-class="item.status == 'DRAFT' ? 'formsToCompleteCardActiveBlock' : ''">
                                 <div class="card_left_block">
                                     <svg width="60" height="60" viewBox="0 0 60 60" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -743,10 +840,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="card__footer formToCompleteButtonsBlock">
-                    <button class="btn primary variant2">Cancel</button>
-                    <button class="btn primary" style="padding: 5px 25px;">Next</button>
-                </div>
+            </div>
+            <div class="portalCommonButtonsBlock">
+                <button class="portalCommonEmptyBtnClass" ng-bind="portalBackAndCancelBtnBind" ></button>
+                <button class="portalCommonFillBtnClass" ng-bind="portalNextAndEditBtnBind" ng-show="portalNextAndEditBtnBindShowHide"></button>
             </div>
 
 

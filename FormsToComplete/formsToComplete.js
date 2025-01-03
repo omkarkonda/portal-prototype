@@ -73,15 +73,34 @@ function TabController($scope) {
     ];
 
 
-    $scope.activeTab = 0;
+    $scope.activeTab = '0';
+    $scope.portalNextAndEditBtnBindShowHide = false;
+    $scope.portalBackAndCancelBtnBind = 'Cancel';
+    $scope.portalNextAndEditBtnBind = 'Edit';
 
+
+    // Function to handle tab selection and button logic
     $scope.setActiveTab = function (tab) {
         $scope.activeTab = tab;
+
+        switch ($scope.activeTab) {
+            case '0':
+                $scope.portalNextAndEditBtnBindShowHide = false;
+                $scope.portalBackAndCancelBtnBind = 'Cancel';
+                break;
+            case '1':
+                $scope.portalNextAndEditBtnBindShowHide = true;
+                $scope.portalBackAndCancelBtnBind = 'Back';
+                $scope.portalNextAndEditBtnBind = 'Edit';
+                break;
+            case '2':
+                $scope.portalNextAndEditBtnBindShowHide = true;
+                $scope.portalNextAndEditBtnBind = 'Next';
+                break;
+        }
     };
 
-    $scope.isActiveTab = function (tab) {
-        return $scope.activeTab === tab;
-    };
+    // Helper function to check if a tab is active
 
     $scope.options = [
         "Yet to Fill CoSign Documents",
