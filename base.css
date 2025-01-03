@@ -730,9 +730,49 @@ main {
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    gap: 24px;
+    column-gap: 20px;
+    row-gap: 16px;
     background: #EBF3FA;
+    flex-wrap: wrap;
+}
+.portalCommonPrintBtnClass{
+    border-radius: 8px;
+    border: 1px solid #1E1E1E;
+    padding: 12px 24px;
+    color: #1E1E1E;
+    text-align: center;
+    font-family: Manrope;
+    font-size: 18px;
+    background-color: transparent;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.portalCommonViewCommentsBtnClass{
+    display: flex;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    border: 1px solid #64108C;
+    background-color: transparent;
+}
+.portalCommonViewCommentsBtnClass span{
+    color: #64108C;
+    text-align: center;
+    font-family: Manrope;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
+.card_right_btn_block{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
 
 

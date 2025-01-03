@@ -71,9 +71,18 @@ function TabController($scope) {
             timestamp: "12/06/20204 05:20 PM",
         },
     ];
+    $scope.easyFormsViewData = [
+        {
+            pdf: '1000060.pdf',
+            status: "DRAFT",
+            icon: "file", // Example icon class or file path
+            timestamp: "12/02/20204 07:57 PM",
+        },
+    ];
 
 
-    $scope.activeTab = '0';
+    $scope.activeTab = 0;
+    $scope.activeTabDropdown = '0';
     $scope.portalNextAndEditBtnBindShowHide = false;
     $scope.portalBackAndCancelBtnBind = 'Cancel';
     $scope.portalNextAndEditBtnBind = 'Edit';
@@ -81,9 +90,30 @@ function TabController($scope) {
 
     // Function to handle tab selection and button logic
     $scope.setActiveTab = function (tab) {
-        $scope.activeTab = tab;
+        $scope.activeTab = tab; 
+        $scope.activeTabDropdown = parseInt(tab); 
 
-        switch ($scope.activeTab) {
+        switch ($scope.activeTab || $scope.activeTabDropdown) {
+            case 0:
+                $scope.portalNextAndEditBtnBindShowHide = false;
+                $scope.portalBackAndCancelBtnBind = 'Cancel';
+                break;
+            case 1:
+                $scope.portalNextAndEditBtnBindShowHide = true;
+                $scope.portalBackAndCancelBtnBind = 'Back';
+                $scope.portalNextAndEditBtnBind = 'Edit';
+                break;
+            case 2:
+                $scope.portalNextAndEditBtnBindShowHide = true;
+                $scope.portalNextAndEditBtnBind = 'Next';
+                break;
+        }
+    };
+
+    $scope.setActiveDropdownTab = function (tab) {
+        $scope.activeTabDropdown = tab; 
+
+        switch ($scope.activeTabDropdown) {
             case '0':
                 $scope.portalNextAndEditBtnBindShowHide = false;
                 $scope.portalBackAndCancelBtnBind = 'Cancel';
@@ -123,5 +153,18 @@ function TabController($scope) {
     $scope.closeDialog = function() {
         $scope.isDialogOpen = false;
     };
+
+
+    $scope.portalCommonNextAndEditClick = function(){
+        if($scope.portalNextAndEditBtnBind == 'Next'){
+            window.location.href = './easyFormsView.html'; 
+        }
+    }
+    $scope.portalCommonViewCommentsClick = function(){
+        window.location.href = './easyFormsViewComments.html'; 
+    }
+    $scope.portalCommonCancelClick = function(){
+        window.location.href = './formsToComplete.html'; 
+    }
 
 };
