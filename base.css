@@ -691,6 +691,47 @@ main {
         gap: var(--gap-xxs);
     }
 
+    .portalCommonButtonsBlock{
+        padding: 28px 32px 25px 32px !important;
+    }
+
+}
+
+.portalCommonEmptyBtnClass{
+    border-radius: 8px;
+    border: 1px solid #64108C;
+    padding: 12px 24px;
+    background-color: transparent;
+    color: #64108C;
+    text-align: center;
+    font-family: Manrope;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+}
+.portalCommonFillBtnClass{
+    border-radius: 8px;
+    background: #64108C;
+    padding: 12px 24px;
+    color: #FFF;
+    text-align: center;
+    font-family: Manrope;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+}
+.portalCommonButtonsBlock{
+    display: flex;
+    padding: 58px 0px 43px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 24px;
+    background: #EBF3FA;
 }
 
 
