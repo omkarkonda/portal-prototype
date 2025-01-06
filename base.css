@@ -363,7 +363,18 @@ main {
     line-height: 2;
 }
 
-
+.navLinkClass {
+    color: #1E1E1E;
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    /* 112.5% */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
 
 
  /* Dialog Styling */
@@ -723,6 +734,7 @@ main {
     font-weight: 500;
     line-height: normal;
     cursor: pointer;
+    border: 1px solid #64108C;
 }
 .portalCommonButtonsBlock{
     display: flex;
@@ -774,5 +786,138 @@ main {
     gap: 24px;
     flex-wrap: wrap;
 }
+.declinedToReasonDefaultClass{
+    border-radius: 16px;
+    max-width: 460px;
+    background: #FFF;
+    display: flex !important;
+    flex-direction: column;
+    box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.10);
+    position: fixed;
+    width: 460px;
+    top: -900px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.therapyInfoDialogDefaultClass{
+    border-radius: 16px;
+    max-width: none !important;
+    width: 77% !important;
+    background: #FFF;
+    display: flex !important;
+    flex-direction: column;
+    box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.10);
+    position: fixed;
+    width: 460px;
+    top: -900px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
+.therapyInfoDialogClass{
+    border-radius: 0px;
+    top: 115px !important;
+}
+.therapyInfoDialogClass,
+.declinedToReasonClass{
+    top: 300px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s ease-in;
+}
 
+.therapyInfoDialogClass .declinedToReasonHeaderClass{
+    border-radius: 0px;
+}
+.declinedToReasonHeaderClass{
+    width: 100%;
+    border-radius: 16px 16px 0px 0px;
+    background: #257CC7;
+    padding: 13px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.declinedToReasonHeaderTitleClass{
+    color: #FFF;
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.therapyInfoDialogClass .declinedToReasonBodyClass{
+    padding: 31px 19px 38px 19px;
+    gap: 28px;
+}
+.therapyInfoDialogClass .easyFormsViewClass{
+    padding: 0px !important;
+}
+.declinedToReasonBodyClass{
+    padding-top: 43px;
+    padding-bottom: 50px;
+    padding-left: 33px;
+    padding-right: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.declinedToReasonBodyClass .search_easyforms{
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    flex-wrap: wrap;
+}
+.declinedToReasonBodyMainClass{
+    display: flex;
+    justify-content: space-between;
+}
+.declinedToReasonInputClass input{
+    border-radius: 4px;
+    border: 1px solid rgba(30, 30, 30, 0.60);
+    opacity: 0.8;
+    padding: 20px;
+    width: 100%;
+    outline: none;
+}
+.declinedToReasonInputClass input:focus{
+    outline: none !important;
+}
+.declinedToReasonBodyTitleClass{
+    color: #1E1E1E;
+    font-family: Manrope;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%; /* 14px */
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    opacity: 0.5;
+}
+.declinedToReasonBodySubTitleClass{
+    color: #002265;
+    font-family: Manrope;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 14px */
+}
+.therapyInfoDialogClass .declinedToReasonButtonBlockClass{
+    padding-bottom: 40px;
+}
+.declinedToReasonButtonBlockClass{
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+@media (max-width:600px) {
+    .therapyInfoDialogClass{
+        width: 95% !important;
+    }
+    .declinedToReasonBodyClass .search_easyforms{
+        justify-content: center !important;
+    }
+}

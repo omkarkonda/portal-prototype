@@ -47,6 +47,7 @@
 }
 
 #formsToCompleteId {
+    position: relative;
 
     .desktop {
         gap: 56px;
@@ -54,18 +55,10 @@
         padding-top: 24px !important;
         padding-bottom: 20px !important;
     }
-
-    .navLinkClass {
-        color: #1E1E1E;
-        font-family: Manrope;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 18px;
-        /* 112.5% */
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
+    .welcome__row {
+        padding-top: 16px !important;
+        padding: 32px;
+        padding-bottom: 0px !important;
     }
 
     .navLinkMenuClass {
@@ -80,12 +73,6 @@
     #container {
         row-gap: 35px;
         padding: 0px !important;
-
-        .welcome__row {
-            padding-top: 16px !important;
-            padding: 32px;
-            padding-bottom: 0px !important;
-        }
 
         .welcome {
             margin: 0px !important;
@@ -199,14 +186,20 @@
     display: flex;
     align-items: center;
     flex: 1;
-
+    .right_content_Style_Class{
+        color: #227CC7;
+        font-family: Manrope;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
     .right_content {
         display: flex;
         flex-direction: column;
         gap: 5px;
         font-family: Manrope;
         align-items: flex-start;
-
         strong {
             color: #002265;
             font-size: 20px;
@@ -243,6 +236,7 @@
     gap: 14px !important;
     width: 100%;
     .formsToCompleteCardBlock {
+        cursor: pointer;
         display: flex;
         flex: 1;
         min-height: auto;
@@ -267,8 +261,9 @@
         border-radius: 8px;
         border: 1px solid #E6E6E6 !important;
         box-shadow: none !important;
-        padding: 27px 15px 26px 15px !important;
+        padding: 16px 15px 16px 15px !important;
         width: 100%;
+        row-gap: 16px;
     }
 }
 
@@ -430,10 +425,6 @@
         display: block !important;
     }
 
-    .welcome__row {
-        padding: 16px !important;
-    }
-
     .formsToCompleteTabs {
         padding: 0px 16px !important;
         row-gap: 20px !important;
@@ -453,11 +444,6 @@
 
     .timeStampClass {
         font-size: 12px !important;
-    }
-
-    .welcome {
-        font-size: 28px !important;
-        line-height: normal !important;
     }
 
     .profileSwitchButton {
@@ -491,10 +477,16 @@
         .desktop {
             padding: 16px 19px !important;
         }
+        .welcome__row {
+            padding: 16px !important;
+        }
     }
 
     .easyFormsViewClass {
         padding: 0 16px !important;
+    }
+    .easyFormsViewTableClass{
+        min-height: 180px !important;
     }
 }
 
@@ -524,4 +516,13 @@
     width: 100%;
     justify-content: center;
     min-height: 400px;
+    text-align: center;
+}
+.formToCosignDropdownTextClass{
+    color: #1E1E1E;
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 16px */
 }
