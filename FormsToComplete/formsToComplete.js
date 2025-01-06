@@ -81,19 +81,24 @@ function TabController($scope) {
     ];
 
 
+
+
     $scope.activeTab = 0;
     $scope.activeTabDropdown = '0';
     $scope.portalNextAndEditBtnBindShowHide = false;
     $scope.portalBackAndCancelBtnBind = 'Cancel';
     $scope.portalNextAndEditBtnBind = 'Edit';
 
+    // Function to handle tab selection and button logic for both tab types
+    $scope.setActiveTab = function (tab, isDropdown) {
+        const activeTabValue = isDropdown ? parseInt(tab) : tab;
 
-    // Function to handle tab selection and button logic
-    $scope.setActiveTab = function (tab) {
-        $scope.activeTab = tab; 
-        $scope.activeTabDropdown = parseInt(tab); 
+        $scope.activeTab = activeTabValue;
+        if(isDropdown){
+            $scope.activeTabDropdown = activeTabValue.toString();
+        }
 
-        switch ($scope.activeTab || $scope.activeTabDropdown) {
+        switch (activeTabValue) {
             case 0:
                 $scope.portalNextAndEditBtnBindShowHide = false;
                 $scope.portalBackAndCancelBtnBind = 'Cancel';
@@ -110,32 +115,12 @@ function TabController($scope) {
         }
     };
 
-    $scope.setActiveDropdownTab = function (tab) {
-        $scope.activeTabDropdown = tab; 
-
-        switch ($scope.activeTabDropdown) {
-            case '0':
-                $scope.portalNextAndEditBtnBindShowHide = false;
-                $scope.portalBackAndCancelBtnBind = 'Cancel';
-                break;
-            case '1':
-                $scope.portalNextAndEditBtnBindShowHide = true;
-                $scope.portalBackAndCancelBtnBind = 'Back';
-                $scope.portalNextAndEditBtnBind = 'Edit';
-                break;
-            case '2':
-                $scope.portalNextAndEditBtnBindShowHide = true;
-                $scope.portalNextAndEditBtnBind = 'Next';
-                break;
-        }
-    };
-
     // Helper function to check if a tab is active
 
     $scope.options = [
-        "Yet to Fill CoSign Documents",
-        "Completed CoSign Documents",
-        "Pending CoSign Documents"
+        "Co-Signature Required",
+        "Cosigned",
+        // "Pending CoSign Documents"
     ];
 
     $scope.selectedOption = $scope.options[0];
@@ -143,28 +128,42 @@ function TabController($scope) {
 
     // State variable to track if dialog is open
     $scope.isDialogOpen = false;
+    $scope.isDeclinedReasonDialogOpen = false;
+    $scope.isTherapyInfoDialogOpen = false;
+
+    $scope.openDeclinedReasonDialog = function(){
+        $scope.isDeclinedReasonDialogOpen = !$scope.isDeclinedReasonDialogOpen;
+    }
 
     // Function to open the dialog
-    $scope.openDialog = function() {        
+    $scope.openDialog = function () {
         $scope.isDialogOpen = true;
     };
 
     // Function to close the dialog
-    $scope.closeDialog = function() {
+    $scope.closeDialog = function () {
         $scope.isDialogOpen = false;
     };
 
-
-    $scope.portalCommonNextAndEditClick = function(){
-        if($scope.portalNextAndEditBtnBind == 'Next'){
-            window.location.href = './easyFormsView.html'; 
+    $scope.portalCommonNextAndEditClick = function () {
+        if ($scope.portalNextAndEditBtnBind == 'Next') {
+            if ($scope.selectedOption == 'Co-Signature Required') {
+                window.location.href = './yetToFillCosignDocs.html';
+            } else if ($scope.selectedOption == 'Cosigned') {
+                window.location.href = './cosignedForms.html';
+            }
+        }else{
+            $scope.isTherapyInfoDialogOpen = !$scope.isTherapyInfoDialogOpen;
         }
     }
-    $scope.portalCommonViewCommentsClick = function(){
-        window.location.href = './easyFormsViewComments.html'; 
+    $scope.portalCommonBackClick = function () {
+        history.go(-1)
     }
-    $scope.portalCommonCancelClick = function(){
-        window.location.href = './formsToComplete.html'; 
+    $scope.portalCommonCancelClick = function () {
+        window.location.href = '../index.html';
+    }
+    $scope.searchSurveyTherapyInfoEasyFormName = function () {
+        window.location.href = './suryveyFormsTherapyInfo.html';
     }
 
 };

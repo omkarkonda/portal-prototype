@@ -72,7 +72,7 @@
                         
                         
                 </a>
-                <a href="#" class="">
+                <a href="./formsToComplete.html" class="">
                     <svg width="40" height="40" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_1085_924)">
                         <path d="M8.5 5H6.5C5.96957 5 5.46086 5.21071 5.08579 5.58579C4.71071 5.96086 4.5 6.46957 4.5 7V19C4.5 19.5304 4.71071 20.0391 5.08579 20.4142C5.46086 20.7893 5.96957 21 6.5 21H12.197" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -176,9 +176,10 @@
                 </div>
             </div>
             <div class="portalCommonButtonsBlock">
+                <button class="portalCommonFillBtnClass">Electronically Signed by Client / Authenticated by Email Address</button>
+                <button class="portalCommonPrintBtnClass" ng-click="openDeclinedReasonDialog()">Decline Signature</button>
+                <button class="portalCommonEmptyBtnClass" ng-click="portalCommonBackClick()">Back</button>
                 <button class="portalCommonEmptyBtnClass" ng-click="portalCommonCancelClick()">Cancel</button>
-                <button class="portalCommonPrintBtnClass">Print</button>
-                <button class="portalCommonFillBtnClass" ng-click="portalCommonViewCommentsClick()">Save As Draft & Close</button>
             </div>
 
 
@@ -256,7 +257,40 @@
                 </a>
             </div>
         </div>
+
     </main>
+    
+    <div class="declinedToReasonDefaultClass" ng-class="{'declinedToReasonClass': isDeclinedReasonDialogOpen}">
+        <div class="declinedToReasonHeaderClass">
+            <label class="declinedToReasonHeaderTitleClass">Declined Reason</label>
+            <div ng-click="openDeclinedReasonDialog()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_1409_3453)">
+                    <path d="M18 6L6 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_1409_3453">
+                    <rect width="24" height="24" fill="white"/>
+                    </clipPath>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+        <div class="declinedToReasonBodyClass">
+            <div class="declinedToReasonBodyMainClass">
+                <label class="declinedToReasonBodyTitleClass">declined reason</label>
+                <label class="declinedToReasonBodySubTitleClass">*required</label>
+            </div>
+            <div class="declinedToReasonInputClass">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="declinedToReasonButtonBlockClass">
+            <button class="portalCommonFillBtnClass">Save</button>
+            <button class="portalCommonPrintBtnClass" ng-click="openDeclinedReasonDialog()">Cancel</button>
+        </div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js" type="text/javascript"></script>
     <script src="../app.js"></script>
     <script src="./formsToComplete.js" type="text/javascript"></script>
