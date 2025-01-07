@@ -1178,6 +1178,7 @@ button.tab.completed .edit {
 }
 
 .portalCommonInputClass {
+    display: flex;
     flex: 1;
     border-radius: 4px;
     border: 1px solid #E6E6E6;
@@ -1206,6 +1207,9 @@ button.tab.completed .edit {
         padding-left: 0px !important;
         padding: 13px;
         border-radius: 4px;
+        border: none;
+        outline: none;
+        flex: 1;
     }
 }
 
@@ -1348,7 +1352,7 @@ button.tab.completed .edit {
         }
     }
     .portalCommonFlexClass{
-        padding: 0px 16px 0px 16px !important;
+        padding: 0px !important;
     }
 }
 
