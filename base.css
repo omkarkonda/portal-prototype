@@ -708,6 +708,20 @@ main {
 
 }
 
+.portalCommonEmptyBlackBtnClass{
+    border-radius: 8px;
+    border: 1px solid #1E1E1E;
+    padding: 12px 24px;
+    background-color: transparent;
+    color: #1E1E1E;
+    text-align: center;
+    font-family: Manrope;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+}
 .portalCommonEmptyBtnClass{
     border-radius: 8px;
     border: 1px solid #64108C;
@@ -786,6 +800,30 @@ main {
     gap: 24px;
     flex-wrap: wrap;
 }
+.deleteDocDefaultClass{
+    border-radius: 16px;
+    max-width: 460px;
+    background: #FFF;
+    display: flex !important;
+    flex-direction: column;
+    box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.10);
+    position: fixed;
+    width: 460px;
+    top: -900px;
+    left: 50%;
+    transform: translateX(-50%);
+    .declinedToReasonBodyTitleClass{
+        color: #1E1E1E !important;
+        font-family: Manrope;
+        font-size: 20px !important;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        opacity: unset;
+        text-transform: none;
+        letter-spacing: normal;
+    }
+}
 .declinedToReasonDefaultClass{
     border-radius: 16px;
     max-width: 460px;
@@ -818,6 +856,8 @@ main {
     border-radius: 0px;
     top: 115px !important;
 }
+
+.deleteDocClass,
 .therapyInfoDialogClass,
 .declinedToReasonClass{
     top: 300px;
@@ -849,6 +889,13 @@ main {
 .therapyInfoDialogClass .declinedToReasonBodyClass{
     padding: 31px 19px 38px 19px;
     gap: 28px;
+}
+
+.deleteDocClass .declinedToReasonBodyClass{
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 .therapyInfoDialogClass .easyFormsViewClass{
     padding: 0px !important;

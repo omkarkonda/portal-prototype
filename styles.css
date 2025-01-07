@@ -1,15 +1,14 @@
-
 @import url('base.css');
 
 
-.cards {    
+.cards {
     display: flex;
     gap: var(--gap-medium);
     flex-wrap: wrap;
-    flex-grow: 1;    
+    flex-grow: 1;
 }
 
-.cards > .card {             
+.cards>.card {
     min-height: 250px;
     flex: 1 0 auto;
     width: calc(50% - 30px);
@@ -22,11 +21,11 @@
     border: 1px solid var(--color-light-gray);
     border-radius: var(--border-radius-small);
     padding: var(--padding-medium);
-}   
+}
 
 
 
-.card > .card__header{
+.card>.card__header {
     font-weight: var(--font-weight-medium);
     color: var(--color-text-h2);
     /* font-size: var(--font-size-xlarge); */
@@ -36,16 +35,16 @@
     align-items: center
 }
 
-.card__header >i{
+.card__header>i {
     font-size: var(--icon-size-medium);
 }
 
-.card > .card__content{
+.card>.card__content {
     flex: 1;
 }
 
 
-.card__content > strong{
+.card__content>strong {
     font-size: var(--font-size-medium);
     padding-bottom: var(--padding-small);
     display: inline-block;
@@ -54,7 +53,7 @@
     color: var(--color-blue);
 }
 
-.apptcard{
+.apptcard {
     display: flex;
     flex-direction: column;
     border: 1px solid var(--color-medium-gray);
@@ -64,32 +63,33 @@
     box-shadow: var(--box-shadow-hard);
 }
 
-.apptcard > .row{
+.apptcard>.row {
     display: flex;
-    justify-content: flex-start;            
-    
+    justify-content: flex-start;
+
     gap: calc(var(--gap-large) - 4px);
 }
 
-.apptcard > .row + .row, .apptcard > .buttons{
+.apptcard>.row+.row,
+.apptcard>.buttons {
     padding-top: var(--padding-small);
     border-top: 1px solid var(--color-medium-gray);
 }
 
-.apptcard > .buttons{
+.apptcard>.buttons {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap:var(--gap-small)
+    gap: var(--gap-small)
 }
 
-.apptcard .date,  
+.apptcard .date,
 .apptcard .details {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
 }
 
-.apptcard .date{
+.apptcard .date {
     text-align: center;
     color: var(--color-blue);
     text-transform: uppercase;
@@ -99,7 +99,7 @@
     justify-content: center;
 }
 
-.apptcard .time{
+.apptcard .time {
     font-size: var(--font-size-large);
     font-weight: var(--font-weight-medium);
     line-height: 1;
@@ -114,39 +114,40 @@
     /* color: var(--color-purple); */
 }
 
-.date span:nth-child(2){
+.date span:nth-child(2) {
     font-weight: var(--font-weight-medium);
     font-size: var(--font-size-xlarge);
 }
 
-.details strong{
+.details strong {
     font-size: var(--font-size-large);
     font-weight: var(--font-weight-bold);
 }
 
-.details span{
+.details span {
     font-size: var(--font-size-medium);
 }
 
-.apptcard .link{
+.apptcard .link {
     font-size: var(--font-size-medium);
 }
 
-.apptcard .icon{
+.apptcard .icon {
     width: 37px;
 }
-.apptcard .icon i{
+
+.apptcard .icon i {
     font-size: var(--font-size-extra-large);
-    color:var(--color-blue);
+    color: var(--color-blue);
 }
 
 
 
-ul.messages{
+ul.messages {
     list-style-type: none;
 }
 
-ul.messages li{
+ul.messages li {
     display: flex;
     padding: var(--padding-small) var(--padding-medium);
     gap: var(--gap-medium);
@@ -156,13 +157,13 @@ ul.messages li{
     align-items: self-start;
 }
 
-ul.messages li:first-child{
+ul.messages li:first-child {
     /* background-color: #257cc71a; */
     background-color: var(--color-light-blue);
 }
 
-ul.messages li i{
-    background-color:var(--color-purple);
+ul.messages li i {
+    background-color: var(--color-purple);
     color: var(--color-white);
     font-size: var(--font-size-xlarge);
     padding: var(--padding-small);
@@ -170,13 +171,15 @@ ul.messages li i{
     width: 40px;
     height: 40px;
 }
-ul.messages li > div{
+
+ul.messages li>div {
     flex: 1;
 }
-ul.messages li strong{
-    color:var(--color-blue);
+
+ul.messages li strong {
+    color: var(--color-blue);
     display: flex;
-    justify-content: space-between;    
+    justify-content: space-between;
     font-size: var(--font-size-large);
     width: 100%;
     margin-bottom: var(--margin-xs);
@@ -184,40 +187,40 @@ ul.messages li strong{
 
 
 ul.messages li.read strong,
-ul.messages li.read strong + span{
+ul.messages li.read strong+span {
     font-weight: var(--font-weight-normal);
 }
 
-ul.messages li strong > span{
+ul.messages li strong>span {
     color: var(--color-black);
     font-size: var(--font-size-small);
     margin-left: auto;
 }
 
-ul.messages li strong + span{
+ul.messages li strong+span {
     font-weight: bold;
-    font-size: var(--font-size-small);    
+    font-size: var(--font-size-small);
     line-height: 1.2;
-    overflow: hidden;    
+    overflow: hidden;
     display: block;
     width: 100%;
 }
 
 
 
-.insurance .icons{
+.insurance .icons {
     margin-left: auto;
     display: flex;
     gap: var(--gap-medium);
 }
 
-.insurance .icons button{
+.insurance .icons button {
     appearance: none;
-    font:inherit;
-    border:none;
+    font: inherit;
+    border: none;
     background: none;
     padding: 0;
-    margin: 0 ;
+    margin: 0;
     color: inherit;
     width: 24px;
     height: 24px;
@@ -226,11 +229,11 @@ ul.messages li strong + span{
 }
 
 
-.card  ul.list{
+.card ul.list {
     list-style-type: none;
 }
 
-ul.list li{
+ul.list li {
     display: flex;
     justify-content: flex-start;
     padding: var(--padding-xs);
@@ -242,12 +245,12 @@ ul.list li span {
     flex: 0 0 50%;
 }
 
-ul.list li span:first-child{
+ul.list li span:first-child {
     color: #1E1E1E70;
 }
 
 
-li span.primaryinsurance{
+li span.primaryinsurance {
     background-color: var(--color-light-blue);
     padding: var(--padding-xs) var(--padding-small);
     border-radius: var(--border-radius-small);
@@ -261,36 +264,36 @@ li span.primaryinsurance{
 
 
 
-.card p{
+.card p {
     font-size: var(--font-size-medium);
 }
 
-.card__footer{
+.card__footer {
     display: flex;
     justify-content: center;
-    gap:var(--gap-small);
+    gap: var(--gap-small);
 }
 
 
-.bills .card__content label{
+.bills .card__content label {
     font-size: var(--font-size-large);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.bills .card__content label span{
+.bills .card__content label span {
     display: block;
     background-color: var(--color-light-blue);
     padding: var(--padding-small);
-    width:120px;
+    width: 120px;
     text-align: center;
     border-radius: var(--border-radius-small);
 }
 
 
 
-.bills .buttons{
+.bills .buttons {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -299,44 +302,45 @@ li span.primaryinsurance{
     margin-top: var(--margin-large);
 }
 
-.bills .buttons button{
-    width:50%;
+.bills .buttons button {
+    width: 50%;
 }
 
 
 /* Appointments */
 
-.appt_list{
+.appt_list {
     display: grid;
-    gap:var(--gap-medium);                 
+    gap: var(--gap-medium);
     grid-template-columns: 1fr 1fr;
 }
-.appt_list > .card{
+
+.appt_list>.card {
     flex: 1 0 auto;
-    border-radius: var(--border-radius-small);                    
-    
+    border-radius: var(--border-radius-small);
+
     border: 1px solid var(--color-light-gray);
     padding: var(--padding-medium);
     position: relative;
     overflow: hidden;
 }
 
-.appt_list .card__header{
+.appt_list .card__header {
     background-color: var(--color-blue);
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
-    width:100%;
+    width: 100%;
     padding: var(--padding-small) var(--padding-medium);
 }
 
-.appt_list .card__header h2{
+.appt_list .card__header h2 {
     font-size: clamp(1rem, 1.0404rem + 0.5106vw, 1.3rem);
-    color:var(--color-white);
+    color: var(--color-white);
     font-weight: var(--font-weight-normal);
 }
 
-.appt_list .card__content{
+.appt_list .card__content {
     padding-top: calc(var(--padding-large) + var(--padding-medium));
     display: flex;
     flex-direction: column;
@@ -346,91 +350,91 @@ li span.primaryinsurance{
 
 /* Book new appointment */
 
-.emergency{
+.emergency {
     flex: 1;
 }
 
-.emergency-yes{
+.emergency-yes {
     display: flex;
     gap: var(--gap-medium);
     margin-top: var(--margin-large);
 }
 
-.emergency-yes i{
+.emergency-yes i {
     font-size: 3rem;
     color: var(--color-red);
 }
 
-.emergency-yes p+p{
+.emergency-yes p+p {
     margin-top: var(--margin-large);
 }
 
-.emergency-yes p:first-child{
+.emergency-yes p:first-child {
     font-weight: var(--font-weight-medium);
     font-size: var(--font-size-extra-large);
     color: var(--color-blue);
 }
 
-.emergency-yes em{
-    color:var(--color-red);
+.emergency-yes em {
+    color: var(--color-red);
 }
 
 
-.booking_wrapper{
-    border-radius: var(--border-radius-small);    
-    min-height: 100%;    
+.booking_wrapper {
+    border-radius: var(--border-radius-small);
+    min-height: 100%;
     display: none;
-    
+
 }
 
-.booking_wrapper.open{
+.booking_wrapper.open {
     flex: 1;
     display: flex;
     flex-direction: column;
-    
+
 }
 
 
 
-.tabs{    
+.tabs {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: var(--gap-xs);            
+    gap: var(--gap-xs);
 }
 
 
-.tabs button.tab{    
+.tabs button.tab {
     border-top-left-radius: var(--border-radius-medium);
     border-top-right-radius: var(--border-radius-medium);
     background-color: #ebebeb;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
     font-size: var(--font-size-medium);
-    cursor:pointer;
-    border:none;
+    cursor: pointer;
+    border: none;
     appearance: none;
-    font:inherit;    
-    color: inherit;    
-    padding: var(--padding-small);    
+    font: inherit;
+    color: inherit;
+    padding: var(--padding-small);
 }
 
-button.tab i{
+button.tab i {
     font-size: var(--icon-size-small);
     color: var(--color-medium-gray);
 }
 
 
-button.tab.completed{
-    background-color: var(--color-light-blue);    
+button.tab.completed {
+    background-color: var(--color-light-blue);
 }
 
 button.tab.completed i {
     color: var(--color-blue);
 }
 
-button.tab.active{
+button.tab.active {
     background-color: var(--color-light-purple);
     border-bottom: 2px solid var(--color-purple);
 }
@@ -439,11 +443,11 @@ button.tab.active i {
     color: var(--color-purple);
 }
 
-button.tab .edit{
+button.tab .edit {
     display: none;
 }
 
-button.tab.completed .edit{
+button.tab.completed .edit {
     display: block;
     text-decoration: underline;
     font-size: var(--font-size-small);
@@ -480,28 +484,28 @@ button.tab.completed .edit{
     color:var(--color-purple)
 } */
 
-.tab-content{
-    padding: var(--padding-medium);    
+.tab-content {
+    padding: var(--padding-medium);
     flex: 1 0 auto;
     border: 1px solid var(--color-light-gray);
 }
 
-.tab-content .service, 
-.tab-content .visit_type, 
-.tab-content .facility, 
-.tab-content .provider, 
+.tab-content .service,
+.tab-content .visit_type,
+.tab-content .facility,
+.tab-content .provider,
 .tab-content .time,
-.tab-content .final{
+.tab-content .final {
     display: flex;
     flex-direction: column;
     gap: var(--gap-small);
     justify-content: center;
     align-items: center;
     flex: 1;
-        
+
 }
 
-.tab-content .buttons{
+.tab-content .buttons {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -510,11 +514,11 @@ button.tab.completed .edit{
     align-items: stretch;
 }
 
-.tab-content .buttons > button{
+.tab-content .buttons>button {
     min-width: 250px;
 }
 
-.tab-content h2{
+.tab-content h2 {
     font-size: clamp(1.2rem, 0.7745rem + 1.3617vw, 2rem);
     font-weight: var(--font-weight-medium);
     text-align: center;
@@ -525,67 +529,68 @@ button.tab.completed .edit{
 
 
 .facility .facility-list,
-.provider .provider-list{
+.provider .provider-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: var(--gap-medium);
     width: 80%;
 }
 
-.facility-list a, 
-.provider-list a{
+.facility-list a,
+.provider-list a {
     display: flex;
     flex-direction: column;
     color: var(--color-text-primary);
     text-decoration: none;
     padding: var(--padding-medium);
     border: 1px solid var(--color-light-gray);
-    box-shadow: var(--box-shadow-small);    
+    box-shadow: var(--box-shadow-small);
     border-radius: var(--border-radius-small);
-    gap:var(--gap-small)
+    gap: var(--gap-small)
 }
 
-.facility-list a i, 
-.provider-list a i{
+.facility-list a i,
+.provider-list a i {
     font-size: var(--icon-size-medium);
     color: var(--color-light-gray);
 }
 
-.facility-list a address{
+.facility-list a address {
     font-style: normal;
 }
 
-.facility-list a.selected, 
-.provider-list a.selected{
+.facility-list a.selected,
+.provider-list a.selected {
     background-color: var(--color-purple);
     border: none;
     color: var(--color-white);
 }
-.facility-list a.selected i, 
-.provider-list a.selected i{
+
+.facility-list a.selected i,
+.provider-list a.selected i {
     color: var(--color-green);
 }
 
-.provider .search{
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     gap: var(--gap-small);     
-     width: 80%;
-     border: 1px solid var(--color-light-gray);
-     border-radius: var(--border-radius-small);
-     padding-right: var(--padding-medium);
+.provider .search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-small);
+    width: 80%;
+    border: 1px solid var(--color-light-gray);
+    border-radius: var(--border-radius-small);
+    padding-right: var(--padding-medium);
 }
 
-.provider .search input{
+.provider .search input {
     padding: var(--padding-small);
     flex: 1;
-    font:inherit;
+    font: inherit;
     font-size: var(--font-size-medium);
     border: none;
 }
 
-.provider .search input:focus{
+.provider .search input:focus {
     outline: none;
 }
 
@@ -595,13 +600,13 @@ button.tab.completed .edit{
 
 
 
-.calendar__wrapper{
-    display: flex;    
+.calendar__wrapper {
+    display: flex;
     gap: var(--gap-large);
     width: 90%;
 }
 
-.calendar__wrapper > *{
+.calendar__wrapper>* {
     width: calc(50% - var(--gap-large));
 }
 
@@ -617,88 +622,89 @@ button.tab.completed .edit{
     flex-direction: column;
     gap: var(--gap-small);
     padding: var(--padding-medium);
-    flex:1 0 auto;
-  }
-  
-  .calendar-header {
+    flex: 1 0 auto;
+}
+
+.calendar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--color-text-primary);;
-    overflow: hidden;    
+    color: var(--color-text-primary);
+    ;
+    overflow: hidden;
     font-weight: var(--font-weight-medium);
     padding: var(--padding-small);
-  }
+}
 
-  
-  .calendar-header button{
+
+.calendar-header button {
     border: none;
     background: none;
     cursor: pointer;
     font-size: var(--font-size-medium);
     color: var(--color-text-secondary);
-  }
+}
 
-  .calendar-header button i{
+.calendar-header button i {
     font-size: var(--font-size-extra-large);
-  }
+}
 
-  .calendar-body {
+.calendar-body {
     display: flex;
     flex-direction: column;
-  }
-  
-  .calendar-weekdays,
-  .calendar-days {
+}
+
+.calendar-weekdays,
+.calendar-days {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     text-align: center;
-  }
-  
-  .calendar-weekdays span {
+}
+
+.calendar-weekdays span {
     font-weight: bold;
     text-transform: uppercase;
     color: var(--color-text-secondary);
-  }
-  
-  .calendar-days span {
+}
+
+.calendar-days span {
     padding: 8px;
     cursor: pointer;
     border-radius: 4px;
-  }
-  
+}
 
 
 
-  .selected-day, 
-  .selected-time{
+
+.selected-day,
+.selected-time {
     background-color: var(--color-purple);
     color: var(--color-white);
-  }
-  
+}
 
 
 
 
-.selected-dates{
+
+.selected-dates {
     display: flex;
     flex-direction: column;
     gap: var(--gap-medium);
     width: 100%;
-    border-radius:var(--border-radius-medium);
+    border-radius: var(--border-radius-medium);
     box-shadow: var(--box-shadow-medium);
     padding: var(--padding-medium);
     border: 1px solid var(--color-light-gray);
-    
+
 }
 
-.selected-dates h4{
+.selected-dates h4 {
     font-size: var(--font-size-large);
     font-weight: var(--font-weight-bold);
     margin-bottom: var(--margin-xs);
 }
 
-.no-date-selected{
+.no-date-selected {
     width: 100%;
     height: 100%;
     display: flex;
@@ -712,41 +718,41 @@ button.tab.completed .edit{
 
 
 
-.timeslots{
+.timeslots {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap:var(--gap-medium);
-    
+    gap: var(--gap-medium);
+
 }
 
-.timeslots button{
+.timeslots button {
     flex: 1;
     padding: var(--padding-xs);
     border-radius: var(--border-radius-small);
     border: 1px solid var(--color-light-gray);
-    font:inherit;
+    font: inherit;
     font-size: var(--font-size-medium);
     font-weight: var(--font-weight-medium);
-    
+
 }
 
-.bookappt{
+.bookappt {
     max-width: 20ch;
     margin: 15px auto;
 }
 
 
-[popover] p{
+[popover] p {
     text-align: center;
 }
 
-#bookApptConfirm:popover-open, 
-#cancelAppt:popover-open{
+#bookApptConfirm:popover-open,
+#cancelAppt:popover-open {
     width: 400px;
     height: 230px;
     padding: 0 10px;
     border-radius: 10px;
-    position: absolute;    
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -766,57 +772,57 @@ button.tab.completed .edit{
 #bookApptConfirm::backdrop,
 #cancelAppt::backdrop {
     backdrop-filter: blur(5px);
-  }
+}
 
-#bookApptConfirm i{
+#bookApptConfirm i {
     font-size: var(--icon-size-large);
     color: var(--color-green);
 }
 
-#cancelAppt i{
+#cancelAppt i {
     color: orange;
     font-size: var(--icon-size-large);
 }
 
 
 
-.final ul{
-    list-style: none;    
-    gap:var(--gap-large);        
+.final ul {
+    list-style: none;
+    gap: var(--gap-large);
     columns: 2;
     border: 1px solid var(--color-light-gray);
     padding: var(--padding-large);
     border-radius: var(--border-radius-medium);
     box-shadow: var(--box-shadow-medium);
-  }
+}
 
-  
 
-  .final li{
+
+.final li {
     color: var(--color-purple);
-    font-weight: 600;    
+    font-weight: 600;
     padding: var(--padding-small);
     /* border: 1px solid var(--color-light-gray); */
     font-size: var(--font-size-large);
-  }
+}
 
-  .final span{
+.final span {
     display: block;
     text-transform: uppercase;
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-bold);
     color: var(--color-text-secondary);
-  }
+}
 
 
 @media (max-width: 1200px) {
-    
-    .cards {        
-        gap: var(--gap-medium);        
+
+    .cards {
+        gap: var(--gap-medium);
     }
 
-    .bills .buttons button{
-        width:80%;
+    .bills .buttons button {
+        width: 80%;
     }
 
 }
@@ -827,49 +833,521 @@ button.tab.completed .edit{
     .cards {
         flex-direction: column;
         row-gap: var(--gap-medium);
-        column-gap: 0px;                
-    }
-    .cards > .card {
-        width: auto; 
+        column-gap: 0px;
     }
 
-    .appt_list{
+    .cards>.card {
+        width: auto;
+    }
+
+    .appt_list {
         grid-template-columns: 1fr;
     }
 
-    .tabs button{
+    .tabs button {
         font-size: var(--font-size-small);
     }
 
     .facility .facility-list,
     .provider .provider-list,
-    .time .days, 
-    .time .selecteddates{
+    .time .days,
+    .time .selecteddates {
         width: 100%;
     }
 
-    .facility-list a, 
-    .provider-list a{
+    .facility-list a,
+    .provider-list a {
         flex-direction: row;
     }
 
-    
-    .calendar__wrapper{
+
+    .calendar__wrapper {
         flex-direction: column;
         width: 100%;
     }
 
-    .calendar__wrapper > *{
+    .calendar__wrapper>* {
         width: auto;
     }
 
-    #bookApptConfirm:popover-open{
+    #bookApptConfirm:popover-open {
         width: 90%;
     }
 
-   button.tab .title{
-    display: none;
-   }
-         
+    button.tab .title {
+        display: none;
+    }
+
+
 }
 
+/* All Pages Common Class */
+
+/* Header */
+.portalCommonHeaderClass {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .switch {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px;
+        margin: 0px !important;
+        border-radius: 8px;
+        background: #FFF;
+
+        .profileSwitchButton {
+            display: flex;
+            flex-direction: column;
+
+            h5 {
+                color: #257CC7;
+                font-family: Manrope;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+
+            h6 {
+                color: #1E1E1E;
+                font-family: Manrope;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+            }
+        }
+    }
+}
+
+
+/* Main */
+#portalCommonMainClass {
+    .desktop {
+        column-gap: 56px;
+        padding: 16px 32px;
+        padding-top: 24px;
+        padding-bottom: 20px;
+
+        .navLinksMainClass {
+            flex-wrap: wrap;
+            display: flex;
+            align-items: center;
+            gap: 56px;
+
+            a {
+                padding: 0px !important;
+            }
+
+            .navLinkMenuClass {
+                line-height: normal !important;
+            }
+
+            .navLinkClass {
+                color: #1E1E1E;
+                font-family: Manrope;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 18px;
+                /* 112.5% */
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+        }
+    }
+}
+
+/* Container */
+#container {
+    row-gap: 35px;
+    padding: 0px !important;
+
+    .welcome__row {
+        padding-top: 16px !important;
+        padding: 32px;
+        padding-bottom: 0px !important;
+
+        .welcome {
+            margin: 0px !important;
+        }
+    }
+
+    .portalCommonTabsClass {
+        display: flex;
+        flex-direction: column;
+        row-gap: 33px;
+        padding: 0px 32px;
+        flex: 1;
+
+        .tab-header {
+            display: flex;
+            border-bottom: 1px solid #E6E6E6;
+            gap: 32px;
+
+            .dropdownTabsClass {
+                display: none;
+            }
+
+            .tab-button {
+                padding: 15px 0px;
+                padding-top: 0px !important;
+                text-align: center;
+                cursor: pointer;
+                border: none;
+                outline: none;
+                color: #A1A1A1;
+                font-family: Manrope;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                background-color: transparent;
+            }
+
+            .tab-button:last-child {
+                border-right: none;
+            }
+
+            .tab-button.active {
+                color: #64108C;
+                position: relative;
+                font-family: Manrope;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+            }
+
+            .tab-button.active::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 3px;
+                background-color: #64108C;
+                left: 0px;
+                bottom: -1px;
+                border-radius: 3px;
+            }
+        }
+
+        .tab-content.ng-hide {
+            display: none !important;
+        }
+
+        .tab-content {
+            border: none !important;
+            padding: 0px !important;
+            flex: 1;
+
+            .tab-content-body {
+                display: flex;
+                flex-direction: column;
+                row-gap: 15px;
+
+                .search_easyforms {
+                    display: flex;
+                    flex-direction: row !important;
+                    justify-content: flex-start !important;
+                    flex-wrap: wrap;
+                    gap: 16px;
+                }
+            }
+        }
+    }
+}
+
+.portalCommonFlexClass {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 16px !important;
+}
+
+.portalCommonUploadCardBlock{
+    display: flex;
+    flex: 1;
+    padding: 16px;
+    flex-direction: row;
+    align-items: center !important;
+    border-radius: 8px;
+    border: 1px solid #E6E6E6;
+    box-shadow: none !important;
+    .portalCommonLeftBlock{
+        gap: 8px !important;
+    }
+    .portalCommonRightBlock{
+        display: flex !important;
+    }
+}
+
+.portalCommonActiveCardBlock {
+    border: 1px solid #227CC7 !important;
+}
+.portalCommonCardBlock:hover{
+    border: 1px solid #227CC7 !important;
+}
+.portalCommonCardBlock {
+    cursor: pointer;
+    display: flex;
+    flex: 1;
+    min-height: auto;
+    flex-direction: row;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.10);
+    min-width: min(100%, 800px) !important;
+    padding-top: 13px;
+    padding-left: 9px;
+    padding-bottom: 12px;
+    padding-right: 19px;
+
+    .portalCommonLeftBlock {
+        display: flex;
+        align-items: center;
+        flex: 1;
+
+        .portalCommonLeftBlock_content {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            font-family: Manrope;
+            align-items: flex-start;
+
+            strong {
+                color: #002265;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+            }
+
+            small {
+                display: inline-flex;
+                padding: 4px;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                color: #A1A1A1;
+                font-family: Manrope;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 100%;
+                /* 14px */
+                border-radius: 4px;
+                background: #F7F7F7;
+            }
+
+            small.active {
+                color: #257CC7 !important;
+                background: #C7DEF1 !important;
+            }
+        }
+    }
+
+    .portalCommonRightBlock {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    
+        .timeStampClass {
+            color: #1E1E1E;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+
+    .portalCommonRightMobileBlock{
+        display: none;
+    }
+}
+
+.portalCommonInputClass {
+    flex: 1;
+    border-radius: 4px;
+    border: 1px solid #E6E6E6;
+    opacity: 0.6;
+    background: #FFF;
+
+    .ri-search-line {
+        padding: 16px;
+    }
+
+    input::placeholder {
+        color: #1E1E1E;
+        font-family: Manrope;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100%;
+        /* 14px */
+    }
+
+    select {
+        padding: 16px;
+    }
+
+    input {
+        padding-left: 0px !important;
+        padding: 13px;
+        border-radius: 4px;
+    }
+}
+
+.portalCommonGoButtonClass {
+    border: 1px solid #64108C;
+    border-radius: 4px;
+    background-color: transparent;
+    padding: 12px 24px;
+    cursor: pointer;
+    color: #64108C;
+    text-align: center;
+    font-family: Manrope;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+@media (max-width:1200px) {
+    .desktop {
+        justify-content: center !important;
+
+        .navLinkMenuClass {
+            display: none !important;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .desktop {
+        padding: 16px 19px !important;
+
+        .navLinksMainClass {
+            gap: 32px;
+            flex-wrap: wrap;
+
+            svg {
+                width: 24px !important;
+                height: 24px !important;
+            }
+
+            .navLinkClass {
+                font-size: 12px !important;
+            }
+        }
+    }
+
+    #container {
+        gap: 28px !important;
+
+        .welcome__row {
+            padding: 16px !important;
+        }
+
+        .portalCommonTabsClass {
+            padding: 0px 16px !important;
+            row-gap: 20px !important;
+
+            .tab-button {
+                display: none !important;
+            }
+
+            .dropdownTabsClass {
+                flex: 1;
+                display: flex !important;
+                border-radius: 8px;
+                background: #FFF;
+                box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.10);
+                position: relative;
+
+                .dropdown-icon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 25px;
+                    height: 25px;
+                    color: var(--color-text-primary);
+                    font-weight: bold;
+                    font-size: 14px;
+                    position: absolute;
+                    right: 10px;
+                }
+
+                .tab-dropdown {
+                    display: none;
+                    flex: 1;
+                }
+
+                .tab-dropdown {
+                    display: block !important;
+                }
+
+                svg {
+                    position: absolute;
+                    right: 15px;
+                    top: 13px;
+                }
+
+                select {
+                    flex: 1;
+                    padding: 10px 10.439px 11px 16px;
+                    border: none;
+                    font-family: Manrope;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                }
+
+                select.active {
+                    color: #64108C;
+                }
+            }
+        }
+
+    }
+
+    .portalCommonInputClass {
+        max-width: none !important;
+    }
+
+    .portalCommonCardBlock {
+        justify-content: flex-end;
+    }
+
+    .portalCommonRightBlock{
+        display: none !important;
+    }
+    .portalCommonRightMobileBlock {
+        display: flex !important;
+        align-items: center;
+        gap: 5px;
+    
+        .timeStampClass {
+            color: #1E1E1E;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+    .portalCommonFlexClass{
+        padding: 0px 16px 0px 16px !important;
+    }
+}
+
+@media (max-width:400px) {
+    .navLinksMainClass {
+        gap: 20px !important;
+    }
+}
