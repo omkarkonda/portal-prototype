@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../base.css">
     <link rel="stylesheet" href="./ViewandUploadDocs.css">
 
-    <title>Forms To Complete</title>
+    <title>View and Upload Documents</title>
 </head>
 
 <body ng-controller="viewAndUploadCtrl">
@@ -154,9 +154,9 @@
                 </a>
             </div>
         </nav>
-        <section class="container" id="container">
+        <section class="container portalCommonCotainer" id="container">
             <div class="welcome__row">
-                <h1 class="welcome">View and Complete Forms</h1>
+                <h1 class="welcome">View and Upload Documents</h1>
                 <a href="../index.html">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_1409_2305)">
@@ -395,7 +395,8 @@
                             </div>
                             <div class="viewandUplaodDocsFlexDirClass">
                                 <small>Select Document(s) From Your Disk...</small>
-                                <button class="portalCommonEmptyBtnClass">Open</button>
+                                <input type="file" id="portalCommonEmptyBtnClass" value="Open">
+                                <label class="portalCommonEmptyBtnClass" for="portalCommonEmptyBtnClass">Open</label>
                             </div>
                             <div class="viewandUplaodDocsFlexDirClass">
                                 <div class="viewandUplaodDocsFlexBetweenClass">
@@ -415,7 +416,7 @@
                             </div>
                             <div class="viewandUplaodDocsFlexDirClass">
                                 <div class="viewandUplaodDocsFlexBetweenClass">
-                                    <small>Select Document Type</small>
+                                    <small>Enter Comments</small>
                                     <small>*required</small>
                                 </div>
                                 <div class="viewAndUploadDocsInputClass">

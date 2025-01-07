@@ -963,7 +963,7 @@ button.tab.completed .edit {
 }
 
 /* Container */
-#container {
+.portalCommonCotainer {
     row-gap: 35px;
     padding: 0px !important;
 
@@ -1092,7 +1092,10 @@ button.tab.completed .edit {
     border: 1px solid #227CC7 !important;
 }
 .portalCommonCardBlock:hover{
-    border: 1px solid #227CC7 !important;
+    outline: 1px solid #227CC7 !important;
+}
+.viewAndUploadingViewClass:hover{
+    outline: none !important;
 }
 .portalCommonCardBlock {
     cursor: pointer;
@@ -1250,7 +1253,7 @@ button.tab.completed .edit {
         }
     }
 
-    #container {
+    .portalCommonCotainer {
         gap: 28px !important;
 
         .welcome__row {
