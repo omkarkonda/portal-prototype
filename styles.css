@@ -977,6 +977,9 @@ button.tab.completed .edit {
         }
     }
 
+    .cards.portalCommonTabsClass{
+        padding-bottom: 32px;
+    }
     .portalCommonTabsClass {
         display: flex;
         flex-direction: column;
