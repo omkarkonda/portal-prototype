@@ -65,6 +65,7 @@ function viewAndUploadCtrl($scope) {
         switch (activeTabValue) {
             case 0:
                 $scope.portalNextAndEditBtnBindShowHide = false;
+                $scope.viewAndUploadingDocsView = true;
                 break;
             case 1:
                 $scope.portalNextAndEditBtnBindShowHide = true;

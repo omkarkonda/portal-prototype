@@ -236,7 +236,7 @@
     gap: 14px !important;
     width: 100%;
     .formsToCompleteCardBlock:hover{
-        border: 1px solid #227CC7;
+        outline: 1px solid #227CC7;
     }
     .formsToCompleteCardBlock {
         cursor: pointer;
