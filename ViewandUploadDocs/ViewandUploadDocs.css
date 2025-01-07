@@ -1,0 +1,91 @@
+.viewAndUploadingViewClass{
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.10);
+    flex-direction: column !important;
+    align-items: flex-start;
+    padding: 16px 16px 40px 16px;
+    row-gap: 25px !important;
+    .viewandUplaodDocsFlexDirClass{
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .viewandUplaodDocsFlexBetweenClass{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 475px;
+        small:nth-child(2){
+            color: #002265;
+            font-family: Manrope;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 100%; /* 14px */
+            text-transform: none;
+            letter-spacing: normal;
+            opacity: unset;
+        }
+    }
+    small{
+        color: #1E1E1E;
+        font-family: Manrope;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%; /* 14px */
+        letter-spacing: 0.7px;
+        text-transform: uppercase;
+        opacity: 0.5;
+    }
+    @media (max-width:578px) {
+        small{
+            color: #1E1E1E;
+            font-family: Manrope;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 100%; /* 12px */
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+        }
+    }
+}
+.viewAndUploadDocsDropDownClass{
+    border-radius: 4px;
+    border: 1px solid #257CC7;
+    background: #FFF;
+    display: flex;
+    align-items: center;
+    max-width: 480px;
+    justify-content: space-between;
+    padding: 15px;
+    flex: 1;
+    width: 100%;
+    select{
+        border: none;
+        outline: none;
+        color: #1E1E1E;
+        font-family: Manrope;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100%; /* 16px */
+    }
+}
+.viewAndUploadDocsInputClass{
+    width: 100%;
+    max-width: 480px;
+    input{
+        border-radius: 4px;
+        border: 1px solid rgba(30, 30, 30, 0.60);
+        opacity: 0.8;
+        padding: 16px;
+        outline: none;
+        width: 100%;
+    }
+}

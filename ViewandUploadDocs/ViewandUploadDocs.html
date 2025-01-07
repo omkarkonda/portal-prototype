@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="tabApp">
+<html lang="en" ng-app="viewAndUpload">
 
 <head>
     <meta charset="UTF-8">
@@ -10,12 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../base.css">
-    <link rel="stylesheet" href="./formsToComplete.css">
+    <link rel="stylesheet" href="./ViewandUploadDocs.css">
 
     <title>Forms To Complete</title>
 </head>
 
-<body ng-controller="TabController">
+<body ng-controller="viewAndUploadCtrl">
     <header class="portalCommonHeaderClass">
         <a href="#0" class="menu --mobile" ng-click="openDialog()">
             <i class="ri-menu-line"></i>
@@ -29,7 +29,7 @@
                 </svg>
                 Log Out
         </button> -->
-        <button class="switch" style="margin: 0px !important;">
+        <button class="switch">
             <div class="current__user">
                 <!-- <span>TM</span> -->
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -59,7 +59,8 @@
         </button>
         
     </header>
-    <main id="formsToCompleteId">
+
+    <main id="portalCommonMainClass">
         <nav class="desktop" style="justify-content: space-between;">
             <div class="navLinksMainClass">
                 <a href="#0" class="navLinkMenuClass" ng-click="openDialog()">
@@ -71,7 +72,7 @@
                         
                         
                 </a>
-                <a href="./formsToComplete.html" class="">
+                <a href="../FormsToComplete/formsToComplete.html" class="">
                     <svg width="40" height="40" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_1085_924)">
                         <path d="M8.5 5H6.5C5.96957 5 5.46086 5.21071 5.08579 5.58579C4.71071 5.96086 4.5 6.46957 4.5 7V19C4.5 19.5304 4.71071 20.0391 5.08579 20.4142C5.46086 20.7893 5.96957 21 6.5 21H12.197" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -152,7 +153,6 @@
                     </div>
                 </a>
             </div>
-
         </nav>
         <section class="container" id="container">
             <div class="welcome__row">
@@ -173,7 +173,7 @@
                 </a>
             </div>
 
-            <div class="tabs formsToCompleteTabs">
+            <div class="tabs portalCommonTabsClass">
                 <div class="tab-header">
                     <button class="tab-button" ng-repeat="tab in tabsList" ng-class="{ active: activeTab == $index}"
                         ng-click="setActiveTab($index, false)">
@@ -193,20 +193,19 @@
                         </select>
                     </div>
                 </div>
-                
                 <div class="tab-content" ng-show="activeTab == 0">
                     <div class="tab-content-body">
-                        <div class="provider search_easyforms">
-                            <div class="search inputFieldsClass">
+                        <div class="provider portalCommonFlexClass">
+                            <div class="search portalCommonInputClass">
                                 <i class="ri-search-line"></i>
                                 <input type="text" placeholder="Search Easy Form Name" id="" name="">
                             </div>
-                            <button class="goBtn" id="" name="" ng-click="searchEasyFormName()"
+                            <button class="portalCommonGoButtonClass" id="" name="" ng-click="searchEasyFormName()"
                                 ng-enter="searchEasyFormName()">Go</button>
                         </div>
                         <div class="cards">
-                            <div class="formsToCompleteCardBlock" ng-repeat="item in listData" ng-class="item.status == 'DRAFT' ? 'formsToCompleteCardActiveBlock' : ''">
-                                <div class="card_left_block">
+                            <div class="portalCommonCardBlock" ng-repeat="item in listPdfData" ng-class="item.status == 'DRAFT' ? 'portalCommonActiveCardBlock' : ''">
+                                <div class="portalCommonLeftBlock">
                                     <svg width="60" height="60" viewBox="0 0 60 60" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_1134_1516)">
@@ -225,12 +224,32 @@
                                             </clipPath>
                                         </defs>
                                     </svg>
-                                    <div class="right_content">
-                                        <strong>{{item.id}}</strong>
-                                        <small ng-class="item.status == 'DRAFT' ? 'active' : ''">{{item.status}}</small>
+                                    <div class="portalCommonLeftBlock_content">
+                                        <strong>{{item.pdf}}</strong>
+                                        <!-- <small ng-class="item.status == 'DRAFT' ? 'active' : ''">{{item.status}}</small> -->
+                                        <div class="portalCommonRightMobileBlock">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_1134_1524)">
+                                                    <path
+                                                        d="M2 8C2 8.78793 2.15519 9.56815 2.45672 10.2961C2.75825 11.0241 3.20021 11.6855 3.75736 12.2426C4.31451 12.7998 4.97595 13.2417 5.7039 13.5433C6.43185 13.8448 7.21207 14 8 14C8.78793 14 9.56815 13.8448 10.2961 13.5433C11.0241 13.2417 11.6855 12.7998 12.2426 12.2426C12.7998 11.6855 13.2417 11.0241 13.5433 10.2961C13.8448 9.56815 14 8.78793 14 8C14 7.21207 13.8448 6.43185 13.5433 5.7039C13.2417 4.97595 12.7998 4.31451 12.2426 3.75736C11.6855 3.20021 11.0241 2.75825 10.2961 2.45672C9.56815 2.15519 8.78793 2 8 2C7.21207 2 6.43185 2.15519 5.7039 2.45672C4.97595 2.75825 4.31451 3.20021 3.75736 3.75736C3.20021 4.31451 2.75825 4.97595 2.45672 5.7039C2.15519 6.43185 2 7.21207 2 8Z"
+                                                        stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M8 8H10.3333" stroke="#1E1E1E" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path d="M8 4.66669V8.00002" stroke="#1E1E1E" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1134_1524">
+                                                        <rect width="16" height="16" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span class="timeStampClass">{{item.timestamp}}</span>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="card_right_block">
+                                <div class="portalCommonRightBlock" ng-show="item.id == 1000060">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_1134_1524)">
@@ -255,18 +274,40 @@
                     </div>
                 </div>
                 <div class="tab-content" ng-show="activeTab == 1">
-                    <div class="tab-content-body">
-                        <div class="provider search_easyforms">
-                            <div class="search inputFieldsClass">
+                    <div class="tab-content-body" ng-show="viewAndUploadingDocsView">
+                        <div class="portalCommonCardBlock portalCommonUploadCardBlock">
+                            <div class="portalCommonLeftBlock">
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1187_3610)">
+                                    <path d="M4.66663 19.8333V22.1666C4.66663 22.7855 4.91246 23.379 5.35004 23.8166C5.78763 24.2541 6.38112 24.5 6.99996 24.5H21C21.6188 24.5 22.2123 24.2541 22.6499 23.8166C23.0875 23.379 23.3333 22.7855 23.3333 22.1666V19.8333" stroke="#002265" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8.16663 10.5L14 4.66669L19.8333 10.5" stroke="#002265" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M14 4.66669V18.6667" stroke="#002265" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_1187_3610">
+                                    <rect width="28" height="28" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                </svg>                                    
+                                <div class="portalCommonLeftBlock_content">
+                                    <strong>Upload document(s)</strong>
+                                </div>
+                            </div>
+                            <div class="portalCommonRightBlock">
+                                <button class="portalCommonEmptyBtnClass" ng-click="viewAndUploadDocsPageClick()">Upload</button>
+                            </div>
+                        </div>
+                        <div class="provider portalCommonFlexClass">
+                            <div class="search portalCommonInputClass">
                                 <i class="ri-search-line"></i>
                                 <input type="text" placeholder="Search Easy Form Name" id="" name="">
                             </div>
-                            <button class="goBtn" id="" name="" ng-click="searchEasyFormName()"
+                            <button class="portalCommonGoButtonClass" id="" name="" ng-click="searchEasyFormName()"
                                 ng-enter="searchEasyFormName()">Go</button>
                         </div>
                         <div class="cards">
-                            <div class="formsToCompleteCardBlock" ng-repeat="item in listData" ng-class="item.status == 'DRAFT' ? 'formsToCompleteCardActiveBlock' : ''" ng-click="searchSurveyTherapyInfoEasyFormName()">
-                                <div class="card_left_block">
+                            <div class="portalCommonCardBlock" ng-repeat="item in listPdfData" ng-class="item.status == 'DRAFT' ? 'portalCommonActiveCardBlock' : ''">
+                                <div class="portalCommonLeftBlock">
                                     <svg width="60" height="60" viewBox="0 0 60 60" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_1134_1516)">
@@ -285,82 +326,32 @@
                                             </clipPath>
                                         </defs>
                                     </svg>
-                                    <div class="right_content">
-                                        <strong>{{item.id}}</strong>
-                                        <small ng-class="item.status == 'DRAFT' ? 'active' : ''">{{item.status}}</small>
-                                    </div>
-                                </div>
-                                <div class="card_right_block" ng-show="item.id == 1000060">
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_1134_1524)">
-                                            <path
-                                                d="M2 8C2 8.78793 2.15519 9.56815 2.45672 10.2961C2.75825 11.0241 3.20021 11.6855 3.75736 12.2426C4.31451 12.7998 4.97595 13.2417 5.7039 13.5433C6.43185 13.8448 7.21207 14 8 14C8.78793 14 9.56815 13.8448 10.2961 13.5433C11.0241 13.2417 11.6855 12.7998 12.2426 12.2426C12.7998 11.6855 13.2417 11.0241 13.5433 10.2961C13.8448 9.56815 14 8.78793 14 8C14 7.21207 13.8448 6.43185 13.5433 5.7039C13.2417 4.97595 12.7998 4.31451 12.2426 3.75736C11.6855 3.20021 11.0241 2.75825 10.2961 2.45672C9.56815 2.15519 8.78793 2 8 2C7.21207 2 6.43185 2.15519 5.7039 2.45672C4.97595 2.75825 4.31451 3.20021 3.75736 3.75736C3.20021 4.31451 2.75825 4.97595 2.45672 5.7039C2.15519 6.43185 2 7.21207 2 8Z"
-                                                stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M8 8H10.3333" stroke="#1E1E1E" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path d="M8 4.66669V8.00002" stroke="#1E1E1E" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_1134_1524">
-                                                <rect width="16" height="16" fill="white" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                    <span class="timeStampClass">{{item.timestamp}}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-content" ng-show="activeTab == 2">
-                    <div class="tab-content-body">
-                        <div class="provider search_easyforms">
-                            <div class="dropdownClass search inputFieldsClass">
-                                <!-- <span class="dropdown-icon">&#9660</span> -->
-                                <svg class="dropdown-icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M8.78061 11.25L5.12207 7.5H12.4391L8.78061 11.25Z" fill="#1D1B20"/>
-                                </svg>
-                                    
-                                <select ng-model="selectedOption" ng-options="option for option in options"
-                                    class="dropdown-select formToCosignDropdownTextClass">
-                                </select>
-                            </div>
-                            <div class="search inputFieldsClass">
-                                <i class="ri-search-line"></i>
-                                <input type="text" placeholder="Search Easy Form Name" id="" name="">
-                            </div>
-                            <button class="goBtn" id="" name="" ng-click="searchEasyFormName()"
-                                ng-enter="searchEasyFormName()">Go</button>
-                        </div>
-                        <div class="cards">
-                            <div class="formsToCompleteCardBlock" ng-repeat="item in listPdfData" ng-class="item.status == 'DRAFT' ? 'formsToCompleteCardActiveBlock' : ''">
-                                <div class="card_left_block">
-                                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_1134_1516)">
-                                            <path
-                                                d="M35 7.5V17.5C35 18.163 35.2634 18.7989 35.7322 19.2678C36.2011 19.7366 36.837 20 37.5 20H47.5"
-                                                stroke="#257CC7" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path
-                                                d="M42.5 52.5H17.5C16.1739 52.5 14.9021 51.9732 13.9645 51.0355C13.0268 50.0979 12.5 48.8261 12.5 47.5V12.5C12.5 11.1739 13.0268 9.90215 13.9645 8.96447C14.9021 8.02678 16.1739 7.5 17.5 7.5H35L47.5 20V47.5C47.5 48.8261 46.9732 50.0979 46.0355 51.0355C45.0979 51.9732 43.8261 52.5 42.5 52.5Z"
-                                                stroke="#257CC7" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_1134_1516">
-                                                <rect width="60" height="60" fill="white" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                    <div class="right_content">
+                                    <div class="portalCommonLeftBlock_content">
                                         <strong>{{item.pdf}}</strong>
-                                        <!-- <small>{{item.status}}</small> -->
+                                        <!-- <small ng-class="item.status == 'DRAFT' ? 'active' : ''">{{item.status}}</small> -->
+                                        <div class="portalCommonRightMobileBlock">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_1134_1524)">
+                                                    <path
+                                                        d="M2 8C2 8.78793 2.15519 9.56815 2.45672 10.2961C2.75825 11.0241 3.20021 11.6855 3.75736 12.2426C4.31451 12.7998 4.97595 13.2417 5.7039 13.5433C6.43185 13.8448 7.21207 14 8 14C8.78793 14 9.56815 13.8448 10.2961 13.5433C11.0241 13.2417 11.6855 12.7998 12.2426 12.2426C12.7998 11.6855 13.2417 11.0241 13.5433 10.2961C13.8448 9.56815 14 8.78793 14 8C14 7.21207 13.8448 6.43185 13.5433 5.7039C13.2417 4.97595 12.7998 4.31451 12.2426 3.75736C11.6855 3.20021 11.0241 2.75825 10.2961 2.45672C9.56815 2.15519 8.78793 2 8 2C7.21207 2 6.43185 2.15519 5.7039 2.45672C4.97595 2.75825 4.31451 3.20021 3.75736 3.75736C3.20021 4.31451 2.75825 4.97595 2.45672 5.7039C2.15519 6.43185 2 7.21207 2 8Z"
+                                                        stroke="#1E1E1E" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M8 8H10.3333" stroke="#1E1E1E" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path d="M8 4.66669V8.00002" stroke="#1E1E1E" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1134_1524">
+                                                        <rect width="16" height="16" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span class="timeStampClass">{{item.timestamp}}</span>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="card_right_block">
+                                <div class="portalCommonRightBlock">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_1134_1524)">
@@ -383,11 +374,67 @@
                             </div>
                         </div>
                     </div>
+                    <div class="tab-content-body" ng-hide="viewAndUploadingDocsView">
+                        <div class="portalCommonCardBlock viewAndUploadingViewClass">
+                            <div class="portalCommonLeftBlock">
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1187_3610)">
+                                    <path d="M4.66663 19.8333V22.1666C4.66663 22.7855 4.91246 23.379 5.35004 23.8166C5.78763 24.2541 6.38112 24.5 6.99996 24.5H21C21.6188 24.5 22.2123 24.2541 22.6499 23.8166C23.0875 23.379 23.3333 22.7855 23.3333 22.1666V19.8333" stroke="#002265" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8.16663 10.5L14 4.66669L19.8333 10.5" stroke="#002265" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M14 4.66669V18.6667" stroke="#002265" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_1187_3610">
+                                    <rect width="28" height="28" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                </svg>                                    
+                                <div class="portalCommonLeftBlock_content">
+                                    <strong>Upload document(s)</strong>
+                                </div>
+                            </div>
+                            <div class="viewandUplaodDocsFlexDirClass">
+                                <small>Select Document(s) From Your Disk...</small>
+                                <button class="portalCommonEmptyBtnClass">Open</button>
+                            </div>
+                            <div class="viewandUplaodDocsFlexDirClass">
+                                <div class="viewandUplaodDocsFlexBetweenClass">
+                                    <small>Select Document Type</small>
+                                    <small>*required</small>
+                                </div>
+                                <div class="viewAndUploadDocsDropDownClass">
+                                    <!-- <span class="dropdown-icon">&#9660</span> -->
+                                        
+                                    <select ng-model="selectedOption" ng-options="option for option in options"
+                                        class="dropdown-select formToCosignDropdownTextClass">
+                                    </select>
+                                    <svg class="dropdown-icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.78061 11.25L5.12207 7.5H12.4391L8.78061 11.25Z" fill="#1D1B20"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="viewandUplaodDocsFlexDirClass">
+                                <div class="viewandUplaodDocsFlexBetweenClass">
+                                    <small>Select Document Type</small>
+                                    <small>*required</small>
+                                </div>
+                                <div class="viewAndUploadDocsInputClass">
+                                    <input type="text" id="" name="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
-            <div class="portalCommonButtonsBlock">
-                <button class="portalCommonEmptyBtnClass" ng-bind="portalBackAndCancelBtnBind" ></button>
-                <button class="portalCommonFillBtnClass" ng-bind="portalNextAndEditBtnBind" ng-show="portalNextAndEditBtnBindShowHide" ng-click="portalCommonNextAndEditClick()"></button>
+            <div class="portalCommonButtonsBlock" ng-show="viewAndUploadingDocsView">
+                <button class="portalCommonEmptyBlackBtnClass" ng-show="portalNextAndEditBtnBindShowHide" ng-click="viewAndUploadDeleteDocClick()">Delete</button>
+                <button class="portalCommonFillBtnClass" ng-bind="portalNextAndEditBtnBind"></button>
+                <button class="portalCommonEmptyBtnClass" ng-bind="portalBackAndCancelBtnBind"></button>
+            </div>
+            <div class="portalCommonButtonsBlock" ng-hide="viewAndUploadingDocsView">
+                <button class="portalCommonEmptyBtnClass" ng-click="viewAndUploadDocsPageClick()">Back</button>
+                <button class="portalCommonFillBtnClass">Upload</button>
             </div>
 
 
@@ -415,7 +462,7 @@
                     <span class="icon"><i class="ri-shield-line"></i></span>
                     <span class="text">Insurance Policies</span>
                 </a>
-                <a href="./formsToComplete.html">
+                <a href="../FormsToComplete/formsToComplete.html">
                     <span class="icon"><i class="ri-survey-line"></i></span>
                     <span class="text">Forms to Complete</span>
                 </a>
@@ -451,7 +498,7 @@
                     <span class="icon"><i class="ri-bill-line"></i></span>
                     <span class="text">Ledger</span>
                 </a>
-                <a href="../ViewandUploadDocs/ViewandUploadDocs.html">
+                <a href="#">
                     <span class="icon"><i class="ri-upload-cloud-line"></i></span>
                     <span class="text">Upload Documents</span>
                 </a>
@@ -466,10 +513,10 @@
             </div>
         </div>
 
-        <div class="therapyInfoDialogDefaultClass" ng-class="{'therapyInfoDialogClass': isTherapyInfoDialogOpen}">
+        <div class="deleteDocDefaultClass" ng-class="{'deleteDocClass': isDeleteDocDialogOpen}">
             <div class="declinedToReasonHeaderClass">
-                <label class="declinedToReasonHeaderTitleClass">Select Program / Therapy Information </label>
-                <div ng-click="portalCommonNextAndEditClick()">
+                <label class="declinedToReasonHeaderTitleClass">Delete document</label>
+                <div ng-click="openDeclinedReasonDialog()">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_1409_3453)">
                         <path d="M18 6L6 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -484,41 +531,17 @@
                 </div>
             </div>
             <div class="declinedToReasonBodyClass">
-                <div class="provider search_easyforms">
-                    <div class="dropdownClass search inputFieldsClass">
-                        <svg class="dropdown-icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8.78061 11.25L5.12207 7.5H12.4391L8.78061 11.25Z" fill="#1D1B20"/>
-                        </svg>
-                            
-                        <select ng-model="selectedOption" ng-options="option for option in options"
-                            class="dropdown-select">
-                        </select>
-                    </div>
-                    <div class="search inputFieldsClass">
-                        <i class="ri-search-line"></i>
-                        <input type="text" placeholder="Search Easy Form Name" id="" name="">
-                    </div>
-                    <div class="search inputFieldsClass">
-                        <i class="ri-search-line"></i>
-                        <input type="text" placeholder="Search Easy Form Name" id="" name="">
-                    </div>
-                    <button class="portalCommonPrintBtnClass" id="" name="" ng-click="searchSurveyTherapyInfoEasyFormName()"
-                        ng-enter="searchSurveyTherapyInfoEasyFormName()">Go</button>
-                </div>
-                <div class="easyFormsViewClass">
-                    <div class="easyFormsViewTableClass">
-                        <h2>Data will show here</h2>
-                    </div>
-                </div>
+                <label class="declinedToReasonBodyTitleClass">Would you like to delete this document?</label>
             </div>
             <div class="declinedToReasonButtonBlockClass">
-                <button class="portalCommonPrintBtnClass" ng-click="portalCommonNextAndEditClick()">Cancel</button>
+                <button class="portalCommonFillBtnClass">Yes</button>
+                <button class="portalCommonPrintBtnClass" ng-click="viewAndUploadDeleteDocClick()">Cancel</button>
             </div>
         </div>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js" type="text/javascript"></script>
     <script src="../app.js"></script>
-    <script src="./formsToComplete.js" type="text/javascript"></script>
+    <script src="./ViewandUploadDocs.js" type="text/javascript"></script>
 </body>
 
 </html>
