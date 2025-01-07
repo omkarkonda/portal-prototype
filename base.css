@@ -722,6 +722,9 @@ main {
     line-height: normal;
     cursor: pointer;
 }
+#portalCommonEmptyBtnClass{
+    display: none;
+}
 .portalCommonEmptyBtnClass{
     border-radius: 8px;
     border: 1px solid #64108C;
