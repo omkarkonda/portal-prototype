@@ -1068,6 +1068,7 @@ button.tab.completed .edit {
     display: flex !important;
     flex-direction: row !important;
     align-items: center;
+    flex-wrap: wrap;
     gap: 16px !important;
 }
 
@@ -1125,6 +1126,7 @@ button.tab.completed .edit {
             gap: 5px;
             font-family: Manrope;
             align-items: flex-start;
+            flex: 1;
 
             strong {
                 color: #002265;
@@ -1226,6 +1228,9 @@ button.tab.completed .edit {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 @media (max-width:1200px) {

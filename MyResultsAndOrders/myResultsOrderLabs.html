@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="tabApp">
+<html lang="en" ng-app="myResultsAndOrder">
 
 <head>
     <meta charset="UTF-8">
@@ -10,13 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../base.css">
-    <link rel="stylesheet" href="./formsToComplete.css">
+    <link rel="stylesheet" href="./MyResultsAndOrder.css">
 
-    <title>Forms To Complete</title>
+    <title>My Results and Orders</title>
 </head>
 
-<body ng-controller="TabController">
-    <header class="headerClass">
+<body ng-controller="myResultsAndOrderCtrl">
+    <header class="portalCommonHeaderClass">
         <a href="#0" class="menu --mobile" ng-click="openDialog()">
             <i class="ri-menu-line"></i>
         </a>
@@ -29,7 +29,7 @@
                 </svg>
                 Log Out
         </button> -->
-        <button class="switch" style="margin: 0px !important;">
+        <button class="switch">
             <div class="current__user">
                 <!-- <span>TM</span> -->
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -59,10 +59,10 @@
         </button>
         
     </header>
-    <main id="formsToCompleteId">
+
+    <main id="portalCommonMainClass">
         <nav class="desktop" style="justify-content: space-between;">
             <div class="navLinksMainClass">
-
                 <a href="#0" class="navLinkMenuClass" ng-click="openDialog()">
                     <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="25" cy="25" r="25" fill="#257CC7"/>
@@ -72,7 +72,7 @@
                         
                         
                 </a>
-                <a href="./formsToComplete.html" class="">
+                <a href="../FormsToComplete/formsToComplete.html" class="">
                     <svg width="40" height="40" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_1085_924)">
                         <path d="M8.5 5H6.5C5.96957 5 5.46086 5.21071 5.08579 5.58579C4.71071 5.96086 4.5 6.46957 4.5 7V19C4.5 19.5304 4.71071 20.0391 5.08579 20.4142C5.46086 20.7893 5.96957 21 6.5 21H12.197" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -96,7 +96,8 @@
                         <span>Complete</span>
                     </div>
                 </a>
-                <a href="#" class=""><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <a href="#" class="">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_1382_731)">
                     <path d="M5 20C5 21.9698 5.38799 23.9204 6.14181 25.7403C6.89563 27.5601 8.00052 29.2137 9.3934 30.6066C10.7863 31.9995 12.4399 33.1044 14.2597 33.8582C16.0796 34.612 18.0302 35 20 35C21.9698 35 23.9204 34.612 25.7403 33.8582C27.5601 33.1044 29.2137 31.9995 30.6066 30.6066C31.9995 29.2137 33.1044 27.5601 33.8582 25.7403C34.612 23.9204 35 21.9698 35 20C35 18.0302 34.612 16.0796 33.8582 14.2597C33.1044 12.4399 31.9995 10.7863 30.6066 9.3934C29.2137 8.00052 27.5601 6.89563 25.7403 6.14181C23.9204 5.38799 21.9698 5 20 5C18.0302 5 16.0796 5.38799 14.2597 6.14181C12.4399 6.89563 10.7863 8.00052 9.3934 9.3934C8.00052 10.7863 6.89563 12.4399 6.14181 14.2597C5.38799 16.0796 5 18.0302 5 20Z" stroke="#257CC7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M20 20H25.8333" stroke="#257CC7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -114,7 +115,8 @@
                         <span>Screening Dues</span>
                     </div>
                 </a>
-                <a href="#" class=""><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <a href="#" class="">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_1382_734)">
                     <path d="M15 5H25" stroke="#257CC7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M16.6667 15H23.3334" stroke="#257CC7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -131,7 +133,8 @@
                         <span>Results</span>
                     </div>
                 </a>
-                <a href="#" class=""><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <a href="#" class="">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_1382_737)">
                     <path d="M15 8.33333H11.6667C10.7827 8.33333 9.93481 8.68452 9.30968 9.30964C8.68456 9.93476 8.33337 10.7826 8.33337 11.6667V31.6667C8.33337 32.5507 8.68456 33.3986 9.30968 34.0237C9.93481 34.6488 10.7827 35 11.6667 35H28.3334C29.2174 35 30.0653 34.6488 30.6904 34.0237C31.3155 33.3986 31.6667 32.5507 31.6667 31.6667V11.6667C31.6667 10.7826 31.3155 9.93476 30.6904 9.30964C30.0653 8.68452 29.2174 8.33333 28.3334 8.33333H25" stroke="#257CC7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M15 8.33333C15 7.44928 15.3512 6.60143 15.9763 5.97631C16.6014 5.35119 17.4493 5 18.3333 5H21.6667C22.5507 5 23.3986 5.35119 24.0237 5.97631C24.6488 6.60143 25 7.44928 25 8.33333C25 9.21739 24.6488 10.0652 24.0237 10.6904C23.3986 11.3155 22.5507 11.6667 21.6667 11.6667H18.3333C17.4493 11.6667 16.6014 11.3155 15.9763 10.6904C15.3512 10.0652 15 9.21739 15 8.33333Z" stroke="#257CC7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -150,11 +153,10 @@
                     </div>
                 </a>
             </div>
-
         </nav>
-        <section class="container" id="container">
+        <section class="container portalCommonCotainer" id="container">
             <div class="welcome__row">
-                <h1 class="welcome">View and Complete Forms</h1>
+                <h1 class="welcome">My Results and Orders</h1>
                 <a href="../index.html">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_1409_2305)">
@@ -170,16 +172,37 @@
                     </svg>
                 </a>
             </div>
-            <div class="easyFormsViewClass">
-                <div class="easyFormsViewTableClass">
-                    <h2>Data will show here</h2>
+
+            <div class="tabs portalCommonTabsClass">
+
+                <div class="myResultsAndImagingOrderDetailsCard">
+                    <div class="myResultsAndOrderDetailsCardDetails">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1244_4529)">
+                            <path d="M10.5 3.5H17.5" stroke="#002265" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M11.6667 10.5H16.3334" stroke="#002265" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M11.6666 3.5V10.5L6.99992 23.3333C6.94363 23.4466 6.9144 23.5713 6.91455 23.6978C6.9147 23.8243 6.94421 23.949 7.00077 24.0621C7.05732 24.1752 7.13937 24.2736 7.24045 24.3496C7.34153 24.4256 7.45888 24.4771 7.58325 24.5H20.4166C20.541 24.4771 20.6583 24.4256 20.7594 24.3496C20.8605 24.2736 20.9425 24.1752 20.9991 24.0621C21.0556 23.949 21.0851 23.8243 21.0853 23.6978C21.0854 23.5713 21.0562 23.4466 20.9999 23.3333L16.3333 10.5V3.5" stroke="#002265" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_1244_4529">
+                            <rect width="28" height="28" fill="white"/>
+                            </clipPath>
+                            </defs>
+                            </svg>
+                            
+                            
+                        <div class="portalCommonLeftBlock_content">
+                            <strong>Lab Orders - 10/14/2024</strong>
+                        </div>
+                    </div>
+
+                    <div class="myResultsAndOrderEasyFormsClass">
+                        <label>The data will be displayed here.</label>
+                    </div>
                 </div>
             </div>
             <div class="portalCommonButtonsBlock">
-                <button class="portalCommonFillBtnClass">Electronically Signed by Client / Authenticated by Email Address</button>
-                <button class="portalCommonPrintBtnClass" ng-click="openDeclinedReasonDialog()">Decline Signature</button>
-                <button class="portalCommonEmptyBtnClass" ng-click="portalCommonBackClick()">Back</button>
-                <button class="portalCommonEmptyBtnClass" ng-click="portalCommonCancelClick()">Cancel</button>
+                <button class="portalCommonEmptyBtnClass" ng-click="portalCommonBackClick('isFromOrder')">Back</button>
             </div>
 
 
@@ -207,11 +230,11 @@
                     <span class="icon"><i class="ri-shield-line"></i></span>
                     <span class="text">Insurance Policies</span>
                 </a>
-                <a href="../MyResultsAndOrders/MyResultsAndOrder.html">
+                <a href="./MyResultsAndOrder.html">
                     <span class="icon"><i class="ri-survey-line"></i></span>
                     <span class="text">My Results and Orders</span>
                 </a>
-                <a href="./formsToComplete.html">
+                <a href="../FormsToComplete/formsToComplete.html">
                     <span class="icon"><i class="ri-survey-line"></i></span>
                     <span class="text">Forms to Complete</span>
                 </a>
@@ -247,7 +270,7 @@
                     <span class="icon"><i class="ri-bill-line"></i></span>
                     <span class="text">Ledger</span>
                 </a>
-                <a href="../ViewandUploadDocs/ViewandUploadDocs.html">
+                <a href="#">
                     <span class="icon"><i class="ri-upload-cloud-line"></i></span>
                     <span class="text">Upload Documents</span>
                 </a>
@@ -261,43 +284,10 @@
                 </a>
             </div>
         </div>
-
     </main>
-    
-    <div class="declinedToReasonDefaultClass" ng-class="{'declinedToReasonClass': isDeclinedReasonDialogOpen}">
-        <div class="declinedToReasonHeaderClass">
-            <label class="declinedToReasonHeaderTitleClass">Declined Reason</label>
-            <div ng-click="openDeclinedReasonDialog()">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_1409_3453)">
-                    <path d="M18 6L6 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </g>
-                    <defs>
-                    <clipPath id="clip0_1409_3453">
-                    <rect width="24" height="24" fill="white"/>
-                    </clipPath>
-                    </defs>
-                </svg>
-            </div>
-        </div>
-        <div class="declinedToReasonBodyClass">
-            <div class="declinedToReasonBodyMainClass">
-                <label class="declinedToReasonBodyTitleClass">declined reason</label>
-                <label class="declinedToReasonBodySubTitleClass">*required</label>
-            </div>
-            <div class="declinedToReasonInputClass">
-                <input type="text" class="form-control">
-            </div>
-        </div>
-        <div class="declinedToReasonButtonBlockClass">
-            <button class="portalCommonFillBtnClass">Save</button>
-            <button class="portalCommonPrintBtnClass" ng-click="openDeclinedReasonDialog()">Cancel</button>
-        </div>
-    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js" type="text/javascript"></script>
     <script src="../app.js"></script>
-    <script src="./formsToComplete.js" type="text/javascript"></script>
+    <script src="./MyResultsAndOrder.js" type="text/javascript"></script>
 </body>
 
 </html>
