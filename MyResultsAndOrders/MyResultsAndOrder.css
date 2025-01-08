@@ -1,0 +1,253 @@
+.viewAndUploadingViewClass{
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.10);
+    flex-direction: column !important;
+    align-items: flex-start;
+    padding: 16px 16px 40px 16px;
+    row-gap: 25px !important;
+    .viewandUplaodDocsFlexDirClass{
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .viewandUplaodDocsFlexBetweenClass{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 475px;
+        small:nth-child(2){
+            color: #002265;
+            font-family: Manrope;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 100%; /* 14px */
+            text-transform: none;
+            letter-spacing: normal;
+            opacity: unset;
+        }
+    }
+    small{
+        color: #1E1E1E;
+        font-family: Manrope;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%; /* 14px */
+        letter-spacing: 0.7px;
+        text-transform: uppercase;
+        opacity: 0.5;
+    }
+    @media (max-width:578px) {
+        small{
+            color: #1E1E1E;
+            font-family: Manrope;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 100%; /* 12px */
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+        }
+    }
+}
+.portalCommonFlexClass:has(.myResultsAndOrdersDropDownClass){
+    justify-content: space-between !important;
+    .portalCommonGoButtonClass{
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    @media (max-width: 600px) {
+        .portalCommonGoButtonClass{
+            justify-content: center;
+            width: 100%;
+        }
+    }
+}
+.myResultsAndOrdersDropDownClass{
+    flex: 1;
+    border-radius: 4px;
+    border: 1px solid #257CC7;
+    background: #FFF;
+    display: flex;
+    align-items: center;
+    max-width: 480px;
+    justify-content: space-between;
+    position: relative;
+    min-width: 160px;
+    select{
+        width: 100%;
+        border: none;
+        outline: none;
+        color: #1E1E1E;
+        font-family: Manrope;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100%; /* 16px */
+        padding: 15px;
+        border-radius: 4px;
+    }
+    .dropdown-icon{
+        position: absolute;
+        right: 5px;
+    }
+}
+.viewAndUploadDocsInputClass{
+    width: 100%;
+    max-width: 480px;
+    input{
+        border-radius: 4px;
+        border: 1px solid rgba(30, 30, 30, 0.60);
+        opacity: 0.8;
+        padding: 16px;
+        outline: none;
+        width: 100%;
+    }
+}
+.myResultsAndOrdersLeftBlock{
+    gap: 24px !important;
+    padding-left: 21px !important;
+}
+.myResultsAndOrderDateBtnClass{
+    display: flex;
+    justify-content: flex-end !important;
+    @media (max-width:600px) {
+        .portalCommonGoButtonClass{
+            justify-content: center;
+            width: 100%;
+        }
+        
+    }
+}
+
+.myResultsAndOrderStrongClass{
+    color: #1E1E1E;
+    font-family: Manrope;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.myResultsAndOrderCardClass{
+    background: rgba(223, 223, 223, 0.25);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    row-gap: 20px;
+}
+
+.myResultsAndOrderDetailsCard{
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}
+.portalCommonCardBlock{
+    display: inline-flex;
+    padding: 27px 16px 26px 16px;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid #E6E6E6;
+    background: #FFF;
+}
+.myResultsAndOrderDetailsCardClass{
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border-radius: 8px;
+    row-gap: 22px;
+    background: #FFF;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.10);
+}
+.myResultsAndOrderCardClass{
+    padding: 16px;
+    max-width: 481px;
+}
+.myResultsAndOrderTextClass{
+    display: flex;
+    align-items: center;
+    column-gap: 86px;
+    row-gap: 10px;
+}
+.myResultsAndOrderTextClass span{
+    color: #1E1E1E;
+    font-family: Manrope;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px; /* 228.571% */
+}
+.myResultsAndOrderTextClass span:nth-child(1){
+    opacity: 0.5;
+}
+.myResultsAndOrderDetailsCardDetails{
+    display: inline-flex;
+    padding: 27px 16px 26px 16px;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid #E6E6E6;
+    background: #FFF;
+    gap: 8px;
+}
+
+.myResultsAndImagingOrderDetailsCard{
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+}
+
+.myResultsAndImagingOrderDetailsContentClass{
+    display: flex;
+    flex-direction: column;
+    row-gap: 23px;
+}
+.myResultsAndImagingOrderDetailsContentClass label{
+    color: #1E1E1E;
+    font-family: Manrope;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.myResultsAndImagingOrderDetailsCardClass{
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+.myResultsAndImagingOrderDetailsCardClass div{
+    display: flex;
+    padding: 13px 9px 13px 9px;
+    align-items: center;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.10);
+}
+.myResultsAndImagingOrderDetailsCardClass div span{
+    color: #002265;
+    font-family: Manrope;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.myResultsAndOrderEasyFormsClass{
+    color: gray;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    justify-content: center;
+    min-height: 400px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+}

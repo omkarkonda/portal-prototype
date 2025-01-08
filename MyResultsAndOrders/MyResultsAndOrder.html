@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myResultsAndOrder">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../base.css">
+    <link rel="stylesheet" href="./MyResultsAndOrder.css">
+
+    <title>My Results and Orders</title>
+</head>
+
+<body ng-controller="myResultsAndOrderCtrl">
+    <header class="portalCommonHeaderClass">
+        <a href="#0" class="menu --mobile" ng-click="openDialog()">
+            <i class="ri-menu-line"></i>
+        </a>
+
+        <a href="../index.html"><img src="../images/ClientLogo.png" class="logo" alt=""></a>
+
+        <!-- <button class="logoutBtnClass">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H9M16 17L21 12M21 12L16 7M21 12H9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Log Out
+        </button> -->
+        <button class="switch">
+            <div class="current__user">
+                <!-- <span>TM</span> -->
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="20" fill="#257CC7"/>
+                    <path d="M12.993 25.5V16.799H9.64V15.42H17.809V16.799H14.456V25.5H12.993ZM18.9292 25.5V15.42H20.2522L23.9062 23.001L27.5392 15.42H28.8762V25.493H27.4902V18.598L24.2352 25.5H23.5702L20.3082 18.598V25.5H18.9292Z" fill="white"/>
+                </svg>
+
+                <div class="profileSwitchButton">
+                    <h5>Alexander</h5>
+                    <div style="display: flex;align-items: center;gap: 4px;">
+                        <h6>Switch</h6>
+                        <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 11.75L5.25 8H12.75L9 11.75Z" fill="#1D1B20"/>
+                        </svg>                                    
+                    </div>
+                </div>
+            </div>
+            <div id="users">
+                <a href="#"><i class="ri-user-line"></i> Matthew Wishmonger</a>
+                <a href="#"><i class="ri-user-line"></i>Toby Barlow </a>
+                <a href="#"><i class="ri-user-line"></i> Roger Ferguson</a>
+                <a href="#"><i class="ri-user-line"></i> Hector Gobble</a>
+                <hr>
+                <a href="#"><i class="ri-logout-box-r-line"></i>Logout</a>
+
+            </div>
+        </button>
+        
+    </header>
+
+    <main id="portalCommonMainClass">
+        <nav class="desktop" style="justify-content: space-between;">
+            <div class="navLinksMainClass">
+                <a href="#0" class="navLinkMenuClass" ng-click="openDialog()">
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="25" cy="25" r="25" fill="#257CC7"/>
+                        <path d="M13.75 25H36.25M13.75 17.5H36.25M13.75 32.5H36.25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div class="navLinkClass">Menu</div>
+                        
+                        
+                </a>
+                <a href="../FormsToComplete/formsToComplete.html" class="">
+                    <svg width="40" height="40" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1085_924)">
+                        <path d="M8.5 5H6.5C5.96957 5 5.46086 5.21071 5.08579 5.58579C4.71071 5.96086 4.5 6.46957 4.5 7V19C4.5 19.5304 4.71071 20.0391 5.08579 20.4142C5.46086 20.7893 5.96957 21 6.5 21H12.197" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M18.5 14V18H22.5" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M18.5 11V7C18.5 6.46957 18.2893 5.96086 17.9142 5.58579C17.5391 5.21071 17.0304 5 16.5 5H14.5" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8.5 5C8.5 4.46957 8.71071 3.96086 9.08579 3.58579C9.46086 3.21071 9.96957 3 10.5 3H12.5C13.0304 3 13.5391 3.21071 13.9142 3.58579C14.2893 3.96086 14.5 4.46957 14.5 5C14.5 5.53043 14.2893 6.03914 13.9142 6.41421C13.5391 6.78929 13.0304 7 12.5 7H10.5C9.96957 7 9.46086 6.78929 9.08579 6.41421C8.71071 6.03914 8.5 5.53043 8.5 5Z" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14.5 18C14.5 19.0609 14.9214 20.0783 15.6716 20.8284C16.4217 21.5786 17.4391 22 18.5 22C19.5609 22 20.5783 21.5786 21.3284 20.8284C22.0786 20.0783 22.5 19.0609 22.5 18C22.5 16.9391 22.0786 15.9217 21.3284 15.1716C20.5783 14.4214 19.5609 14 18.5 14C17.4391 14 16.4217 14.4214 15.6716 15.1716C14.9214 15.9217 14.5 16.9391 14.5 18Z" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8.5 11H12.5" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8.5 15H11.5" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_1085_924">
+                        <rect width="24" height="24" fill="white" transform="translate(0.5)"/>
+                        </clipPath>
+                        </defs>
+                        </svg>
+                        
+    
+                    <div class="navLinkClass">
+                        <span>Forms to</span>
+                        <span>Complete</span>
+                    </div>
+                </a>
+                <a href="#" class="">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_1382_731)">
+                    <path d="M5 20C5 21.9698 5.38799 23.9204 6.14181 25.7403C6.89563 27.5601 8.00052 29.2137 9.3934 30.6066C10.7863 31.9995 12.4399 33.1044 14.2597 33.8582C16.0796 34.612 18.0302 35 20 35C21.9698 35 23.9204 34.612 25.7403 33.8582C27.5601 33.1044 29.2137 31.9995 30.6066 30.6066C31.9995 29.2137 33.1044 27.5601 33.8582 25.7403C34.612 23.9204 35 21.9698 35 20C35 18.0302 34.612 16.0796 33.8582 14.2597C33.1044 12.4399 31.9995 10.7863 30.6066 9.3934C29.2137 8.00052 27.5601 6.89563 25.7403 6.14181C23.9204 5.38799 21.9698 5 20 5C18.0302 5 16.0796 5.38799 14.2597 6.14181C12.4399 6.89563 10.7863 8.00052 9.3934 9.3934C8.00052 10.7863 6.89563 12.4399 6.14181 14.2597C5.38799 16.0796 5 18.0302 5 20Z" stroke="#257CC7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20 20H25.8333" stroke="#257CC7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20 11.6667V20" stroke="#257CC7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_1382_731">
+                    <rect width="40" height="40" fill="white"/>
+                    </clipPath>
+                    </defs>
+                    </svg>
+    
+                    <div class="navLinkClass">
+                        <span>Clinical</span>
+                        <span>Screening Dues</span>
+                    </div>
+                </a>
+                <a href="#" class="">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_1382_734)">
+                    <path d="M15 5H25" stroke="#257CC7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16.6667 15H23.3334" stroke="#257CC7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16.6667 5V15L10 33.3333C9.91959 33.4951 9.87784 33.6733 9.87805 33.854C9.87826 34.0347 9.92043 34.2128 10.0012 34.3744C10.082 34.536 10.1992 34.6766 10.3436 34.7852C10.488 34.8937 10.6557 34.9673 10.8333 35H29.1667C29.3443 34.9673 29.512 34.8937 29.6564 34.7852C29.8008 34.6766 29.918 34.536 29.9988 34.3744C30.0796 34.2128 30.1217 34.0347 30.122 33.854C30.1222 33.6733 30.0804 33.4951 30 33.3333L23.3333 15V5" stroke="#257CC7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_1382_734">
+                    <rect width="40" height="40" fill="white"/>
+                    </clipPath>
+                    </defs>
+                    </svg>
+                    <div class="navLinkClass">
+                        <span>Lab</span>
+                        <span>Results</span>
+                    </div>
+                </a>
+                <a href="#" class="">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_1382_737)">
+                    <path d="M15 8.33333H11.6667C10.7827 8.33333 9.93481 8.68452 9.30968 9.30964C8.68456 9.93476 8.33337 10.7826 8.33337 11.6667V31.6667C8.33337 32.5507 8.68456 33.3986 9.30968 34.0237C9.93481 34.6488 10.7827 35 11.6667 35H28.3334C29.2174 35 30.0653 34.6488 30.6904 34.0237C31.3155 33.3986 31.6667 32.5507 31.6667 31.6667V11.6667C31.6667 10.7826 31.3155 9.93476 30.6904 9.30964C30.0653 8.68452 29.2174 8.33333 28.3334 8.33333H25" stroke="#257CC7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15 8.33333C15 7.44928 15.3512 6.60143 15.9763 5.97631C16.6014 5.35119 17.4493 5 18.3333 5H21.6667C22.5507 5 23.3986 5.35119 24.0237 5.97631C24.6488 6.60143 25 7.44928 25 8.33333C25 9.21739 24.6488 10.0652 24.0237 10.6904C23.3986 11.3155 22.5507 11.6667 21.6667 11.6667H18.3333C17.4493 11.6667 16.6014 11.3155 15.9763 10.6904C15.3512 10.0652 15 9.21739 15 8.33333Z" stroke="#257CC7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15 20H25" stroke="#257CC7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15 26.6667H25" stroke="#257CC7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_1382_737">
+                    <rect width="40" height="40" fill="white"/>
+                    </clipPath>
+                    </defs>
+                    </svg>
+                    <div class="navLinkClass">
+                        <span>Request</span>
+                        <span>Rx Refill</span>
+                    </div>
+                </a>
+            </div>
+        </nav>
+        <section class="container portalCommonCotainer" id="container">
+            <div class="welcome__row">
+                <h1 class="welcome">My Results and Orders</h1>
+                <a href="../index.html">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1409_2305)">
+                        <path d="M5 12H3L12 3L21 12H19" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5 12V19C5 19.5304 5.21071 20.0391 5.58579 20.4142C5.96086 20.7893 6.46957 21 7 21H17C17.5304 21 18.0391 20.7893 18.4142 20.4142C18.7893 20.0391 19 19.5304 19 19V12" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 21V15C9 14.4696 9.21071 13.9609 9.58579 13.5858C9.96086 13.2107 10.4696 13 11 13H13C13.5304 13 14.0391 13.2107 14.4142 13.5858C14.7893 13.9609 15 14.4696 15 15V21" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_1409_2305">
+                        <rect width="24" height="24" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="tabs portalCommonTabsClass">
+                <div class="tab-header">
+                    <button class="tab-button" ng-repeat="tab in tabsList" ng-class="{ active: activeTab == $index}"
+                        ng-click="setActiveTab($index, false)">
+                        <span class="title">{{tab.title}}</span>
+                    </button>
+                    
+                    <div class="dropdownTabsClass">
+                        <svg class="dropdown-icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.78061 11.25L5.12207 7.5H12.4391L8.78061 11.25Z" fill="#1D1B20"/>
+                        </svg>
+                            
+                        <select class="tab-dropdown" 
+                                ng-class="{ active: tabsList[activeTabDropdown]}"
+                                ng-model="activeTabDropdown" 
+                                ng-change="setActiveTab(activeTabDropdown, true)" 
+                                ng-options="index as tab.title for (index, tab) in tabsList">
+                        </select>
+                    </div>
+                </div>
+                <div class="tab-content" ng-show="activeTab == 0">
+                    <div class="tab-content-body">
+                        <div class="provider portalCommonFlexClass">
+                            <div class="myResultsAndOrdersDropDownClass">
+                                <select ng-model="selectedOption" ng-options="option for option in options"
+                                    class="dropdown-select formToCosignDropdownTextClass">
+                                </select>
+                                <svg class="dropdown-icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.78061 11.25L5.12207 7.5H12.4391L8.78061 11.25Z" fill="#1D1B20"/>
+                                </svg>
+                            </div>
+                            <button class="portalCommonGoButtonClass" id="" name="">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1241_2374)">
+                                    <path d="M4 7C4 6.46957 4.21071 5.96086 4.58579 5.58579C4.96086 5.21071 5.46957 5 6 5H18C18.5304 5 19.0391 5.21071 19.4142 5.58579C19.7893 5.96086 20 6.46957 20 7V19C20 19.5304 19.7893 20.0391 19.4142 20.4142C19.0391 20.7893 18.5304 21 18 21H6C5.46957 21 4.96086 20.7893 4.58579 20.4142C4.21071 20.0391 4 19.5304 4 19V7Z" stroke="#64108C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16 3V7" stroke="#64108C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8 3V7" stroke="#64108C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M4 11H20" stroke="#64108C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M11 15H12" stroke="#64108C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 15V18" stroke="#64108C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_1241_2374">
+                                    <rect width="24" height="24" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                </svg>
+                                    
+                                <span>12/12/2023 - 12/12/2024</span>
+                            </button>
+                        </div>
+                        <div class="cards">
+                            <div class="portalCommonCardBlock" ng-repeat="item in labsListData" ng-class="item.status == 'DRAFT' ? 'portalCommonActiveCardBlock' : ''" ng-click="myResultAndOrderDetailsClick(1)">
+                                <div class="portalCommonLeftBlock">
+                                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_1241_2298)">
+                                        <path d="M22.5 7.5H37.5" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M25 22.5H35" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M25 7.5V22.5L15 50C14.8794 50.2427 14.8168 50.51 14.8171 50.781C14.8174 51.052 14.8806 51.3192 15.0018 51.5616C15.123 51.804 15.2988 52.0149 15.5154 52.1777C15.732 52.3406 15.9835 52.4509 16.25 52.5H43.75C44.0165 52.4509 44.268 52.3406 44.4846 52.1777C44.7012 52.0149 44.877 51.804 44.9982 51.5616C45.1194 51.3192 45.1826 51.052 45.1829 50.781C45.1832 50.51 45.1206 50.2427 45 50L35 22.5V7.5" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </g>
+                                        <defs>
+                                        <clipPath id="clip0_1241_2298">
+                                        <rect width="60" height="60" fill="white"/>
+                                        </clipPath>
+                                        </defs>
+                                        </svg>
+                                        
+                                    <div class="portalCommonLeftBlock_content">
+                                        <strong>{{item.title}}</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" ng-show="activeTab == 1">
+                    <div class="tab-content-body">
+                        <div class="portalCommonFlexClass myResultsAndOrderDateBtnClass">
+                            <button class="portalCommonGoButtonClass" id="" name="">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1241_2374)">
+                                    <path d="M4 7C4 6.46957 4.21071 5.96086 4.58579 5.58579C4.96086 5.21071 5.46957 5 6 5H18C18.5304 5 19.0391 5.21071 19.4142 5.58579C19.7893 5.96086 20 6.46957 20 7V19C20 19.5304 19.7893 20.0391 19.4142 20.4142C19.0391 20.7893 18.5304 21 18 21H6C5.46957 21 4.96086 20.7893 4.58579 20.4142C4.21071 20.0391 4 19.5304 4 19V7Z" stroke="#64108C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16 3V7" stroke="#64108C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8 3V7" stroke="#64108C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M4 11H20" stroke="#64108C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M11 15H12" stroke="#64108C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 15V18" stroke="#64108C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_1241_2374">
+                                    <rect width="24" height="24" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                </svg>
+                                    
+                                <span>12/12/2023 - 12/12/2024</span>
+                            </button>
+                        </div>
+                        <div class="cards">
+                            <div class="portalCommonCardBlock" ng-repeat="item in labsListData" ng-class="item.status == 'DRAFT' ? 'portalCommonActiveCardBlock' : ''" ng-click="myResultAndOrderDetailsClick(2)">
+                                <div class="portalCommonLeftBlock myResultsAndOrdersLeftBlock">
+                                    <svg width="36" height="61" viewBox="0 0 36 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19.3306 28.6655H19V25.6655H19.0677C21.2782 25.6604 24.2621 25.6553 25.0515 25.9847C25.1267 26.2099 25.2797 26.401 25.4829 26.5238C25.6862 26.6466 25.9266 26.6931 26.1609 26.6548C26.3953 26.6166 26.6085 26.4962 26.7622 26.3152C26.9159 26.1342 27.0002 25.9044 27 25.6669C27.0003 25.4691 26.9608 25.2733 26.8839 25.0911C26.8069 24.9089 26.694 24.7441 26.5519 24.6065C25.6369 23.693 23.4736 23.6557 19.0644 23.6655H19C19 23.4003 18.8946 23.146 18.7071 22.9584C18.5196 22.7709 18.2652 22.6655 18 22.6655C17.7348 22.6655 17.4804 22.7709 17.2929 22.9584C17.1054 23.146 17 23.4003 17 23.6655H16.9362C12.5238 23.6554 10.3634 23.6932 9.44812 24.6065C9.30604 24.7441 9.19314 24.9089 9.11615 25.0911C9.03915 25.2733 8.99965 25.4691 9 25.6669C8.99977 25.9044 9.08406 26.1342 9.2378 26.3152C9.39153 26.4962 9.60466 26.6166 9.83905 26.6548C10.0734 26.6931 10.3138 26.6466 10.5171 26.5238C10.7203 26.401 10.8733 26.2099 10.9485 25.9847C11.738 25.6552 14.7222 25.6608 16.9322 25.6655H17V28.6655H16.6694C10.962 28.656 8.39513 28.6933 7.42863 29.6583C7.29399 29.7897 7.18677 29.9465 7.11319 30.1196C7.03962 30.2928 7.00114 30.4788 7 30.6669C6.99983 30.8992 7.08056 31.1244 7.22832 31.3036C7.37608 31.4829 7.58166 31.6052 7.80974 31.6494C8.03782 31.6936 8.27418 31.657 8.47822 31.5459C8.68226 31.4348 8.84124 31.2561 8.92787 31.0405C9.86112 30.6548 13.6172 30.6597 16.6662 30.6655H17V33.6655H16.9362C12.5238 33.6555 10.3634 33.6932 9.44812 34.6065C9.30604 34.7441 9.19314 34.9089 9.11615 35.0911C9.03915 35.2733 8.99965 35.4691 9 35.6669C8.99977 35.9044 9.08406 36.1342 9.2378 36.3152C9.39153 36.4962 9.60466 36.6166 9.83905 36.6548C10.0734 36.6931 10.3138 36.6466 10.5171 36.5238C10.7203 36.401 10.8733 36.2099 10.9485 35.9847C11.738 35.6552 14.7222 35.6603 16.9322 35.6655H17V38.6669H14C13.7348 38.6669 13.4804 38.7723 13.2929 38.9598C13.1054 39.1473 13 39.4017 13 39.6669C13 40.993 13.5268 42.2648 14.4645 43.2024C15.4021 44.1401 16.6739 44.6669 18 44.6669C19.3261 44.6669 20.5979 44.1401 21.5355 43.2024C22.4732 42.2648 23 40.993 23 39.6669C23 39.4017 22.8946 39.1473 22.7071 38.9598C22.5196 38.7723 22.2652 38.6669 22 38.6669H19V35.6657H19.0677C21.2782 35.6603 24.2621 35.6554 25.0515 35.9848C25.1267 36.21 25.2797 36.4012 25.483 36.524C25.6863 36.6468 25.9266 36.6932 26.161 36.655C26.3954 36.6167 26.6085 36.4963 26.7623 36.3153C26.916 36.1342 27.0003 35.9044 27 35.6669C27.0003 35.4691 26.9608 35.2733 26.8839 35.0911C26.8069 34.9089 26.694 34.7441 26.5519 34.6065C25.6369 33.693 23.4736 33.6565 19.0644 33.6655H19V30.6655H19.3337C22.3814 30.66 26.1389 30.6547 27.0721 31.0405C27.1588 31.2561 27.3177 31.4348 27.5218 31.5459C27.7258 31.657 27.9622 31.6936 28.1903 31.6494C28.4183 31.6052 28.6239 31.4829 28.7717 31.3036C28.9194 31.1244 29.0002 30.8992 29 30.6669C28.9989 30.4788 28.9604 30.2928 28.8868 30.1196C28.8132 29.9465 28.706 29.7897 28.5714 29.6583C27.605 28.6932 25.0416 28.6562 19.3306 28.6655ZM20.8286 40.6669C20.6219 41.2519 20.2389 41.7585 19.7323 42.1168C19.2257 42.4751 18.6205 42.6675 18 42.6675C17.3795 42.6675 16.7743 42.4751 16.2677 42.1168C15.7611 41.7585 15.3781 41.2519 15.1714 40.6669H20.8286Z" fill="#257CC7"/>
+                                        <path d="M1 48.6667H9V56.6667C9 57.7276 9.42143 58.745 10.1716 59.4952C10.9217 60.2453 11.9391 60.6667 13 60.6667C14.0609 60.6667 15.0783 60.2453 15.8284 59.4952C16.5786 58.745 17 57.7276 17 56.6667V48.6667H19V56.6667C19 57.7276 19.4214 58.745 20.1716 59.4952C20.9217 60.2453 21.9391 60.6667 23 60.6667C24.0609 60.6667 25.0783 60.2453 25.8284 59.4952C26.5786 58.745 27 57.7276 27 56.6667V48.6667H35C35.2652 48.6667 35.5196 48.5614 35.7071 48.3739C35.8946 48.1863 36 47.932 36 47.6667V19.6667C36 19.4015 35.8946 19.1472 35.7071 18.9596C35.5196 18.7721 35.2652 18.6667 35 18.6667H31.9274C31.685 17.0017 30.8518 15.4795 29.58 14.3779C28.3082 13.2763 26.6826 12.669 25 12.6667H21.6974C21.9429 12.3737 22.1696 12.0654 22.3762 11.7437C23.3777 10.1887 24 8.24337 24 6.66675C24 5.07545 23.3679 3.54933 22.2426 2.42411C21.1174 1.29889 19.5913 0.666748 18 0.666748C16.4087 0.666748 14.8826 1.29889 13.7574 2.42411C12.6321 3.54933 12 5.07545 12 6.66675C12 8.24337 12.6222 10.1887 13.6237 11.7437C13.8304 12.0654 14.0571 12.3737 14.3026 12.6667H11C9.31744 12.669 7.69182 13.2763 6.41999 14.3779C5.14817 15.4795 4.31499 17.0017 4.07262 18.6667H1C0.734783 18.6667 0.48043 18.7721 0.292893 18.9596C0.105357 19.1472 0 19.4015 0 19.6667V47.6667C0 47.932 0.105357 48.1863 0.292893 48.3739C0.48043 48.5614 0.734783 48.6667 1 48.6667ZM15 56.6667C15 57.1972 14.7893 57.7059 14.4142 58.081C14.0391 58.456 13.5304 58.6667 13 58.6667C12.4696 58.6667 11.9609 58.456 11.5858 58.081C11.2107 57.7059 11 57.1972 11 56.6667V48.6667H15V56.6667ZM25 56.6667C25 57.1972 24.7893 57.7059 24.4142 58.081C24.0391 58.456 23.5304 58.6667 23 58.6667C22.4696 58.6667 21.9609 58.456 21.5858 58.081C21.2107 57.7059 21 57.1972 21 56.6667V48.6667H25V56.6667ZM14 6.66675C14 5.60588 14.4214 4.58847 15.1716 3.83832C15.9217 3.08818 16.9391 2.66675 18 2.66675C19.0609 2.66675 20.0783 3.08818 20.8284 3.83832C21.5786 4.58847 22 5.60588 22 6.66675C22 9.14525 19.9312 12.6667 18 12.6667C16.0687 12.6667 14 9.14525 14 6.66675ZM11 14.6667H25C26.1522 14.6681 27.2687 15.0667 28.1613 15.7954C29.0539 16.524 29.668 17.5381 29.9 18.6667H6.10062C6.33263 17.5382 6.94661 16.5242 7.83906 15.7956C8.73152 15.067 9.84788 14.6683 11 14.6667ZM2 20.6667H34V46.6667H2V20.6667Z" fill="#257CC7"/>
+                                    </svg>
+                                        
+                                        
+                                    <div class="portalCommonLeftBlock_content">
+                                        <strong>{{item.title}}</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" ng-show="activeTab == 2">
+                    <div class="tab-content-body">
+                        <div class="provider portalCommonFlexClass">
+                            <div class="myResultsAndOrdersDropDownClass">
+                                <select ng-model="ordersListOption" ng-options="option for option in ordersList"
+                                    class="dropdown-select formToCosignDropdownTextClass" ng-change="myResultsAndOrderDropdownChange()">
+                                </select>
+                                <svg class="dropdown-icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.78061 11.25L5.12207 7.5H12.4391L8.78061 11.25Z" fill="#1D1B20"/>
+                                </svg>
+                            </div>
+                            <button class="portalCommonGoButtonClass" id="" name="">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1241_2374)">
+                                    <path d="M4 7C4 6.46957 4.21071 5.96086 4.58579 5.58579C4.96086 5.21071 5.46957 5 6 5H18C18.5304 5 19.0391 5.21071 19.4142 5.58579C19.7893 5.96086 20 6.46957 20 7V19C20 19.5304 19.7893 20.0391 19.4142 20.4142C19.0391 20.7893 18.5304 21 18 21H6C5.46957 21 4.96086 20.7893 4.58579 20.4142C4.21071 20.0391 4 19.5304 4 19V7Z" stroke="#64108C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16 3V7" stroke="#64108C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8 3V7" stroke="#64108C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M4 11H20" stroke="#64108C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M11 15H12" stroke="#64108C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 15V18" stroke="#64108C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_1241_2374">
+                                    <rect width="24" height="24" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                </svg>
+                                    
+                                <span>12/12/2023 - 12/12/2024</span>
+                            </button>
+                        </div>
+                        <div class="cards">
+                            <div class="portalCommonCardBlock" ng-repeat="item in myResultsCommonList" ng-class="item.status == 'DRAFT' ? 'portalCommonActiveCardBlock' : ''" ng-click="myResultAndOrderDetailsClick(3)">
+                                <div class="portalCommonLeftBlock myResultsAndOrdersLeftBlock">
+                                    <svg ng-show="myResultsAndOrdersIconShowHide" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_1241_2298)">
+                                        <path d="M22.5 7.5H37.5" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M25 22.5H35" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M25 7.5V22.5L15 50C14.8794 50.2427 14.8168 50.51 14.8171 50.781C14.8174 51.052 14.8806 51.3192 15.0018 51.5616C15.123 51.804 15.2988 52.0149 15.5154 52.1777C15.732 52.3406 15.9835 52.4509 16.25 52.5H43.75C44.0165 52.4509 44.268 52.3406 44.4846 52.1777C44.7012 52.0149 44.877 51.804 44.9982 51.5616C45.1194 51.3192 45.1826 51.052 45.1829 50.781C45.1832 50.51 45.1206 50.2427 45 50L35 22.5V7.5" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </g>
+                                        <defs>
+                                        <clipPath id="clip0_1241_2298">
+                                        <rect width="60" height="60" fill="white"/>
+                                        </clipPath>
+                                        </defs>
+                                    </svg>
+                                    <svg ng-hide="myResultsAndOrdersIconShowHide" width="36" height="61" viewBox="0 0 36 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19.3306 28.6655H19V25.6655H19.0677C21.2782 25.6604 24.2621 25.6553 25.0515 25.9847C25.1267 26.2099 25.2797 26.401 25.4829 26.5238C25.6862 26.6466 25.9266 26.6931 26.1609 26.6548C26.3953 26.6166 26.6085 26.4962 26.7622 26.3152C26.9159 26.1342 27.0002 25.9044 27 25.6669C27.0003 25.4691 26.9608 25.2733 26.8839 25.0911C26.8069 24.9089 26.694 24.7441 26.5519 24.6065C25.6369 23.693 23.4736 23.6557 19.0644 23.6655H19C19 23.4003 18.8946 23.146 18.7071 22.9584C18.5196 22.7709 18.2652 22.6655 18 22.6655C17.7348 22.6655 17.4804 22.7709 17.2929 22.9584C17.1054 23.146 17 23.4003 17 23.6655H16.9362C12.5238 23.6554 10.3634 23.6932 9.44812 24.6065C9.30604 24.7441 9.19314 24.9089 9.11615 25.0911C9.03915 25.2733 8.99965 25.4691 9 25.6669C8.99977 25.9044 9.08406 26.1342 9.2378 26.3152C9.39153 26.4962 9.60466 26.6166 9.83905 26.6548C10.0734 26.6931 10.3138 26.6466 10.5171 26.5238C10.7203 26.401 10.8733 26.2099 10.9485 25.9847C11.738 25.6552 14.7222 25.6608 16.9322 25.6655H17V28.6655H16.6694C10.962 28.656 8.39513 28.6933 7.42863 29.6583C7.29399 29.7897 7.18677 29.9465 7.11319 30.1196C7.03962 30.2928 7.00114 30.4788 7 30.6669C6.99983 30.8992 7.08056 31.1244 7.22832 31.3036C7.37608 31.4829 7.58166 31.6052 7.80974 31.6494C8.03782 31.6936 8.27418 31.657 8.47822 31.5459C8.68226 31.4348 8.84124 31.2561 8.92787 31.0405C9.86112 30.6548 13.6172 30.6597 16.6662 30.6655H17V33.6655H16.9362C12.5238 33.6555 10.3634 33.6932 9.44812 34.6065C9.30604 34.7441 9.19314 34.9089 9.11615 35.0911C9.03915 35.2733 8.99965 35.4691 9 35.6669C8.99977 35.9044 9.08406 36.1342 9.2378 36.3152C9.39153 36.4962 9.60466 36.6166 9.83905 36.6548C10.0734 36.6931 10.3138 36.6466 10.5171 36.5238C10.7203 36.401 10.8733 36.2099 10.9485 35.9847C11.738 35.6552 14.7222 35.6603 16.9322 35.6655H17V38.6669H14C13.7348 38.6669 13.4804 38.7723 13.2929 38.9598C13.1054 39.1473 13 39.4017 13 39.6669C13 40.993 13.5268 42.2648 14.4645 43.2024C15.4021 44.1401 16.6739 44.6669 18 44.6669C19.3261 44.6669 20.5979 44.1401 21.5355 43.2024C22.4732 42.2648 23 40.993 23 39.6669C23 39.4017 22.8946 39.1473 22.7071 38.9598C22.5196 38.7723 22.2652 38.6669 22 38.6669H19V35.6657H19.0677C21.2782 35.6603 24.2621 35.6554 25.0515 35.9848C25.1267 36.21 25.2797 36.4012 25.483 36.524C25.6863 36.6468 25.9266 36.6932 26.161 36.655C26.3954 36.6167 26.6085 36.4963 26.7623 36.3153C26.916 36.1342 27.0003 35.9044 27 35.6669C27.0003 35.4691 26.9608 35.2733 26.8839 35.0911C26.8069 34.9089 26.694 34.7441 26.5519 34.6065C25.6369 33.693 23.4736 33.6565 19.0644 33.6655H19V30.6655H19.3337C22.3814 30.66 26.1389 30.6547 27.0721 31.0405C27.1588 31.2561 27.3177 31.4348 27.5218 31.5459C27.7258 31.657 27.9622 31.6936 28.1903 31.6494C28.4183 31.6052 28.6239 31.4829 28.7717 31.3036C28.9194 31.1244 29.0002 30.8992 29 30.6669C28.9989 30.4788 28.9604 30.2928 28.8868 30.1196C28.8132 29.9465 28.706 29.7897 28.5714 29.6583C27.605 28.6932 25.0416 28.6562 19.3306 28.6655ZM20.8286 40.6669C20.6219 41.2519 20.2389 41.7585 19.7323 42.1168C19.2257 42.4751 18.6205 42.6675 18 42.6675C17.3795 42.6675 16.7743 42.4751 16.2677 42.1168C15.7611 41.7585 15.3781 41.2519 15.1714 40.6669H20.8286Z" fill="#257CC7"/>
+                                        <path d="M1 48.6667H9V56.6667C9 57.7276 9.42143 58.745 10.1716 59.4952C10.9217 60.2453 11.9391 60.6667 13 60.6667C14.0609 60.6667 15.0783 60.2453 15.8284 59.4952C16.5786 58.745 17 57.7276 17 56.6667V48.6667H19V56.6667C19 57.7276 19.4214 58.745 20.1716 59.4952C20.9217 60.2453 21.9391 60.6667 23 60.6667C24.0609 60.6667 25.0783 60.2453 25.8284 59.4952C26.5786 58.745 27 57.7276 27 56.6667V48.6667H35C35.2652 48.6667 35.5196 48.5614 35.7071 48.3739C35.8946 48.1863 36 47.932 36 47.6667V19.6667C36 19.4015 35.8946 19.1472 35.7071 18.9596C35.5196 18.7721 35.2652 18.6667 35 18.6667H31.9274C31.685 17.0017 30.8518 15.4795 29.58 14.3779C28.3082 13.2763 26.6826 12.669 25 12.6667H21.6974C21.9429 12.3737 22.1696 12.0654 22.3762 11.7437C23.3777 10.1887 24 8.24337 24 6.66675C24 5.07545 23.3679 3.54933 22.2426 2.42411C21.1174 1.29889 19.5913 0.666748 18 0.666748C16.4087 0.666748 14.8826 1.29889 13.7574 2.42411C12.6321 3.54933 12 5.07545 12 6.66675C12 8.24337 12.6222 10.1887 13.6237 11.7437C13.8304 12.0654 14.0571 12.3737 14.3026 12.6667H11C9.31744 12.669 7.69182 13.2763 6.41999 14.3779C5.14817 15.4795 4.31499 17.0017 4.07262 18.6667H1C0.734783 18.6667 0.48043 18.7721 0.292893 18.9596C0.105357 19.1472 0 19.4015 0 19.6667V47.6667C0 47.932 0.105357 48.1863 0.292893 48.3739C0.48043 48.5614 0.734783 48.6667 1 48.6667ZM15 56.6667C15 57.1972 14.7893 57.7059 14.4142 58.081C14.0391 58.456 13.5304 58.6667 13 58.6667C12.4696 58.6667 11.9609 58.456 11.5858 58.081C11.2107 57.7059 11 57.1972 11 56.6667V48.6667H15V56.6667ZM25 56.6667C25 57.1972 24.7893 57.7059 24.4142 58.081C24.0391 58.456 23.5304 58.6667 23 58.6667C22.4696 58.6667 21.9609 58.456 21.5858 58.081C21.2107 57.7059 21 57.1972 21 56.6667V48.6667H25V56.6667ZM14 6.66675C14 5.60588 14.4214 4.58847 15.1716 3.83832C15.9217 3.08818 16.9391 2.66675 18 2.66675C19.0609 2.66675 20.0783 3.08818 20.8284 3.83832C21.5786 4.58847 22 5.60588 22 6.66675C22 9.14525 19.9312 12.6667 18 12.6667C16.0687 12.6667 14 9.14525 14 6.66675ZM11 14.6667H25C26.1522 14.6681 27.2687 15.0667 28.1613 15.7954C29.0539 16.524 29.668 17.5381 29.9 18.6667H6.10062C6.33263 17.5382 6.94661 16.5242 7.83906 15.7956C8.73152 15.067 9.84788 14.6683 11 14.6667ZM2 20.6667H34V46.6667H2V20.6667Z" fill="#257CC7"/>
+                                    </svg>
+                                        
+                                    <div class="portalCommonLeftBlock_content">
+                                        <strong>{{item.title}}</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="portalCommonButtonsBlock">
+                <button class="portalCommonEmptyBtnClass" ng-click="portalCommonBackClick()">Back</button>
+                <button class="portalCommonFillBtnClass">Next</button>
+            </div>
+
+
+        </section>
+
+        <div class="dialog-backdrop" ng-class="{'open': isDialogOpen}" ng-click="closeDialog()"></div>
+        <div class="menu-dialog" ng-class="{'open': isDialogOpen}">
+            <span class="close-dialog" ng-click="closeDialog()">
+                <i class="ri-close-large-fill"></i> <span>Close</span>
+            </span>
+            <div class="menu-links">
+                <a href="#">
+                    <span class="icon"><i class="ri-calendar-line"></i></span>
+                    <span class="text">All Appointments</span>
+                </a>
+                <a href="#">
+                    <span class="icon"><i class="ri-calendar-event-line"></i></i></span>
+                    <span class="text">Book New Appointment</span>
+                </a>
+                <a href="#">
+                    <span class="icon"><i class="ri-file-3-line"></i></span>
+                    <span class="text">Documents</span>
+                </a>
+                <a href="#">
+                    <span class="icon"><i class="ri-shield-line"></i></span>
+                    <span class="text">Insurance Policies</span>
+                </a>
+                <a href="./MyResultsAndOrder.html">
+                    <span class="icon"><i class="ri-survey-line"></i></span>
+                    <span class="text">My Results and Orders</span>
+                </a>
+                <a href="../FormsToComplete/formsToComplete.html">
+                    <span class="icon"><i class="ri-survey-line"></i></span>
+                    <span class="text">Forms to Complete</span>
+                </a>
+                <a href="#">
+                    <span class="icon"><i class="ri-bank-card-line"></i></span>
+                    <span class="text">Credit Cards</span>
+                </a>
+                <a href="#">
+                    <span class="icon"><i class="ri-chat-1-line"></i></span>
+                    <span class="text">Messages</span>
+                </a>
+                <a href="#">
+                    <span class="icon"><i class="ri-checkbox-multiple-line"></i></span>
+                    <span class="text">Patient Choices</span>
+                </a>
+                <a href="#">
+                    <span class="icon"><i class="ri-contacts-line"></i></span>
+                    <span class="text">Contacts</span>
+                </a>
+                <a href="#">
+                    <span class="icon"><i class="ri-feedback-line"></i></span>
+                    <span class="text">My Complaints</span>
+                </a>
+                <a href="#">
+                    <span class="icon"><i class="ri-money-dollar-circle-line"></i></span>
+                    <span class="text">Billing</span>
+                </a>
+                <a href="#">
+                    <span class="icon"><i class="ri-folder-user-line"></i></span>
+                    <span class="text">Demographics</span>
+                </a>
+                <a href="#">
+                    <span class="icon"><i class="ri-bill-line"></i></span>
+                    <span class="text">Ledger</span>
+                </a>
+                <a href="#">
+                    <span class="icon"><i class="ri-upload-cloud-line"></i></span>
+                    <span class="text">Upload Documents</span>
+                </a>
+                <a href="#">
+                    <span class="icon"><i class="ri-capsule-fill"></i></span>
+                    <span class="text">Current Medicines</span>
+                </a>
+                <a href="#">
+                    <span class="icon"><i class="ri-video-on-line"></i></span>
+                    <span class="text">Zoom Meetings</span>
+                </a>
+            </div>
+        </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js" type="text/javascript"></script>
+    <script src="../app.js"></script>
+    <script src="./MyResultsAndOrder.js" type="text/javascript"></script>
+</body>
+
+</html>
