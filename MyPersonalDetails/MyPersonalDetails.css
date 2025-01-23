@@ -84,3 +84,9 @@
 .portalCommonContainer:has(.myPersonalDetailsFieldsMainClass){
     row-gap: 22px !important;
 }
+@media (max-width:600px) {
+    .myPersonalDetailsFieldsMainEditClass{
+        padding: 0px 16px !important;
+        padding-bottom: 16px !important;
+    }
+}

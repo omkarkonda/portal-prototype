@@ -18,22 +18,22 @@ function myPersonalDetailsCtrl($scope) {
         },
         {
             name: 'BIRTH SEX',
-            model: 'male', // ng-model="myPersonalDetailsFieldsBirthSex"
+            model: 'Male', // ng-model="myPersonalDetailsFieldsBirthSex"
             isDropdown: true,
             options: [
-                { label: "Male", value: "male" },
-                { label: "Female", value: "female" },
+                { label: "Male", value: "Male" },
+                { label: "Female", value: "Female" },
             ]
         },
         {
             name: 'MARITAL STATUS',
-            model: 'widowed', // ng-model="myPersonalDetailsFieldsMaritalStatus"
+            model: 'Widowed', // ng-model="myPersonalDetailsFieldsMaritalStatus"
             isDropdown: true,
             options : [
-                { label: "Single", value: "single" },
-                { label: "Married", value: "married" },
-                { label: "Divorced", value: "divorced" },
-                { label: "Widowed", value: "widowed" }
+                { label: "Single", value: "Single" },
+                { label: "Married", value: "Married" },
+                { label: "Divorced", value: "Divorced" },
+                { label: "Widowed", value: "Widowed" }
             ]
         },
         {
@@ -46,19 +46,19 @@ function myPersonalDetailsCtrl($scope) {
         },
         {
             name: 'COUNTRY',
-            model: 'us', // ng-model="myPersonalDetailsFieldsCountry"
+            model: 'US', // ng-model="myPersonalDetailsFieldsCountry"
             isDropdown: true,
             options : [
-                { label: "US", value: "us" },
-                { label: "India", value: "india" },
+                { label: "US", value: "US" },
+                { label: "India", value: "India" },
             ]
         },
         {
             name: 'RACE',
-            model: 'asian_native', // ng-model="myPersonalDetailsFieldsRace"
+            model: 'Asian, Native American Indian', // ng-model="myPersonalDetailsFieldsRace"
             isDropdown: true,
             options : [
-                { label: "Asian, Native American Indian", value: "asian_native", isCheck: true, },
+                { label: "Asian, Native American Indian", value: "Asian, Native American Indian", isCheck: true, },
                 { label: "American Indian or Alaska Native", value: "american_indian", isCheck: false, },
                 { label: "White", value: "white", isCheck: false, },
                 { label: "Black or African American", value: "black_african", isCheck: false, },
@@ -68,21 +68,21 @@ function myPersonalDetailsCtrl($scope) {
         },
         {
             name: 'ETHNICITY',
-            model: 'american', // ng-model="myPersonalDetailsFieldsEthnicity"
+            model: 'American', // ng-model="myPersonalDetailsFieldsEthnicity"
             isDropdown: true,
             options : [
-                { label: "American", value: "american" },
-                { label: "Indian", value: "indian" },
+                { label: "American", value: "American" },
+                { label: "Indian", value: "Indian" },
             ]
         },
         {
             name: 'PREFERRED LANGUAGE',
-            model: 'spanish', // ng-model="myPersonalDetailsFieldsLanguage"
+            model: 'Spanish', // ng-model="myPersonalDetailsFieldsLanguage"
             isDropdown: true,
             options : [
-                { label: "Spanish", value: "spanish" },
-                { label: "Telugu", value: "telugu" },
-                { label: "Hindi", value: "hindi" },
+                { label: "Spanish", value: "Spanish" },
+                { label: "Telugu", value: "Telugu" },
+                { label: "Hindi", value: "Hindi" },
             ]
         }
     ];
