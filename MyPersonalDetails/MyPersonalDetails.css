@@ -1,0 +1,84 @@
+.myPersonalDetailsFieldsMainClass{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    padding: 0px 32px;
+    padding-bottom: 32px;
+}
+.myPersonalDetailsSubHeading{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.myPersonalDetailsSubHeading a{
+    color: #257CC7;
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: none;
+    line-height: 20px; /* 125% */
+}
+.myPersonalDetailsFieldsCardClass{
+    padding: 28px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 20px;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.10);
+}
+.myPersonalDetailsFieldsClass{
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+    flex: 1;
+    min-width: min(100%, 600px);
+    position: relative;
+}
+.downArrowIconClass{
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+}
+@media (min-width:1693px) {
+    .myPersonalDetailsFieldsClass:last-child{
+        max-width: 49%;
+    }
+}
+.myPersonalDetailsFieldsClass label{
+    color: #1E1E1E;
+    font-family: Manrope;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%; /* 14px */
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    opacity: 0.5;
+}
+.myPersonalDetailsFieldsClass select{
+    padding: 19px !important;
+}
+.myPersonalDetailsFieldsClass select,
+.myPersonalDetailsFieldsClass input{
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid rgba(30, 30, 30, 0.60);
+    background: #FFF;
+    padding: 16px;
+    color: #002265;
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%; /* 16px */
+}
+.myPersonalDetailsFieldsMainEditClass .myPersonalDetailsFieldsClass select,
+.myPersonalDetailsFieldsMainEditClass .myPersonalDetailsFieldsClass input{
+    color: #1E1E1E !important;
+}
+.portalCommonContainer:has(.myPersonalDetailsFieldsMainClass){
+    row-gap: 22px !important;
+}

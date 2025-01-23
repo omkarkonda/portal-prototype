@@ -963,7 +963,7 @@ button.tab.completed .edit {
 }
 
 /* Container */
-.portalCommonCotainer {
+.portalCommonContainer {
     row-gap: 35px;
     padding: 0px !important;
 
@@ -1262,7 +1262,7 @@ button.tab.completed .edit {
         }
     }
 
-    .portalCommonCotainer {
+    .portalCommonContainer {
         gap: 28px !important;
 
         .welcome__row {

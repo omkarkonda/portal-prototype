@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myResultsAndOrder">
+<html lang="en" ng-app="myPersonalDetails">
 
 <head>
     <meta charset="UTF-8">
@@ -10,12 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../base.css">
-    <link rel="stylesheet" href="./MyResultsAndOrder.css">
+    <link rel="stylesheet" href="./MyPersonalDetails.css">
 
-    <title>My Results and Orders</title>
+    <title>My Personal Details</title>
 </head>
 
-<body ng-controller="myResultsAndOrderCtrl">
+<body ng-controller="myPersonalDetailsCtrl">
     <header class="portalCommonHeaderClass">
         <a href="#0" class="menu --mobile" ng-click="openDialog()">
             <i class="ri-menu-line"></i>
@@ -154,9 +154,9 @@
                 </a>
             </div>
         </nav>
-        <section class="container portalCommonContainer" id="container">
+        <section class="container portalCommonCotainer" id="container">
             <div class="welcome__row">
-                <h1 class="welcome">My Results and Orders</h1>
+                <h1 class="welcome">My Personal Details</h1>
                 <a href="../index.html">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_1409_2305)">
@@ -173,49 +173,33 @@
                 </a>
             </div>
 
-            <div class="tabs portalCommonTabsClass">
-
-                <div class="myResultsAndOrderDetailsCard">
-                    <div class="myResultsAndOrderDetailsCardDetails">
-                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_1244_2744)">
-                            <path d="M10.5 3.5H17.5" stroke="#002265" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M11.6667 10.5H16.3333" stroke="#002265" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M11.6667 3.5V10.5L7.00001 23.3333C6.94372 23.4466 6.9145 23.5713 6.91464 23.6978C6.91479 23.8243 6.94431 23.949 7.00086 24.0621C7.05742 24.1752 7.13947 24.2736 7.24055 24.3496C7.34163 24.4256 7.45897 24.4771 7.58334 24.5H20.4167C20.541 24.4771 20.6584 24.4256 20.7595 24.3496C20.8606 24.2736 20.9426 24.1752 20.9992 24.0621C21.0557 23.949 21.0852 23.8243 21.0854 23.6978C21.0855 23.5713 21.0563 23.4466 21 23.3333L16.3333 10.5V3.5" stroke="#002265" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </g>
-                            <defs>
-                            <clipPath id="clip0_1244_2744">
-                            <rect width="28" height="28" fill="white"/>
-                            </clipPath>
-                            </defs>
-                        </svg>
-                        <div class="portalCommonLeftBlock_content">
-                            <strong>07/11/2024- 1,5-Anhydroglucitol [Mass/volume]</strong>
-                        </div>
-                    </div>
-                    <div class="myResultsAndOrderDetailsCardClass">
-                        <div class="portalCommonLeftBlock_content myResultsAndOrderStrongClass">
-                            <strong>1,5-Anhydroglucitol [Mass/volume] in Serum or Plasma</strong>
-                        </div>
-                        <div class="myResultsAndOrderCardClass">
-                            <div class="myResultsAndOrderTextClass">
-                                <span>Result</span>
-                                <span>Negative</span>
-                            </div>
-                            <div class="myResultsAndOrderTextClass">
-                                <span>Interpretation</span>
-                            </div>
-                            <div class="myResultsAndOrderTextClass">
-                                <span>Status</span>
-                                <span>Final</span>
-                            </div>
-                        </div>
+            <div class="myPersonalDetailsFieldsMainClass">
+                <div class="myPersonalDetailsSubHeading">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1505_3191)">
+                        <path d="M7 7H6C5.46957 7 4.96086 7.21071 4.58579 7.58579C4.21071 7.96086 4 8.46957 4 9V18C4 18.5304 4.21071 19.0391 4.58579 19.4142C4.96086 19.7893 5.46957 20 6 20H15C15.5304 20 16.0391 19.7893 16.4142 19.4142C16.7893 19.0391 17 18.5304 17 18V17" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M20.385 6.58499C20.7788 6.19114 21.0001 5.65697 21.0001 5.09998C21.0001 4.543 20.7788 4.00883 20.385 3.61498C19.9912 3.22114 19.457 2.99988 18.9 2.99988C18.343 2.99988 17.8088 3.22114 17.415 3.61498L9 12V15H12L20.385 6.58499Z" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16 5L19 8" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_1505_3191">
+                        <rect width="24" height="24" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    <a href="./MyPersonalDetailsEdit.html">Edit Details</a>                        
+                </div>
+                <div class="myPersonalDetailsFieldsCardClass">
+                    <div class="myPersonalDetailsFieldsClass" ng-repeat="item in personalDetails">
+                        <label>{{item.name}}</label>
+                        <input type="text" ng-model="item.model">
                     </div>
                 </div>
             </div>
-            <div class="portalCommonButtonsBlock">
+            <!-- <div class="portalCommonButtonsBlock">
                 <button class="portalCommonEmptyBtnClass" ng-click="portalCommonBackClick()">Back</button>
-            </div>
+                <button class="portalCommonFillBtnClass">Next</button>
+            </div> -->
 
 
         </section>
@@ -242,11 +226,11 @@
                     <span class="icon"><i class="ri-shield-line"></i></span>
                     <span class="text">Insurance Policies</span>
                 </a>
-                <a href="../MyPersonalDetails/MyPersonalDetails.html">
+                <a href="./MyPersonalDetails.html">
                     <span class="icon"><i class="ri-survey-line"></i></span>
                     <span class="text">My Personal Details</span>
                 </a>
-                <a href="./MyResultsAndOrder.html">
+                <a href="../MyResultsAndOrders/MyResultsAndOrder.html">
                     <span class="icon"><i class="ri-survey-line"></i></span>
                     <span class="text">My Results and Orders</span>
                 </a>
@@ -303,7 +287,7 @@
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js" type="text/javascript"></script>
     <script src="../app.js"></script>
-    <script src="./MyResultsAndOrder.js" type="text/javascript"></script>
+    <script src="./myPersonalDetails.js" type="text/javascript"></script>
 </body>
 
 </html>
