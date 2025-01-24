@@ -971,3 +971,16 @@ main {
         justify-content: center !important;
     }
 }
+.portalCommonCheckboxClass{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.portalCommonCheckboxClass > *{
+    margin: 0px !important;
+}
+.downArrowIconClass{
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+}

@@ -102,7 +102,7 @@ function myPersonalDetailsCtrl($scope) {
 
 
     $scope.portalCommonBackClick = function (isFrom) {
-        window.location.href = './MyResultsAndOrder.html';
+        window.location.href = './MyPersonalDetails.html';
     }
     $scope.portalCommonCancelClick = function () {
         window.location.href = '../index.html';

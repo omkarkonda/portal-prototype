@@ -39,11 +39,6 @@
     min-width: min(100%, 600px);
     position: relative;
 }
-.downArrowIconClass{
-    position: absolute;
-    bottom: 15px;
-    right: 20px;
-}
 @media (min-width:1693px) {
     .myPersonalDetailsFieldsClass:last-child{
         max-width: 49%;
@@ -80,6 +75,9 @@
 .myPersonalDetailsFieldsMainEditClass .myPersonalDetailsFieldsClass select,
 .myPersonalDetailsFieldsMainEditClass .myPersonalDetailsFieldsClass input{
     color: #1E1E1E !important;
+}
+.myPersonalDetailsFieldsMainClass input:disabled{
+    background-color: #f0f0f0 !important;
 }
 .portalCommonContainer:has(.myPersonalDetailsFieldsMainClass){
     row-gap: 22px !important;

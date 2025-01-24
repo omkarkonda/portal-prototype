@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myPersonalDetails">
+<html lang="en" ng-app="insuranceDetails">
 
 <head>
     <meta charset="UTF-8">
@@ -10,12 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../base.css">
-    <link rel="stylesheet" href="./MyPersonalDetails.css">
+    <link rel="stylesheet" href="./insuranceDetails.css">
 
-    <title>My Personal Details</title>
+    <title>Insurance Details</title>
 </head>
 
-<body ng-controller="myPersonalDetailsCtrl">
+<body ng-controller="insuranceDetailsCtrl">
     <header class="portalCommonHeaderClass">
         <a href="#0" class="menu --mobile" ng-click="openDialog()">
             <i class="ri-menu-line"></i>
@@ -154,9 +154,9 @@
                 </a>
             </div>
         </nav>
-        <section class="container" id="container">
+        <section class="container portalCommonContainer" id="container">
             <div class="welcome__row">
-                <h1 class="welcome">My Personal Details</h1>
+                <h1 class="welcome">Insurance Details</h1>
                 <a href="../index.html">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_1409_2305)">
@@ -173,35 +173,70 @@
                 </a>
             </div>
 
-            <div class="myPersonalDetailsFieldsMainClass">
-                <div class="myPersonalDetailsSubHeading">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clip-path="url(#clip0_1505_3191)">
-                        <path d="M7 7H6C5.46957 7 4.96086 7.21071 4.58579 7.58579C4.21071 7.96086 4 8.46957 4 9V18C4 18.5304 4.21071 19.0391 4.58579 19.4142C4.96086 19.7893 5.46957 20 6 20H15C15.5304 20 16.0391 19.7893 16.4142 19.4142C16.7893 19.0391 17 18.5304 17 18V17" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M20.385 6.58499C20.7788 6.19114 21.0001 5.65697 21.0001 5.09998C21.0001 4.543 20.7788 4.00883 20.385 3.61498C19.9912 3.22114 19.457 2.99988 18.9 2.99988C18.343 2.99988 17.8088 3.22114 17.415 3.61498L9 12V15H12L20.385 6.58499Z" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M16 5L19 8" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <div class="insuranceDetailsFieldsMainClass">
+                <div class="insuranceDetailsSubHeading">
+                    <svg ng-click="isAddInsurancePolicyClick()" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1438_1479)">
+                        <path d="M3 12C3 13.1819 3.23279 14.3522 3.68508 15.4442C4.13738 16.5361 4.80031 17.5282 5.63604 18.364C6.47177 19.1997 7.46392 19.8626 8.55585 20.3149C9.64778 20.7672 10.8181 21 12 21C13.1819 21 14.3522 20.7672 15.4442 20.3149C16.5361 19.8626 17.5282 19.1997 18.364 18.364C19.1997 17.5282 19.8626 16.5361 20.3149 15.4442C20.7672 14.3522 21 13.1819 21 12C21 9.61305 20.0518 7.32387 18.364 5.63604C16.6761 3.94821 14.3869 3 12 3C9.61305 3 7.32387 3.94821 5.63604 5.63604C3.94821 7.32387 3 9.61305 3 12Z" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 12H15" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 9V15" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </g>
                         <defs>
-                        <clipPath id="clip0_1505_3191">
+                        <clipPath id="clip0_1438_1479">
                         <rect width="24" height="24" fill="white"/>
                         </clipPath>
                         </defs>
-                    </svg>
-                    <a href="./MyPersonalDetailsEdit.html">Edit Details</a>                        
+                    </svg>                        
+                    <a ng-click="isAddInsurancePolicyClick()">Add Insurance Policy</a>                        
                 </div>
-                <div class="myPersonalDetailsFieldsCardClass">
-                    <div class="myPersonalDetailsFieldsClass" ng-repeat="item in personalDetails">
-                        <label>{{item.name}}</label>
-                        <input type="text" value="Disabled Input" ng-model="item.model" disabled>
+                <div class="insuranceDetailsMainBlockClass">
+                    <div class="insurance-card" ng-repeat="card in insuranceData">
+                        <div class="card-header">
+                            <span class="badge">{{card.badge}}</span>
+                            <div class="card-heading-block">
+                                <h3 class="insurance-title">{{card.title}}</h3>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1439_2563)">
+                                    <path d="M7 7H6C5.46957 7 4.96086 7.21071 4.58579 7.58579C4.21071 7.96086 4 8.46957 4 9V18C4 18.5304 4.21071 19.0391 4.58579 19.4142C4.96086 19.7893 5.46957 20 6 20H15C15.5304 20 16.0391 19.7893 16.4142 19.4142C16.7893 19.0391 17 18.5304 17 18V17" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M20.385 6.58499C20.7788 6.19114 21.0001 5.65697 21.0001 5.09998C21.0001 4.543 20.7788 4.00883 20.385 3.61498C19.9912 3.22114 19.457 2.99988 18.9 2.99988C18.343 2.99988 17.8088 3.22114 17.415 3.61498L9 12V15H12L20.385 6.58499Z" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16 5L19 8" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_1439_2563">
+                                    <rect width="24" height="24" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                </svg>                                    
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-item">
+                                <span class="item-label">Policy Number:</span>
+                                <span class="item-value">{{card.policyNumber}}</span>
+                            </div>
+                            <div class="card-item">
+                                <span class="item-label">Relation to Insured:</span>
+                                <span class="item-value">{{card.relation}}</span>
+                            </div>
+                            <div class="card-item">
+                                <span class="item-label">Policy Start Date:</span>
+                                <span class="item-value">{{card.startDate}}</span>
+                            </div>
+                            <div class="card-item">
+                                <span class="item-label">Policy End Date:</span>
+                                <span class="item-value">{{card.endDate}}</span>
+                            </div>
+                            <div class="card-item">
+                                <span class="item-label">Insurance Sequence:</span>
+                                <span class="item-value">{{card.sequence}}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- <div class="portalCommonButtonsBlock">
+            <div class="portalCommonButtonsBlock">
                 <button class="portalCommonEmptyBtnClass" ng-click="portalCommonBackClick()">Back</button>
-                <button class="portalCommonFillBtnClass">Next</button>
-            </div> -->
-
-
+            </div>
         </section>
 
         <div class="dialog-backdrop" ng-class="{'open': isDialogOpen}" ng-click="closeDialog()"></div>
@@ -222,11 +257,11 @@
                     <span class="icon"><i class="ri-file-3-line"></i></span>
                     <span class="text">Documents</span>
                 </a>
-                <a href="../InsuranceDetails/InsuranceDetails.html">
+                <a href="#">
                     <span class="icon"><i class="ri-shield-line"></i></span>
                     <span class="text">Insurance Policies</span>
                 </a>
-                <a href="./MyPersonalDetails.html">
+                <a href="./insuranceDetails.html">
                     <span class="icon"><i class="ri-survey-line"></i></span>
                     <span class="text">My Personal Details</span>
                 </a>
@@ -284,10 +319,132 @@
                 </a>
             </div>
         </div>
+        <div class="addInsuranceOverlay" ng-class="isAddInsurance ? 'addInsurancePolicyOverlayOpen': 'addInsurancePolicyOverlayClose'" ng-click="isAddInsurancePolicyClick()"></div>
+
+        <div class="addInsurancePolicyMainBlock" ng-class="isAddInsurance ? 'addInsurancePolicyOpen': 'addInsurancePolicyClose'">
+            <div class="header">
+                <label>Add Insurance Policy</label>
+                <svg ng-click="isAddInsurancePolicyClick();" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_1445_3728)">
+                    <path d="M18 6L6 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_1445_3728">
+                        <rect width="24" height="24" fill="white"/>
+                    </clipPath>
+                    </defs>
+                </svg>                    
+            </div>
+            <div class="addInsuranceBodyClass">
+                <div class="addInsurancePolicyFieldsClass">
+                    <label>RELATION TO INSURED</label>
+                    <select ng-model="addInsurancePolicyModel.selectRelation" class="dropdown">
+                        <option ng-repeat="value in selectRelationList" value="{{value.selectRelation}}">
+                            {{value.selectRelation}}
+                        </option>
+                    </select>
+                    <svg class="downArrowIconClass" width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.70737 11.25L6.04883 7.5H13.3659L9.70737 11.25Z" fill="#1D1B20"/>
+                    </svg>   
+                </div>
+                <div class="addInsurancePolicyFieldsClass">
+                    <div class="addInsuInfoClass">
+                        <label>INSURED INFORMATION</label>
+                        <div class="insuranceDetailsSubHeading">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_1445_3746)">
+                                <path d="M3 12C3 13.1819 3.23279 14.3522 3.68508 15.4442C4.13738 16.5361 4.80031 17.5282 5.63604 18.364C6.47177 19.1997 7.46392 19.8626 8.55585 20.3149C9.64778 20.7672 10.8181 21 12 21C13.1819 21 14.3522 20.7672 15.4442 20.3149C16.5361 19.8626 17.5282 19.1997 18.364 18.364C19.1997 17.5282 19.8626 16.5361 20.3149 15.4442C20.7672 14.3522 21 13.1819 21 12C21 9.61305 20.0518 7.32387 18.364 5.63604C16.6761 3.94821 14.3869 3 12 3C9.61305 3 7.32387 3.94821 5.63604 5.63604C3.94821 7.32387 3 9.61305 3 12Z" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 12H15" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 9V15" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_1445_3746">
+                                <rect width="24" height="24" fill="white"/>
+                                </clipPath>
+                                </defs>
+                            </svg>                                
+                            <a ng-click="addInsuranceAddNewClick()">Add New</a>
+                        </div>
+                    </div>
+                    <div style="display: flex;align-items: center;gap: 5px;color: #1E1E1E;font-family: Manrope;font-size: 14px;font-style: normal;font-weight: 400;line-height: 100%; /* 14px */;">
+                        <div class="portalCommonCheckboxClass">
+                            <input type="checkbox" id="isAdult" style="zoom: 0.8;border:1px solid #257CC7">
+                            <label for="isAdult" style="opacity: unset !important;text-transform: none;"><span style="color: #002265;font-family: Manrope;font-size: 14px;font-style: normal;font-weight: 400;line-height: 100%; /* 14px */">Chris Brow</span> (Adult in home)</label>
+                        </div>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1464_2646)">
+                            <path d="M7 7H6C5.46957 7 4.96086 7.21071 4.58579 7.58579C4.21071 7.96086 4 8.46957 4 9V18C4 18.5304 4.21071 19.0391 4.58579 19.4142C4.96086 19.7893 5.46957 20 6 20H15C15.5304 20 16.0391 19.7893 16.4142 19.4142C16.7893 19.0391 17 18.5304 17 18V17" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M20.385 6.58511C20.7788 6.19126 21.0001 5.65709 21.0001 5.10011C21.0001 4.54312 20.7788 4.00895 20.385 3.61511C19.9912 3.22126 19.457 3 18.9 3C18.343 3 17.8088 3.22126 17.415 3.61511L9 12.0001V15.0001H12L20.385 6.58511Z" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 5L19 8" stroke="#257CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_1464_2646">
+                            <rect width="24" height="24" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>                            
+                    </div>
+                </div>
+                <div class="addInsurancePolicyFieldsClass">
+                    <label>HEALTH PLAN</label>
+                    <select ng-model="addInsurancePolicyModel.HealthPlan" class="dropdown">
+                        <option ng-repeat="value in healthPlanList" value="{{value.HealthPlan}}">
+                            {{value.HealthPlan}}
+                        </option>
+                    </select>
+                    <svg class="downArrowIconClass" width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.70737 11.25L6.04883 7.5H13.3659L9.70737 11.25Z" fill="#1D1B20"/>
+                    </svg>   
+                </div>
+                <div class="addInsurancePolicyFieldsClass">
+                    <label>POLICY NUMBER</label>
+                    <input type="text" ng-model="addInsurancePolicyModel.PolicyNumber">
+                </div>
+                <div class="addInsurancePolicyFieldsClass">
+                    <label>POLICY START DATE</label>
+                    <input type="date" ng-model="addInsurancePolicyModel.PolicyStartDate" ng-change="addInsurancePolicyStartDate()">
+                </div>
+                <div class="addInsurancePolicyFieldsClass">
+                    <label>POLICY END DATE</label>
+                    <input type="date" ng-model="addInsurancePolicyModel.PolicyEndDate" ng-change="addInsurancePolicyStartDate()">
+                </div>
+                <div class="addInsurancePolicyFieldsClass">
+                    <label>COMMENTS</label>
+                    <input type="text" ng-model="addInsurancePolicyModel.Comments">
+                </div>
+                <div class="addInsurancePolicyFieldsClass">
+                    <label>INSURANCE SEQUENCE</label>
+                    <select ng-model="addInsurancePolicyModel.Insurance" class="dropdown">
+                        <option ng-repeat="value in insuranceList" value="{{value.Insurance}}">
+                            {{value.Insurance}}
+                        </option>
+                    </select>
+                    <svg class="downArrowIconClass" width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.70737 11.25L6.04883 7.5H13.3659L9.70737 11.25Z" fill="#1D1B20"/>
+                    </svg>   
+                </div>
+                <div class="addInsurancePolicyFieldsClass">
+                    <label>POLICY STATUS</label>
+                    <select ng-model="addInsurancePolicyModel.PolicyStatus" class="dropdown">
+                        <option ng-repeat="value in policyStatusList" value="{{value.PolicyStatus}}">
+                            {{value.PolicyStatus}}
+                        </option>
+                    </select>
+                    <svg class="downArrowIconClass" width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.70737 11.25L6.04883 7.5H13.3659L9.70737 11.25Z" fill="#1D1B20"/>
+                    </svg>   
+                </div>
+            </div>
+            <div class="addInsuranceButtonBlockClass">
+                <button class="portalCommonEmptyBtnClass" ng-click="isAddInsurancePolicyClick()">Cancel</button>
+                <button class="portalCommonFillBtnClass">Save</button>
+            </div>
+        </div>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js" type="text/javascript"></script>
     <script src="../app.js"></script>
-    <script src="./MyPersonalDetails.js" type="text/javascript"></script>
+    <script src="./insuranceDetails.js" type="text/javascript"></script>
 </body>
 
 </html>

@@ -1,0 +1,275 @@
+.insuranceDetailsFieldsMainClass{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    flex: 1;
+    padding: 0px 32px;
+}
+.insuranceDetailsMainBlockClass{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.insurance-card {
+    fill: #FFF;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.10);
+    flex: 1;
+    border-radius: 4px;
+    min-width: min(100%, 500px);
+}
+@media (min-width:1693px) {
+    .insurance-card:last-child{
+        max-width: 49%;
+    }
+}
+
+.insuranceDetailsSubHeading{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.insuranceDetailsSubHeading a{
+    cursor: pointer;
+    color: #257CC7;
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: none;
+    line-height: 20px; /* 125% */
+}
+.insuranceDetailsSubHeading svg{
+    cursor: pointer;
+}
+
+
+.card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    border-bottom: 1px solid #E6E6E6;;
+    row-gap: 17px;
+}
+.card-heading-block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.badge {
+    border-radius: 4px;
+    background: #C7DEF1;
+    display: inline-flex;
+    padding: 4px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #257CC7;
+    font-family: Manrope;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; /* 14px */
+}
+
+.insurance-title {
+    color: #257CC7;
+    font-family: Manrope;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px; /* 88.889% */
+}
+
+.edit-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-button img {
+    width: 16px;
+    height: 16px;
+}
+
+.card-body {
+    padding: 16px;
+}
+
+.card-item {
+    display: flex;
+}
+
+.item-label {
+    color: #1E1E1E;
+    font-family: Manrope;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    opacity: 0.5;
+    line-height: 32px; /* 228.571% */
+    min-width: 200px;
+}
+
+.item-value {
+    color: #1E1E1E;
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px; /* 200% */
+}
+
+.addInsurancePolicyMainBlock{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    border-radius: 16px 0px 0px 16px;
+    background: #FFF;
+    box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.10);
+    width: 520px;
+    z-index: 999;
+}
+.addInsuranceOverlay{
+    position: fixed;
+    z-index: -1;
+    background: rgba(30, 30, 30, 0.80);
+    height: 100vh;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+.addInsurancePolicyOverlayOpen{
+    z-index: 998;
+    opacity: 1;
+    transition: all 0.4s ease-in;
+}
+.addInsurancePolicyOverlayClose{
+    opacity: 0;
+    transition: all 0.4s ease-out;
+}
+
+.addInsurancePolicyOpen{
+    right: 0px;
+    transition: all 0.5s ease-in-out;
+}
+.addInsurancePolicyClose{
+    right: -999px;
+    transition: all 0.5s ease-out;
+}
+.addInsuranceBodyClass{
+    padding: 38px 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+    flex: 1;
+    overflow-y: auto;
+}
+.addInsurancePolicyMainBlock .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px;
+    border-radius: 16px 0px 0px 0px;
+    background: #257CC7;
+}
+.addInsurancePolicyMainBlock .header label{
+    color: #FFF;
+    font-family: Manrope;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+
+.addInsurancePolicyFieldsClass{
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+    flex: 1;
+    min-width: min(100%, 600px);
+    position: relative;
+}
+.addInsurancePolicyFieldsClass label{
+    color: #1E1E1E;
+    font-family: Manrope;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%; /* 14px */
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    opacity: 0.5;
+}
+.addInsurancePolicyFieldsClass select{
+    padding: 19px !important;
+}
+.addInsurancePolicyFieldsClass select,
+.addInsurancePolicyFieldsClass input{
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid rgba(30, 30, 30, 0.60);
+    background: #FFF;
+    padding: 16px;
+    color: #002265;
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%; /* 16px */
+}
+.myPersonalDetailsFieldsMainClass input:disabled{
+    background-color: #f0f0f0 !important;
+}
+.addInsuInfoClass{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.addInsuranceButtonBlockClass{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 20px;
+    justify-content: center;
+}
+.addInsuranceButtonBlockClass button{
+    flex: 1;
+}
+
+@media (max-width: 600px) {
+    .insuranceDetailsFieldsMainClass{
+        padding: 0px 16px !important;
+        padding-bottom: 16px !important;
+    }
+    .addInsurancePolicyOpen{
+        opacity: 1;
+        z-index: 999 !important;
+    }
+    .addInsurancePolicyClose{
+        opacity: 0;
+        border-radius: 16px !important;
+        z-index: -1 !important;
+    }
+    .addInsurancePolicyMainBlock .header{
+        border-top-left-radius: 16px !important;
+        border-top-right-radius: 16px !important;
+    }
+    .addInsurancePolicyMainBlock{
+        right: auto !important;
+        transform: translate(10px, 10px);
+        left: auto !important;
+        height: 95% !important;
+        width: 95% !important;
+        border-radius: 16px !important;
+    }
+    .addInsuranceOverlay{
+        height: 100%;
+    }
+}
